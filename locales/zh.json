@@ -1,0 +1,5 @@
+{
+	"show version of this program": "显示程序的版本",
+	"build the library": "构建库",
+	"Cannot find entry file, please make sure src/index.ts or src/index.tsx exists": "Cannot find entry file, please make sure src/index.ts or src/index.tsx exists"
+}
