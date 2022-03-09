@@ -4,9 +4,13 @@
   "description": "Effortless React Library Development Experience",
   "type": "module",
   "main": "lib/index.js",
-  "bin": {
-    "rive": "lib/bin/rive.js"
-  },
+  "bin": "lib/bin/rive.js",
+  "files": [
+    "lib",
+    "locales",
+    "LICENSE",
+    "README.md"
+  ],
   "scripts": {
     "build": "tsc",
     "watch": "tsc --watch",
@@ -43,7 +47,9 @@
     "esbuild-node-externals": "^1.4.1",
     "fast-glob": "^3.2.11",
     "i18n": "^0.14.1",
-    "read-pkg": "^7.1.0"
+    "read-pkg": "^7.1.0",
+    "rollup": "^2.70.0",
+    "rollup-plugin-dts": "^4.2.0"
   },
   "peerDependencies": {
     "typescript": "^4.6.2"
