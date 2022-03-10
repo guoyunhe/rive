@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "node ../../lib/bin/rive.js build"
+    "build": "node ../../lib/rive.js build"
   },
   "keywords": [],
   "author": "Guo Yunhe",

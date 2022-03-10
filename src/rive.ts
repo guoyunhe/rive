@@ -1,8 +1,8 @@
 import { Command } from 'commander';
+import { dirname } from 'dirname-filename-esm';
 import i18n from 'i18n';
 import { join } from 'path';
-import { dirname } from 'dirname-filename-esm';
-import { build } from '../actions/build.js';
+import { build } from './build/build.js';
 
 i18n.configure({
   locales: ['en', 'zh'],

@@ -5,14 +5,14 @@ import { rollup } from 'rollup';
 import dts from 'rollup-plugin-dts';
 import ts from 'typescript';
 import { exclude, include, outDir } from '../config.js';
-import { readTsconfig } from './readTsconfig.js';
+import { readTsconfig } from '../utils/readTsconfig.js';
 
 /**
- * Generate TypeScript declaration files and bundle them into one
+ * Build TypeScript declaration files and bundle them into one
  * @see https://github.com/Microsoft/TypeScript/wiki/Using-the-Compiler-API
  * @see https://www.npmjs.com/package/rollup-plugin-dts
  */
-export async function generateDeclaration(): Promise<void> {
+export async function buildDTS() {
   const tsconfig = readTsconfig();
   const dtsOutDir = join(outDir, '_types');
   const compilerOptions = {
@@ -40,7 +40,10 @@ export async function generateDeclaration(): Promise<void> {
     plugins: [dts()],
   });
 
-  await bundle.write({ file: join(outDir, 'index.d.ts'), format: 'es' });
+  const result = await bundle.write({
+    file: join(outDir, 'index.d.ts'),
+    format: 'es',
+  });
 
   rmSync(dtsOutDir, { recursive: true });
 }
