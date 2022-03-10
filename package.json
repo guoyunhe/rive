@@ -1,6 +1,6 @@
 {
   "name": "rive",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Effortless React Library Development Experience",
   "type": "module",
   "bin": "lib/rive.js",
