@@ -1,6 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@types/fs-extra': ^9.0.13
   '@types/i18n': ^0.13.2
   '@types/lodash-es': ^4.17.6
   '@types/node': ^17.0.21
@@ -12,6 +13,7 @@ specifiers:
   esbuild-node-externals: ^1.4.1
   eslint: ^8.11.0
   fast-glob: ^3.2.11
+  fs-extra: ^10.0.1
   i18n: ^0.14.1
   lodash-es: ^4.17.21
   ora: ^6.1.0
@@ -32,6 +34,7 @@ dependencies:
   esbuild-node-externals: 1.4.1_esbuild@0.14.25
   eslint: 8.11.0
   fast-glob: 3.2.11
+  fs-extra: 10.0.1
   i18n: 0.14.1
   lodash-es: 4.17.21
   ora: 6.1.0
@@ -44,6 +47,7 @@ dependencies:
   write-pkg: 5.0.0
 
 devDependencies:
+  '@types/fs-extra': 9.0.13
   '@types/i18n': 0.13.2
   '@types/lodash-es': 4.17.6
   '@types/node': 17.0.21
@@ -156,6 +160,12 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.13.0
     dev: false
+
+  /@types/fs-extra/9.0.13:
+    resolution: {integrity: sha512-nEnwB++1u5lVDM2UI4c1+5R+FYaKfaAzS4OococimjVm3nQw3TuzH5UNsocrcTBbhnerblyHj4A49qXbIiZdpA==}
+    dependencies:
+      '@types/node': 17.0.21
+    dev: true
 
   /@types/i18n/0.13.2:
     resolution: {integrity: sha512-FdzABEs0NNi99xN+FgWAAeCenaNo+5jolCxr2RhQrySinNPH8rkgjbw6OMGW9+HSgnGeuI7C6y2lC83m6JN3bg==}
@@ -947,6 +957,15 @@ packages:
     resolution: {integrity: sha512-WIWGi2L3DyTUvUrwRKgGi9TwxQMUEqPOPQBVi71R96jZXJdFskXEmf54BoZaS1kknGODoIGASGEzBUYdyMCBJg==}
     dev: false
 
+  /fs-extra/10.0.1:
+    resolution: {integrity: sha512-NbdoVMZso2Lsrn/QwLXOy6rm0ufY2zEOKCDzJR/0kBsb0E6qed0P3iYK+Ath3BfvXEeu4JhEtXLgILx5psUfag==}
+    engines: {node: '>=12'}
+    dependencies:
+      graceful-fs: 4.2.9
+      jsonfile: 6.1.0
+      universalify: 2.0.0
+    dev: false
+
   /fs.realpath/1.0.0:
     resolution: {integrity: sha1-FQStJSMVjKpA20onh8sBQRmU6k8=}
     dev: false
@@ -1034,6 +1053,10 @@ packages:
 
   /globjoin/0.1.4:
     resolution: {integrity: sha1-L0SUrIkZ43Z8XLtpHp9GMyQoXUM=}
+    dev: false
+
+  /graceful-fs/4.2.9:
+    resolution: {integrity: sha512-NtNxqUcXgpW2iMrfqSfR73Glt39K+BLwWsPs94yR63v45T0Wbej7eRmL5cWfwEgqXnmjQp3zaJTshdRW/qC2ZQ==}
     dev: false
 
   /hard-rejection/2.1.0:
@@ -1229,6 +1252,14 @@ packages:
 
   /json-stable-stringify-without-jsonify/1.0.1:
     resolution: {integrity: sha1-nbe1lJatPzz+8wp1FC0tkwrXJlE=}
+    dev: false
+
+  /jsonfile/6.1.0:
+    resolution: {integrity: sha512-5dgndWOriYSm5cnYaJNhalLNDKOqFwyDB/rr1E9ZsGciGvKPs8R2xYGCacuf3z6K1YKDz182fd+fY3cn3pMqXQ==}
+    dependencies:
+      universalify: 2.0.0
+    optionalDependencies:
+      graceful-fs: 4.2.9
     dev: false
 
   /kind-of/6.0.3:
@@ -2052,6 +2083,11 @@ packages:
     resolution: {integrity: sha512-HM/hFigTBHZhLXshn9sN37H085+hQGeJHJ/X7LpBWLID/fbc2acUMfU+lGD98X81sKP+pFa9f0DZmCwB9GnbAg==}
     engines: {node: '>=4.2.0'}
     hasBin: true
+    dev: false
+
+  /universalify/2.0.0:
+    resolution: {integrity: sha512-hAZsKq7Yy11Zu1DE0OzWjw7nnLZmJZYTDZZyEFHZdUhV8FkH5MCfoU1XMaxXovpyW5nq5scPqq0ZDP9Zyl04oQ==}
+    engines: {node: '>= 10.0.0'}
     dev: false
 
   /uri-js/4.4.1:

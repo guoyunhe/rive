@@ -15,5 +15,9 @@
 		"coverage",
 		"dist"
 	],
-	"stylelint": {}
+	"stylelint": {},
+	"name": "",
+	"version": "",
+	"readme": "ERROR: No README data found!",
+	"_id": "@"
 }
