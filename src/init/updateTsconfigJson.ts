@@ -21,7 +21,7 @@ const config = {
 };
 
 export function updateTsconfigJson() {
-  const packageJson = readJsonSync(filePath, { throws: false }) || {};
-  merge(packageJson, config);
-  writeJsonSync(filePath, packageJson, { spaces: 2 });
+  const tsconfigJson = readJsonSync(filePath, { throws: false }) || {};
+  merge(tsconfigJson, config);
+  writeJsonSync(filePath, tsconfigJson, { spaces: 2 });
 }
