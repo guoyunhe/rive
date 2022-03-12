@@ -3,6 +3,7 @@
 ## 0.3.0
 
 - Add `init` command
+- Add `eslint-config-rive` and dependencies
 
 ## 0.2.0
 
