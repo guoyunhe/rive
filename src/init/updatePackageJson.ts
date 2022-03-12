@@ -6,6 +6,10 @@ const { readJsonSync, writeJsonSync } = fse;
 const filePath = './package.json';
 
 const config = {
+  main: 'dist/index.cjs.js',
+  module: 'dist/index.esm.js',
+  style: 'dist/index.css',
+  types: 'dist/index.d.ts',
   scripts: {
     start: 'rive start',
     build: 'rive build',
