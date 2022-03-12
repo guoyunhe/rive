@@ -1,23 +1,25 @@
 {
-	"scripts": {
-		"start": "rive start",
-		"build": "rive build",
-		"test": "rive test",
-		"lint": "rive lint",
-		"format": "rive format"
-	},
-	"devDependencies": {
-		"rive": "latest"
-	},
-	"eslintConfig": {},
-	"eslintIgnore": [
-		"node_modules",
-		"coverage",
-		"dist"
-	],
-	"stylelint": {},
-	"name": "",
-	"version": "",
-	"readme": "ERROR: No README data found!",
-	"_id": "@"
+  "scripts": {
+    "start": "rive start",
+    "build": "rive build",
+    "test": "rive test",
+    "lint": "rive lint",
+    "format": "rive format"
+  },
+  "devDependencies": {
+    "rive": "latest"
+  },
+  "eslintConfig": {},
+  "eslintIgnore": [
+    "node_modules",
+    "coverage",
+    "dist"
+  ],
+  "stylelint": {
+    "ignoreFiles": [
+      "node_modules",
+      "coverage",
+      "dist"
+    ]
+  }
 }

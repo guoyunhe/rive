@@ -1,21 +1,32 @@
-import { set, unset } from 'lodash-es';
-import { readPackageSync } from 'read-pkg';
-import { writePackageSync } from 'write-pkg';
+import fse from 'fs-extra';
+import { merge, unset } from 'lodash-es';
+
+const { readJsonSync, writeJsonSync } = fse;
+
+const filePath = './package.json';
+
+const config = {
+  scripts: {
+    start: 'rive start',
+    build: 'rive build',
+    test: 'rive test',
+    lint: 'rive lint',
+    format: 'rive format',
+  },
+  devDependencies: {
+    rive: 'latest',
+  },
+  eslintConfig: {},
+  eslintIgnore: ['node_modules', 'coverage', 'dist'],
+  stylelint: {
+    ignoreFiles: ['node_modules', 'coverage', 'dist'],
+  },
+};
 
 export function updatePackageJson() {
-  let packageJson = {};
-  try {
-    packageJson = readPackageSync();
-  } catch (e) {}
-  // Set scripts
-  set(packageJson, 'scripts.start', 'rive start');
-  set(packageJson, 'scripts.build', 'rive build');
-  set(packageJson, 'scripts.test', 'rive test');
-  set(packageJson, 'scripts.lint', 'rive lint');
-  set(packageJson, 'scripts.format', 'rive format');
+  const packageJson = readJsonSync(filePath, { throws: false }) || {};
 
-  // Add devDependencies
-  set(packageJson, 'devDependencies.rive', 'latest');
+  merge(packageJson, config);
 
   // Remove devDependencies
   const depsToRemove = ['eslint', 'stylelint', 'prettier'];
@@ -23,9 +34,5 @@ export function updatePackageJson() {
     unset(packageJson, 'devDependencies.' + dep);
   });
 
-  set(packageJson, 'eslintConfig', {}); // TODO
-  set(packageJson, 'eslintIgnore', ['node_modules', 'coverage', 'dist']); // TODO
-  set(packageJson, 'stylelint', {}); // TODO
-
-  writePackageSync(packageJson);
+  writeJsonSync(filePath, packageJson, { spaces: 2 });
 }
