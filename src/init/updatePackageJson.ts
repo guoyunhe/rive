@@ -10,6 +10,7 @@ const config = {
   module: 'dist/index.esm.js',
   style: 'dist/index.css',
   types: 'dist/index.d.ts',
+  files: ['dist', 'README.md'],
   scripts: {
     start: 'rive start',
     build: 'rive build',
@@ -20,12 +21,16 @@ const config = {
   devDependencies: {
     rive: 'latest',
   },
-  eslintConfig: {},
+  eslintConfig: {
+    extends: ['rive'],
+  },
   eslintIgnore: ['node_modules', 'coverage', 'dist'],
   stylelint: {
     ignoreFiles: ['node_modules', 'coverage', 'dist'],
   },
 };
+
+const depsToRemove = ['eslint', 'stylelint', 'prettier', 'tslint'];
 
 export function updatePackageJson() {
   const packageJson = readJsonSync(filePath, { throws: false }) || {};
@@ -33,7 +38,6 @@ export function updatePackageJson() {
   merge(packageJson, config);
 
   // Remove devDependencies
-  const depsToRemove = ['eslint', 'stylelint', 'prettier'];
   depsToRemove.forEach((dep) => {
     unset(packageJson, 'devDependencies.' + dep);
   });
