@@ -1,0 +1,13 @@
+# Changelog
+
+## 0.3.0
+
+- Add `init` command
+
+## 0.2.0
+
+- Add bundled \*.d.ts output
+
+## 0.1.0
+
+- Add `build` command with ESM and CJS output

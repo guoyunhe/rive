@@ -1,0 +1,19 @@
+{
+	"scripts": {
+		"start": "rive start",
+		"build": "rive build",
+		"test": "rive test",
+		"lint": "rive lint",
+		"format": "rive format"
+	},
+	"devDependencies": {
+		"rive": "latest"
+	},
+	"eslintConfig": {},
+	"eslintIgnore": [
+		"node_modules",
+		"coverage",
+		"dist"
+	],
+	"stylelint": {}
+}

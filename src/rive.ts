@@ -3,10 +3,11 @@ import { dirname } from 'dirname-filename-esm';
 import i18n from 'i18n';
 import { join } from 'path';
 import { build } from './build/build.js';
+import { init } from './init/init.js';
 
 i18n.configure({
   locales: ['en', 'zh'],
-  directory: join(dirname(import.meta), '..', '..', 'locales'),
+  directory: join(dirname(import.meta), '..', 'locales'),
 });
 
 if (process.env.LANG?.startsWith('zh')) {
@@ -15,15 +16,13 @@ if (process.env.LANG?.startsWith('zh')) {
 
 const program = new Command('rive');
 
-program
-  .command('build')
-  .description(i18n.__('build the library'))
-  .action(build);
+program.command('build').description(i18n.__('build_cmd_desc')).action(build);
 
-program.version(
-  '0.1.0',
-  '-v, --version',
-  i18n.__('show version of this program')
-);
+program.command('init').description(i18n.__('init_cmd_desc')).action(init);
+
+program.helpOption('-h, --help', i18n.__('help_cmd_desc'));
+program.addHelpCommand('help [command]', i18n.__('help_cmd_desc'));
+
+program.version('0.1.0', '-v, --version', i18n.__('version_cmd_desc'));
 
 program.parse();

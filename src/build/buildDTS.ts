@@ -26,11 +26,8 @@ export async function buildDTS() {
     ignore: tsconfig.exclude || exclude,
   });
 
-  // Create a Program with an in-memory emit
-  const host = ts.createCompilerHost(compilerOptions);
-
   // Prepare and emit the d.ts files
-  const program = ts.createProgram(fileNames, compilerOptions, host);
+  const program = ts.createProgram(fileNames, compilerOptions);
   program.emit();
 
   // Bundle d.ts files

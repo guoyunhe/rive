@@ -9,7 +9,7 @@ export async function build() {
   const start = Date.now();
   const entry = findEntry();
   if (!entry) {
-    console.error(i18n.__('error-no-entry'));
+    console.error(i18n.__('build_err_no_entry'));
     return process.exit(1);
   }
   const spinner = ora('building').start();

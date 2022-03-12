@@ -1,3 +1,7 @@
 {
-	"show version of this program": "show version of this program"
+  "help_cmd_desc": "Show help",
+  "version_cmd_desc": "Show version",
+  "init_cmd_desc": "Initialize project",
+  "build_cmd_desc": "Build code and docs",
+  "build_err_no_entry": "Cannot find entry file. Make sure src/index.ts or src/index.tsx exists"
 }
