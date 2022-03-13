@@ -30,6 +30,9 @@ specifiers:
   rollup: ^2.70.0
   rollup-plugin-dts: ^4.2.0
   stylelint: ^14.5.3
+  stylelint-config-prettier: ^9.0.3
+  stylelint-config-rive: ^1.0.0
+  stylelint-config-standard: ^25.0.0
   typescript: ^4.6.2
 
 dependencies:
@@ -56,6 +59,9 @@ dependencies:
   rollup: 2.70.0
   rollup-plugin-dts: 4.2.0_rollup@2.70.0+typescript@4.6.2
   stylelint: 14.5.3
+  stylelint-config-prettier: 9.0.3_stylelint@14.5.3
+  stylelint-config-rive: 1.0.0
+  stylelint-config-standard: 25.0.0_stylelint@14.5.3
   typescript: 4.6.2
 
 devDependencies:
@@ -2567,6 +2573,37 @@ packages:
 
   /style-search/0.1.0:
     resolution: {integrity: sha1-eVjHk+R+MuB9K1yv5cC/jhLneQI=}
+    dev: false
+
+  /stylelint-config-prettier/9.0.3_stylelint@14.5.3:
+    resolution: {integrity: sha512-5n9gUDp/n5tTMCq1GLqSpA30w2sqWITSSEiAWQlpxkKGAUbjcemQ0nbkRvRUa0B1LgD3+hCvdL7B1eTxy1QHJg==}
+    engines: {node: '>= 12'}
+    hasBin: true
+    peerDependencies:
+      stylelint: '>=11.0.0'
+    dependencies:
+      stylelint: 14.5.3
+    dev: false
+
+  /stylelint-config-recommended/7.0.0_stylelint@14.5.3:
+    resolution: {integrity: sha512-yGn84Bf/q41J4luis1AZ95gj0EQwRX8lWmGmBwkwBNSkpGSpl66XcPTulxGa/Z91aPoNGuIGBmFkcM1MejMo9Q==}
+    peerDependencies:
+      stylelint: ^14.4.0
+    dependencies:
+      stylelint: 14.5.3
+    dev: false
+
+  /stylelint-config-rive/1.0.0:
+    resolution: {integrity: sha512-cKlqHUloJ/hzjcLWAVqhOL4gH/Z8Z/ornfRRA8i/S896QKWZ4EMB18HPkEw0qjIrckrq56kSySDIHtZoU9T8uw==}
+    dev: false
+
+  /stylelint-config-standard/25.0.0_stylelint@14.5.3:
+    resolution: {integrity: sha512-21HnP3VSpaT1wFjFvv9VjvOGDtAviv47uTp3uFmzcN+3Lt+RYRv6oAplLaV51Kf792JSxJ6svCJh/G18E9VnCA==}
+    peerDependencies:
+      stylelint: ^14.4.0
+    dependencies:
+      stylelint: 14.5.3
+      stylelint-config-recommended: 7.0.0_stylelint@14.5.3
     dev: false
 
   /stylelint/14.5.3:

@@ -26,6 +26,7 @@ const config = {
   },
   eslintIgnore: ['node_modules', 'coverage', 'dist'],
   stylelint: {
+    extends: ['stylelint-config-rive'],
     ignoreFiles: ['node_modules', 'coverage', 'dist'],
   },
 };
