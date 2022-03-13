@@ -37,7 +37,7 @@
     "@types/i18n": "^0.13.2",
     "@types/lodash-es": "^4.17.6",
     "@types/node": "^17.0.21",
-    "@types/react": "^17.0.39",
+    "@types/react": "^17.0.40",
     "react": "^17.0.2"
   },
   "dependencies": {
@@ -50,14 +50,14 @@
     "esbuild-node-externals": "^1.4.1",
     "eslint": "^8.11.0",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-config-rive": "^1.0.0",
+    "eslint-config-rive": "^1.0.1",
     "eslint-import-resolver-typescript": "^2.5.0",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.29.3",
     "fast-glob": "^3.2.11",
     "fs-extra": "^10.0.1",
-    "i18n": "^0.14.1",
+    "i18n": "^0.14.2",
     "lodash-es": "^4.17.21",
     "ora": "^6.1.0",
     "prettier": "^2.5.1",
@@ -68,5 +68,25 @@
     "stylelint-config-rive": "^1.0.0",
     "stylelint-config-standard": "^25.0.0",
     "typescript": "^4.6.2"
+  },
+  "eslintConfig": {
+    "extends": [
+      "rive"
+    ]
+  },
+  "eslintIgnore": [
+    "node_modules",
+    "coverage",
+    "dist"
+  ],
+  "stylelint": {
+    "ignoreFiles": [
+      "node_modules",
+      "coverage",
+      "dist"
+    ],
+    "extends": [
+      "stylelint-config-rive"
+    ]
   }
 }

@@ -1,4 +1,4 @@
-import { build as esbuild } from 'esbuild';
+import { build } from 'esbuild';
 import { nodeExternalsPlugin } from 'esbuild-node-externals';
 
 export interface BuildESMOptions {
@@ -8,8 +8,8 @@ export interface BuildESMOptions {
 /**
  * Build ESM bundle and CSS bundle
  */
-export async function buildESM({ entry }: BuildESMOptions) {
-  return esbuild({
+export function buildESM({ entry }: BuildESMOptions) {
+  return build({
     entryPoints: [entry],
     outdir: 'dist',
     outbase: 'src',

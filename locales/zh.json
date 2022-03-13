@@ -4,6 +4,9 @@
 	"init_cmd_desc": "初始化项目",
 	"build_cmd_desc": "构建代码和文档",
 	"build_err_no_entry": "找不到入口文件，请确保 src/index.ts 或 src/index.tsx 存在",
+	"build_step_esm": "构建 ESM 模块",
+	"build_step_cjs": "构建 CJS 模块",
+	"build_step_dts": "构建 TS 类型 (*.d.ts)",
 	"build_status_building": "build_status_building",
 	"build_status_finish": "build_status_finish"
 }

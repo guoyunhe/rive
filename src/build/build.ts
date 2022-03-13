@@ -1,7 +1,7 @@
-import { remove } from 'fs-extra';
+import { emptyDirSync } from 'fs-extra';
 import i18n from 'i18n';
-import ora from 'ora';
 import { findEntry } from '../utils/findEntry.js';
+import { stepOutput } from '../utils/stepOutput.js';
 import { buildCJS } from './buildCJS.js';
 import { buildDTS } from './buildDTS.js';
 import { buildESM } from './buildESM.js';
@@ -13,14 +13,11 @@ export async function build() {
     return process.exit(1);
   }
 
-  const start = Date.now();
-  const spinner = ora(i18n.__('build_status_building')).start();
+  emptyDirSync('dist');
 
-  await remove('dist');
+  await stepOutput(i18n.__('build_step_esm'), () => buildESM({ entry }));
 
-  await Promise.all([buildESM({ entry }), buildCJS({ entry }), buildDTS()]);
+  await stepOutput(i18n.__('build_step_cjs'), () => buildCJS({ entry }));
 
-  const end = Date.now();
-  spinner.stop();
-  console.log(i18n.__('build_status_finish'), (end - start) / 1000);
+  await stepOutput(i18n.__('build_step_dts'), () => buildDTS());
 }

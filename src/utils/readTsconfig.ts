@@ -6,7 +6,8 @@ export function readTsconfig(): any {
   if (existsSync(fullpath)) {
     const file = readFileSync(fullpath, 'utf8');
     try {
-      return JSON.parse(file);
+      const json = JSON.parse(file);
+      return json;
     } catch (e) {
       return {};
     }

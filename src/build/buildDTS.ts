@@ -13,15 +13,21 @@ import { readTsconfig } from '../utils/readTsconfig.js';
  * @see https://www.npmjs.com/package/rollup-plugin-dts
  */
 export async function buildDTS() {
+  // Create a temp directory for intermediate files
+  const dtsTempDir = join(outDir, 'dts_temp');
+
   const tsconfig = readTsconfig();
-  const dtsOutDir = join(outDir, '_types');
-  const compilerOptions = {
-    ...tsconfig?.compilerOptions,
-    moduleResolution: ts.ModuleResolutionKind.NodeJs,
+  const compilerOptionsResult = ts.convertCompilerOptionsFromJson(
+    tsconfig,
+    process.cwd()
+  );
+  const compilerOptions: ts.CompilerOptions = {
+    ...compilerOptionsResult.options,
     declaration: true,
     emitDeclarationOnly: true,
-    outDir: dtsOutDir,
+    outDir: dtsTempDir,
   };
+
   const fileNames = glob.sync(tsconfig.include || include, {
     ignore: tsconfig.exclude || exclude,
   });
@@ -32,7 +38,7 @@ export async function buildDTS() {
 
   // Bundle d.ts files
   const bundle = await rollup({
-    input: join(process.cwd(), dtsOutDir, 'index.d.ts'),
+    input: join(process.cwd(), dtsTempDir, 'index.d.ts'),
     external: [/\.(css|sass|scss|less)$/u], // remove all non-js imports
     plugins: [dts()],
   });
@@ -42,5 +48,5 @@ export async function buildDTS() {
     format: 'es',
   });
 
-  rmSync(dtsOutDir, { recursive: true });
+  rmSync(dtsTempDir, { recursive: true });
 }
