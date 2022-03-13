@@ -17,7 +17,7 @@ export async function buildDTS() {
   const dtsOutDir = join(outDir, '_types');
   const compilerOptions = {
     ...tsconfig?.compilerOptions,
-    allowJs: true,
+    moduleResolution: ts.ModuleResolutionKind.NodeJs,
     declaration: true,
     emitDeclarationOnly: true,
     outDir: dtsOutDir,

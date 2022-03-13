@@ -1,7 +1,9 @@
 {
-  "help_cmd_desc": "显示帮助",
-  "version_cmd_desc": "显示版本",
-  "init_cmd_desc": "初始化项目",
-  "build_cmd_desc": "构建代码和文档",
-  "build_err_no_entry": "找不到入口文件，请确保 src/index.ts 或 src/index.tsx 存在"
+	"help_cmd_desc": "显示帮助",
+	"version_cmd_desc": "显示版本",
+	"init_cmd_desc": "初始化项目",
+	"build_cmd_desc": "构建代码和文档",
+	"build_err_no_entry": "找不到入口文件，请确保 src/index.ts 或 src/index.tsx 存在",
+	"build_status_building": "build_status_building",
+	"build_status_finish": "build_status_finish"
 }

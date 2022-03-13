@@ -1,15 +1,14 @@
 {
   "compilerOptions": {
     "strict": true,
-    "module": "ESNext",
     "moduleResolution": "node",
     "target": "ES6",
     "lib": [
-      "ESNext"
+      "ESNext",
+      "DOM"
     ],
-    "outDir": "lib",
-    "rootDir": "src",
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react"
   },
   "include": [
     "src/**/*.ts",

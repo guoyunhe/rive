@@ -24,6 +24,9 @@
       "node_modules",
       "coverage",
       "dist"
+    ],
+    "extends": [
+      "stylelint-config-rive"
     ]
   },
   "main": "dist/index.cjs.js",
