@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/index.cjs.js",
   "scripts": {
-    "build": "rive build",
+    "build": "node ../../lib/rive.js build",
     "init": "node ../../lib/rive.js init",
     "start": "rive start",
     "test": "rive test",
