@@ -36,57 +36,41 @@
     "@types/fs-extra": "^9.0.13",
     "@types/i18n": "^0.13.2",
     "@types/lodash-es": "^4.17.6",
-    "@types/node": "^17.0.21",
-    "@types/react": "^17.0.40",
-    "react": "^17.0.2"
+    "@types/node": "^17.0.23",
+    "@types/react": "^17.0.43",
+    "@types/react-dom": "^17.0.14",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.14.0",
-    "@typescript-eslint/parser": "^5.14.0",
+    "@microsoft/api-extractor": "^7.19.5",
+    "@typescript-eslint/eslint-plugin": "^5.16.0",
+    "@typescript-eslint/parser": "^5.16.0",
     "chalk": "^5.0.1",
-    "commander": "^9.0.0",
+    "commander": "^9.1.0",
     "dirname-filename-esm": "^1.1.1",
-    "esbuild": "^0.14.25",
+    "esbuild": "^0.14.28",
     "esbuild-node-externals": "^1.4.1",
-    "eslint": "^8.11.0",
+    "eslint": "^8.12.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-rive": "^1.0.1",
-    "eslint-import-resolver-typescript": "^2.5.0",
+    "eslint-import-resolver-typescript": "^2.7.0",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.29.3",
+    "eslint-plugin-react": "^7.29.4",
     "fast-glob": "^3.2.11",
     "fs-extra": "^10.0.1",
     "i18n": "^0.14.2",
     "lodash-es": "^4.17.21",
     "ora": "^6.1.0",
-    "prettier": "^2.5.1",
-    "rollup": "^2.70.0",
+    "prettier": "^2.6.1",
+    "rollup": "^2.70.1",
     "rollup-plugin-dts": "^4.2.0",
-    "stylelint": "^14.5.3",
+    "stylelint": "^14.6.1",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-rive": "^1.0.0",
     "stylelint-config-standard": "^25.0.0",
-    "typescript": "^4.6.2"
-  },
-  "eslintConfig": {
-    "extends": [
-      "rive"
-    ]
-  },
-  "eslintIgnore": [
-    "node_modules",
-    "coverage",
-    "dist"
-  ],
-  "stylelint": {
-    "ignoreFiles": [
-      "node_modules",
-      "coverage",
-      "dist"
-    ],
-    "extends": [
-      "stylelint-config-rive"
-    ]
+    "typescript": "^4.6.3",
+    "vite": "^2.8.6"
   }
 }

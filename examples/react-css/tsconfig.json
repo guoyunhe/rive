@@ -4,11 +4,12 @@
     "module": "ESNext",
     "moduleResolution": "node",
     "target": "ES6",
+    "jsx": "react",
     "lib": ["ESNext"],
     "outDir": "lib",
     "rootDir": "src",
     "esModuleInterop": true
   },
-  "include": ["src/**/*.ts"],
-  "exclude": ["src/**/*.spec.ts"]
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["src/**/*.spec.ts", "src/**/*.spec.tsx"]
 }
