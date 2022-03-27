@@ -1,4 +1,6 @@
 import { createFoldersFiles } from './createFoldersFiles.js';
+import { initVSCodeExtensions } from './initVSCodeExtensions.js';
+import { initVSCodeSettings } from './initVSCodeSettings.js';
 import { removeConflictFiles } from './removeConflictFiles.js';
 import { updateEditorConfig } from './updateEditorConfig.js';
 import { updateGitIgnore } from './updateGitIgnore.js';
@@ -12,4 +14,6 @@ export function init() {
   updateGitIgnore();
   updatePackageJson();
   updateTsconfigJson();
+  initVSCodeExtensions();
+  initVSCodeSettings();
 }

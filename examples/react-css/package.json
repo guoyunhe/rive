@@ -2,9 +2,14 @@
   "name": "react-css",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.cjs.js",
   "scripts": {
-    "build": "node ../../lib/rive.js build"
+    "build": "rive build",
+    "init": "node ../../lib/rive.js init",
+    "start": "rive start",
+    "test": "rive test",
+    "lint": "rive lint",
+    "format": "rive format"
   },
   "keywords": [],
   "author": "Guo Yunhe",
@@ -13,6 +18,34 @@
     "@types/react": "^17.0.39",
     "@types/react-dom": "^17.0.13",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "rive": "latest"
+  },
+  "module": "dist/index.esm.js",
+  "style": "dist/index.css",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "eslintConfig": {
+    "extends": [
+      "rive"
+    ]
+  },
+  "eslintIgnore": [
+    "node_modules",
+    "coverage",
+    "dist"
+  ],
+  "stylelint": {
+    "extends": [
+      "stylelint-config-rive"
+    ],
+    "ignoreFiles": [
+      "node_modules",
+      "coverage",
+      "dist"
+    ]
   }
 }
