@@ -5,7 +5,11 @@
     "typescript",
     "typescriptreact"
   ],
-  "stylelint.validate": ["css", "scss", "less"],
+  "stylelint.validate": [
+    "css",
+    "scss",
+    "less"
+  ],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
     "source.fixAll.stylelint": true,
