@@ -1,6 +1,28 @@
 import fse from 'fs-extra';
 import { merge } from 'lodash-es';
-import tsconfig from '../config/tsconfig.js';
+
+// Based on https://www.npmjs.com/package/@tsconfig/vite-react
+const tsconfig = {
+  compilerOptions: {
+    target: 'esnext',
+    lib: ['esnext', 'dom', 'dom.iterable'],
+    allowJs: false,
+    skipLibCheck: false,
+    esModuleInterop: false,
+    allowSyntheticDefaultImports: true,
+    strict: true,
+    forceConsistentCasingInFileNames: true,
+    module: 'esnext',
+    moduleResolution: 'node',
+    resolveJsonModule: true,
+    isolatedModules: true,
+    noEmit: true,
+    jsx: 'react',
+    types: ['react', 'jest'],
+  },
+  include: ['src/**/*.ts', 'src/**/*.tsx'],
+  exclude: ['**/*.spec.ts', '**/*.spec.tsx', '**/*.test.ts', '**/*.test.tsx'],
+};
 
 const filePath = './tsconfig.json';
 
