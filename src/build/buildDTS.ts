@@ -8,8 +8,14 @@ import { rmSync } from 'fs';
 import { join } from 'path';
 import type { CompilerOptions } from 'typescript';
 import ts from 'typescript';
-import { exclude, include, outDir } from '../config.js';
-import { readTsconfig } from '../utils/readTsconfig.js';
+import {
+  exclude,
+  include,
+  outDir,
+  packageJsonPath,
+  tsconfigJsonPath,
+} from '../config/common.js';
+import { readTsconfigJson } from '../utils/readTsconfigJson.js';
 
 /**
  * Build TypeScript declaration files and bundle them into one
@@ -21,7 +27,7 @@ export async function buildDTS() {
   const dtsTempDir = join(outDir, 'dts_temp');
   const dtsTempEntry = join(dtsTempDir, 'index.d.ts');
 
-  const tsconfig = readTsconfig();
+  const tsconfig = readTsconfigJson();
   const compilerOptionsResult = ts.convertCompilerOptionsFromJson(
     tsconfig,
     process.cwd()
@@ -33,7 +39,7 @@ export async function buildDTS() {
     outDir: dtsTempDir,
   };
 
-  const fileNames = await glob(tsconfig.include || include, {
+  const fileNames = glob.sync(tsconfig.include || include, {
     ignore: tsconfig.exclude || exclude,
   });
 
@@ -45,12 +51,12 @@ export async function buildDTS() {
   // TODO: use api-extractor instead
   const extractorOptions: IExtractorConfigPrepareOptions = {
     configObjectFullPath: join(process.cwd(), 'api-extractor.json'),
-    packageJsonFullPath: join(process.cwd(), 'package.json'),
+    packageJsonFullPath: packageJsonPath,
     configObject: {
       mainEntryPointFilePath: dtsTempEntry,
       projectFolder: process.cwd(),
       compiler: {
-        tsconfigFilePath: join(process.cwd(), 'tsconfig.json'),
+        tsconfigFilePath: tsconfigJsonPath,
       },
       dtsRollup: {
         enabled: true,

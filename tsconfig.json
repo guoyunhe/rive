@@ -1,13 +1,27 @@
 {
   "compilerOptions": {
+    "lib": ["es2021"],
+    "module": "es2022",
+    "target": "es2021",
     "strict": true,
-    "module": "ESNext",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowUnusedLabels": false,
+    "allowUnreachableCode": false,
+    "exactOptionalPropertyTypes": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "importsNotUsedAsValues": "error",
+    "checkJs": true,
     "moduleResolution": "node",
-    "target": "ES6",
-    "lib": ["ESNext"],
     "outDir": "lib",
-    "rootDir": "src",
-    "esModuleInterop": true
+    "rootDir": "src"
   },
   "include": ["src/**/*.ts"],
   "exclude": ["src/**/*.spec.ts"]

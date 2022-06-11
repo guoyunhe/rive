@@ -1,5 +1,5 @@
 import FastGlob from 'fast-glob';
-import { outputFileSync } from 'fs-extra';
+import fs from 'fs-extra';
 import { join } from 'path';
 
 const entryFileContent = `import React, { ReactNode } from 'react';
@@ -18,7 +18,7 @@ export function findEntry() {
   let entry = entries[0];
   if (!entry) {
     entry = join(process.cwd(), 'src', 'index.tsx');
-    outputFileSync(entry, entryFileContent);
+    fs.outputFileSync(entry, entryFileContent);
   }
   return entry;
 }

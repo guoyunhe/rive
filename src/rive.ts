@@ -10,7 +10,7 @@ i18n.configure({
   directory: join(dirname(import.meta), '..', 'locales'),
 });
 
-if (process.env.LANG?.startsWith('zh')) {
+if (process.env['LANG']?.startsWith('zh')) {
   i18n.setLocale('zh');
 }
 

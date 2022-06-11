@@ -1,19 +1,16 @@
-import { emptyDirSync } from 'fs-extra';
 import i18n from 'i18n';
+import { build as viteBuild } from 'vite';
+import getLibViteConfig from '../config/lib-vite-config.js';
 import { findEntry } from '../utils/findEntry.js';
+import { readPackageJson } from '../utils/readPackageJson.js';
 import { stepOutput } from '../utils/stepOutput.js';
-import { buildCJS } from './buildCJS.js';
 import { buildDTS } from './buildDTS.js';
-import { buildESM } from './buildESM.js';
 
 export async function build() {
   const entry = findEntry();
+  const packageJson = readPackageJson();
 
-  emptyDirSync('dist');
-
-  await stepOutput(i18n.__('build_step_esm'), () => buildESM({ entry }));
-
-  await stepOutput(i18n.__('build_step_cjs'), () => buildCJS({ entry }));
-
+  const libViteConfig = getLibViteConfig(entry, packageJson);
+  await viteBuild(libViteConfig);
   await stepOutput(i18n.__('build_step_dts'), () => buildDTS());
 }
