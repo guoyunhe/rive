@@ -3,11 +3,11 @@ import { initEditorConfig } from './initEditorConfig.js';
 import { initGitHubCI } from './initGitHubCI.js';
 import { initGitIgnore } from './initGitIgnore.js';
 import { initGitLabCI } from './initGitLabCI.js';
+import { initPackageJson } from './initPackageJson.js';
 import { initTSConfig } from './initTSConfig.js';
 import { initVSCodeExtensions } from './initVSCodeExtensions.js';
 import { initVSCodeSettings } from './initVSCodeSettings.js';
 import { removeConflictFiles } from './removeConflictFiles.js';
-import { updatePackageJson } from './updatePackageJson.js';
 
 export function init() {
   removeConflictFiles();
@@ -16,7 +16,7 @@ export function init() {
   findEntry(); // this will create src/index.tsx if not exists
   initEditorConfig();
   initGitIgnore();
-  updatePackageJson();
+  initPackageJson();
   initTSConfig();
   initVSCodeExtensions();
   initVSCodeSettings();
