@@ -8,10 +8,6 @@ import { buildESM } from './buildESM.js';
 
 export async function build() {
   const entry = findEntry();
-  if (!entry) {
-    console.error(i18n.__('build_err_no_entry'));
-    return process.exit(1);
-  }
 
   emptyDirSync('dist');
 
