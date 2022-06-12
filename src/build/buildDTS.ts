@@ -14,7 +14,7 @@ import {
   outDir,
   packageJsonPath,
   tsconfigJsonPath,
-} from '../config/common.js';
+} from '../config.js';
 import { readTsconfigJson } from '../utils/readTsconfigJson.js';
 
 /**

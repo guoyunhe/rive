@@ -3,6 +3,7 @@ import { dirname } from 'dirname-filename-esm';
 import i18n from 'i18n';
 import { join } from 'path';
 import { build } from './build/build.js';
+import { riveVersion } from './config.js';
 import { init } from './init/init.js';
 
 i18n.configure({
@@ -23,6 +24,6 @@ program.command('init').description(i18n.__('init_cmd_desc')).action(init);
 program.helpOption('-h, --help', i18n.__('help_cmd_desc'));
 program.addHelpCommand('help [command]', i18n.__('help_cmd_desc'));
 
-program.version('0.1.0', '-v, --version', i18n.__('version_cmd_desc'));
+program.version(riveVersion, '-v, --version', i18n.__('version_cmd_desc'));
 
 program.parse();

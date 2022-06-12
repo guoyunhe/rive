@@ -1,4 +1,3 @@
-import { findEntry } from '../utils/findEntry.js';
 import { initEditorConfig } from './initEditorConfig.js';
 import { initGitHubCI } from './initGitHubCI.js';
 import { initGitIgnore } from './initGitIgnore.js';
@@ -12,8 +11,6 @@ import { removeConflictFiles } from './removeConflictFiles.js';
 export function init() {
   removeConflictFiles();
 
-  // src/index.tsx
-  findEntry(); // this will create src/index.tsx if not exists
   initEditorConfig();
   initGitIgnore();
   initPackageJson();

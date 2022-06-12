@@ -1,3 +1,8 @@
-import vite from 'vite';
+import { build } from 'vite';
+import { docViteConfig } from '../config.js';
+import { generateDocSrc } from './generateDocSrc.js';
 
-vite.build();
+export async function buildDoc() {
+  generateDocSrc();
+  await build(docViteConfig);
+}
