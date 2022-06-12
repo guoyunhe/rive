@@ -3,7 +3,6 @@
 ## 0.4.0
 
 - Build lib with vite
-- Build doc with vite and @vitejs/plugin-vite
 - Initialize GitHub CI and GitLab CI
 
 ## 0.3.0
