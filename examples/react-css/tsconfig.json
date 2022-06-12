@@ -4,18 +4,33 @@
     "jsx": "react",
     "lib": [
       "esnext",
-      "dom"
+      "dom",
+      "dom.iterable"
     ],
     "moduleResolution": "node",
     "strict": true,
-    "types": []
+    "types": [
+      "react",
+      "jest"
+    ],
+    "target": "esnext",
+    "allowJs": false,
+    "skipLibCheck": false,
+    "esModuleInterop": false,
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true
   },
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx"
   ],
   "exclude": [
-    "src/**/*.spec.ts",
-    "src/**/*.spec.tsx"
+    "**/*.spec.ts",
+    "**/*.spec.tsx",
+    "**/*.test.ts",
+    "**/*.test.tsx"
   ]
 }

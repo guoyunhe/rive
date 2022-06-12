@@ -22,7 +22,7 @@ import { readTsconfigJson } from '../utils/readTsconfigJson.js';
  * @see https://github.com/Microsoft/TypeScript/wiki/Using-the-Compiler-API
  * @see https://www.npmjs.com/package/rollup-plugin-dts
  */
-export async function buildDTS() {
+export function buildDTS() {
   // Create a temp directory for intermediate files
   const dtsTempDir = join(outDir, 'dts_temp');
   const dtsTempEntry = join(dtsTempDir, 'index.d.ts');

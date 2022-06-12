@@ -6,11 +6,11 @@ const { readJsonSync, writeJsonSync } = fse;
 const filePath = './package.json';
 
 const packageJsonConfig = {
-  main: 'dist/index.cjs.js',
-  module: 'dist/index.esm.js',
+  main: 'dist/index.cjs',
+  module: 'dist/index.mjs',
   style: 'dist/index.css',
   types: 'dist/index.d.ts',
-  files: ['dist', 'README.md'],
+  files: ['dist', 'README.md', 'CHANGELOG.md'],
   scripts: {
     start: 'rive start',
     build: 'rive build',
@@ -19,7 +19,13 @@ const packageJsonConfig = {
     format: 'rive format',
   },
   devDependencies: {
+    '@types/react': '^18.0.0',
+    '@types/react-dom': '^18.0.0',
+    '@types/jest': '^18.0.0',
     rive: 'latest',
+    react: '^18.0.0',
+    'react-dom': '^18.0.0',
+    typescript: '^4.0.0',
   },
   eslintConfig: {
     extends: ['rive'],
