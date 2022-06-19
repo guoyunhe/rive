@@ -3,8 +3,14 @@ import { libViteConfig } from '../config.js';
 import { buildDoc } from './buildDoc.js';
 import { buildDTS } from './buildDTS.js';
 
-export async function build() {
+export interface BuildOptions {
+  doc: boolean;
+}
+
+export async function build({ doc }: BuildOptions) {
   await viteBuild(libViteConfig);
-  await buildDoc();
   buildDTS();
+  if (doc) {
+    await buildDoc();
+  }
 }
