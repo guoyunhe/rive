@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.5.0
+
+- Add jest and preset
+
 ## 0.4.0
 
 - Build lib with vite
