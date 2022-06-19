@@ -13,7 +13,7 @@
   ],
   "scripts": {
     "build": "tsc",
-    "watch": "tsc --watch",
+    "watch": "rm -r lib && tsc --watch",
     "test": "cd test/react-css && node ../../lib/bin/rive.js build"
   },
   "repository": {

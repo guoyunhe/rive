@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.5.1
+
+- Fix previous build
+
 ## 0.5.0
 
 - Add jest and preset
