@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.5.2
+
+- Fix config import
+
 ## 0.5.1
 
 - Fix previous build

@@ -1,6 +1,6 @@
 import fs from 'fs-extra';
 import { join } from 'path';
-import { docSrcDir } from '../config';
+import { docSrcDir } from '../config.js';
 
 const indexHtml = `<!DOCTYPE html>
 <html lang="en">

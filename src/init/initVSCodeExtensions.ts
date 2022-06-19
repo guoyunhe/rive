@@ -1,7 +1,15 @@
 import fse from 'fs-extra';
 import { merge } from 'lodash-es';
 import { join } from 'path';
-import extensionsConfig from '../config/vscode-extensions.js';
+
+const extensionsConfig = {
+  recommendations: [
+    'dbaeumer.vscode-eslint',
+    'stylelint.vscode-stylelint',
+    'esbenp.prettier-vscode',
+    'editorconfig.editorconfig',
+  ],
+};
 
 const extensionsFilePath = join(process.cwd(), '.vscode', 'extensions.json');
 
