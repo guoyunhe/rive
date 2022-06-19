@@ -17,7 +17,11 @@ if (process.env['LANG']?.startsWith('zh')) {
 
 const program = new Command('rive');
 
-program.command('build').description(i18n.__('build_cmd_desc')).action(build);
+program
+  .command('build')
+  .option('--no-doc', i18n.__('build_cmd_no_doc_opt_desc'))
+  .description(i18n.__('build_cmd_desc'))
+  .action(build);
 
 program.command('init').description(i18n.__('init_cmd_desc')).action(init);
 
