@@ -20,7 +20,7 @@ import { readTsconfigJson } from '../utils/readTsconfigJson.js';
 /**
  * Build TypeScript declaration files and bundle them into one
  * @see https://github.com/Microsoft/TypeScript/wiki/Using-the-Compiler-API
- * @see https://www.npmjs.com/package/rollup-plugin-dts
+ * @see https://api-extractor.com/pages/setup/configure_rollup/
  */
 export function buildDTS() {
   // Create a temp directory for intermediate files

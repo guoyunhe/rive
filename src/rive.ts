@@ -1,14 +1,13 @@
 import { Command } from 'commander';
-import { dirname } from 'dirname-filename-esm';
 import i18n from 'i18n';
 import { join } from 'path';
 import { build } from './build/build.js';
-import { riveVersion } from './config.js';
+import { riveRootFullPath, riveVersion } from './config.js';
 import { init } from './init/init.js';
 
 i18n.configure({
   locales: ['en', 'zh'],
-  directory: join(dirname(import.meta), '..', 'locales'),
+  directory: join(riveRootFullPath, 'locales'),
 });
 
 if (process.env['LANG']?.startsWith('zh')) {
