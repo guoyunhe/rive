@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.5.3
+
+- Clean up dependencies
+- Clean up translations
+
 ## 0.5.2
 
 - Fix config import

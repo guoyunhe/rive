@@ -3,9 +3,5 @@
   "version_cmd_desc": "Show version",
   "init_cmd_desc": "Initialize project",
   "build_cmd_desc": "Build code and document",
-  "build_cmd_no_doc_opt_desc": "Don't build document",
-  "build_err_no_entry": "Cannot find entry file. Make sure src/index.ts or src/index.tsx exists",
-  "build_step_esm": "Build ESM modules",
-  "build_step_cjs": "Build CJS modules",
-  "build_step_dts": "Build TS declarations (*.d.ts)"
+  "build_cmd_no_doc_opt_desc": "Don't build document"
 }
