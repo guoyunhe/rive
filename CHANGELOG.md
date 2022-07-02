@@ -1,9 +1,13 @@
 # Changelog
 
-## 0.5.3
+## 0.5.4
 
 - Clean up dependencies
 - Clean up translations
+
+## 0.5.3
+
+- Fix build
 
 ## 0.5.2
 
