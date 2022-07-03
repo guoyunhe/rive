@@ -1,8 +1,10 @@
+import { existsSync } from 'fs';
+import { join } from 'path';
 import { build } from 'vite';
 import { docViteConfig } from '../config.js';
-import { generateDocSrc } from './generateDocSrc.js';
 
 export async function buildDoc() {
-  generateDocSrc();
-  await build(docViteConfig);
+  if (existsSync(join('docs', 'index.html'))) {
+    await build(docViteConfig);
+  }
 }

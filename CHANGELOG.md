@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.6.0
+
+- Build docs
+
 ## 0.5.4
 
 - Clean up dependencies

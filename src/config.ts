@@ -89,7 +89,7 @@ export const libViteConfig: UserConfig = {
   },
 };
 
-export const docSrcDir = '.rive';
+export const docSrcDir = 'docs';
 export const docOutDir = 'build';
 export const docViteConfig: UserConfig = {
   root: docSrcDir,
