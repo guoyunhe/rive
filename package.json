@@ -12,8 +12,8 @@
     "README.md"
   ],
   "scripts": {
-    "build": "rm -r lib && tsc",
-    "watch": "rm -r lib && tsc --watch",
+    "build": "rm -rf lib && tsc",
+    "watch": "rm -rf lib && tsc --watch",
     "test": "cd test/react-css && node ../../lib/bin/rive.js build"
   },
   "repository": {
