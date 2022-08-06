@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.6.2
+
+- Fix GitHub CI
+
 ## 0.6.1
 
 - Add #!/usr/bin/env node

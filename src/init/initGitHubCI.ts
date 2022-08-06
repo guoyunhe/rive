@@ -13,6 +13,8 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
       - uses: pnpm/action-setup@v2
+        with:
+          version: 7
       - run: pnpm install
       - run: pnpm run lint
       - run: pnpm run test
