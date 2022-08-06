@@ -6,6 +6,7 @@ import { join } from 'path';
 import { build } from './build/build.js';
 import { riveRootFullPath, riveVersion } from './config.js';
 import { init } from './init/init.js';
+import { lint } from './lint/lint.js';
 
 i18n.configure({
   locales: ['en', 'zh'],
@@ -25,6 +26,8 @@ program
   .action(build);
 
 program.command('init').description(i18n.__('init_cmd_desc')).action(init);
+
+program.command('lint').description(i18n.__('lint_cmd_desc')).action(lint);
 
 program.helpOption('-h, --help', i18n.__('help_cmd_desc'));
 program.addHelpCommand('help [command]', i18n.__('help_cmd_desc'));
