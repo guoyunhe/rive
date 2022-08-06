@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.6.1
+
+- Add #!/usr/bin/env node
+
 ## 0.6.0
 
 - Build docs

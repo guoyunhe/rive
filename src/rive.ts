@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { Command } from 'commander';
 import i18n from 'i18n';
 import { join } from 'path';
