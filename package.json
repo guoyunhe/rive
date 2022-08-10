@@ -12,6 +12,7 @@
     "README.md"
   ],
   "scripts": {
+    "postinstall": "cd $INIT_CWD && rm -f .husky/pre-commit && husky install && husky add .husky/pre-commit node_modules/.bin/lint-staged || true",
     "build": "rm -rf lib && tsc",
     "watch": "rm -rf lib && tsc --watch",
     "test": "cd test/react-css && node ../../lib/bin/rive.js build"
