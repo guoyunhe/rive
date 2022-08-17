@@ -28,7 +28,12 @@ program
 
 program.command('init').description(i18n.__('init_cmd_desc')).action(init);
 
-program.command('lint').description(i18n.__('lint_cmd_desc')).action(lint);
+program
+  .command('lint')
+  .description(i18n.__('lint_cmd_desc'))
+  .option('--fix', i18n.__('lint_cmd_fix_opt_desc'))
+  .option('--staged', i18n.__('lint_cmd_staged_opt_desc'))
+  .action(lint);
 
 program.command('test').description(i18n.__('test_cmd_desc')).action(test);
 
