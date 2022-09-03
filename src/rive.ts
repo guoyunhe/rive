@@ -35,7 +35,7 @@ program
   .option('--staged', i18n.__('lint_cmd_staged_opt_desc'))
   .action(lint);
 
-program.command('test').description(i18n.__('test_cmd_desc')).action(test);
+program.command('test').allowUnknownOption().description(i18n.__('test_cmd_desc')).action(test);
 
 program.helpOption('-h, --help', i18n.__('help_cmd_desc'));
 program.addHelpCommand('help [command]', i18n.__('help_cmd_desc'));
