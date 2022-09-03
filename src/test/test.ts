@@ -1,3 +1,5 @@
+import jest from 'jest';
+
 export function test() {
-  // TODO: jest
+  jest.run(process.argv.slice(3));
 }
