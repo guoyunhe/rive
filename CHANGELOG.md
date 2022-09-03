@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.7.0
+
+- Add test command
+
 ## 0.6.2
 
 - Fix GitHub CI
