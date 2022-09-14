@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.7.2
+
+- Init jest preset
+
+## 0.7.1
+
+- Fix test command
+
 ## 0.7.0
 
 - Add test command

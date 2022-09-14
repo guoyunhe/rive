@@ -29,6 +29,9 @@ const packageJsonConfig = {
     'ts-jest': '^28.0.0',
     typescript: '^4.0.0',
   },
+  jest: {
+    preset: 'rive',
+  },
   eslintConfig: {
     extends: ['rive'],
   },
