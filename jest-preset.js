@@ -1,5 +1,6 @@
 /** @type {import('ts-jest/dist/types').InitialOptionsTsJest} */
 const config = {
+  collectCoverage: true,
   collectCoverageFrom: [
     '<rootDir>/src/**/*.{js,jsx,ts,tsx}',
     '!<rootDir>/src/**/*.d.ts',
