@@ -9,7 +9,9 @@ export async function doESLint(fix?: boolean, stagedFiles?: string[]) {
   });
 
   // 检查文件
-  const results = await eslint.lintFiles(stagedFiles || 'src/**/*.{js,jsx,ts,tsx}');
+  const results = await eslint.lintFiles(
+    stagedFiles || 'src/**/*.{js,jsx,ts,tsx}'
+  );
 
   // 修复代码并保存
   if (fix) {
@@ -24,5 +26,5 @@ export async function doESLint(fix?: boolean, stagedFiles?: string[]) {
   // eslint-disable-next-line no-console
   console.log(resultText);
 
-  return !resultText;
+  return !ESLint.getErrorResults(results).length;
 }
