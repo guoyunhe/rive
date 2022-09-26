@@ -19,6 +19,7 @@ const packageJsonConfig = {
     format: 'rive format',
   },
   devDependencies: {
+    '@types/node': '^18.0.0',
     '@types/react': '^18.0.0',
     '@types/react-dom': '^18.0.0',
     '@types/jest': '^18.0.0',
