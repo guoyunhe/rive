@@ -23,6 +23,7 @@ export const libConfig: UserConfig = {
     rollupOptions: {
       external: [
         ...builtinModules,
+        ...builtinModules.map((mod) => 'node:' + mod),
         ...Object.keys(packageJson.dependencies || {}),
         ...Object.keys(packageJson.devDependencies || {}),
         ...Object.keys(packageJson.peerDependencies || {}),
