@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.0
+
+- External node built-in modules
+
 ## 0.7.2
 
 - Init jest preset
