@@ -1,6 +1,6 @@
 import nodeExternals from 'rollup-plugin-node-externals';
 import type { UserConfig } from 'vite';
-import { entry, outDir, packageJson } from '../config.js';
+import { entry, outDir } from '../config.js';
 
 export const libConfig: UserConfig = {
   build: {
@@ -21,11 +21,6 @@ export const libConfig: UserConfig = {
       },
     },
     rollupOptions: {
-      external: [
-        ...Object.keys(packageJson.dependencies || {}),
-        ...Object.keys(packageJson.devDependencies || {}),
-        ...Object.keys(packageJson.peerDependencies || {}),
-      ],
       output: {
         assetFileNames: (chunkInfo) => {
           if (chunkInfo.name === 'style.css') return 'index.css';
