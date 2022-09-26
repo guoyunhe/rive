@@ -1,4 +1,3 @@
-import react from '@vitejs/plugin-react';
 import FastGlob from 'fast-glob';
 import fs from 'fs-extra';
 import { dirname, join } from 'path';
@@ -91,11 +90,3 @@ export const libViteConfig: UserConfig = {
 
 export const docSrcDir = 'docs';
 export const docOutDir = 'build';
-export const docViteConfig: UserConfig = {
-  root: docSrcDir,
-  build: {
-    emptyOutDir: true,
-    outDir: docOutDir,
-  },
-  plugins: [react()],
-};

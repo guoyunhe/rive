@@ -1,6 +1,6 @@
 import { build as viteBuild } from 'vite';
 import { libViteConfig } from '../config.js';
-import { buildDoc } from './buildDoc.js';
+import { buildDocs } from '../docs/buildDocs.js';
 import { buildDTS } from './buildDTS.js';
 
 export interface BuildOptions {
@@ -11,6 +11,6 @@ export async function build({ doc }: BuildOptions) {
   await viteBuild(libViteConfig);
   buildDTS();
   if (doc) {
-    await buildDoc();
+    await buildDocs();
   }
 }
