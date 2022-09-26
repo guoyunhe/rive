@@ -44,8 +44,7 @@
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "rollup-plugin-node-externals": "^5.0.0"
+    "react-dom": "^18.2.0"
   },
   "dependencies": {
     "@microsoft/api-extractor": "^7.31.2",
@@ -65,6 +64,7 @@
     "postcss": "^8.4.16",
     "prettier": "^2.7.1",
     "react-docgen-typescript": "^2.2.2",
+    "rollup-plugin-node-externals": "^5.0.0",
     "simple-git": "^3.14.1",
     "stylelint": "^14.12.1",
     "stylelint-config-rive": "^1.2.0",
