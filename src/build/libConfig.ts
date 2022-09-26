@@ -1,7 +1,6 @@
+import nodeExternals from 'rollup-plugin-node-externals';
 import type { UserConfig } from 'vite';
 import { entry, outDir, packageJson } from '../config.js';
-
-const nodeInternals = ['node:path', 'node:fs', 'node:http', 'node:https'];
 
 export const libConfig: UserConfig = {
   build: {
@@ -23,7 +22,6 @@ export const libConfig: UserConfig = {
     },
     rollupOptions: {
       external: [
-        ...nodeInternals,
         ...Object.keys(packageJson.dependencies || {}),
         ...Object.keys(packageJson.devDependencies || {}),
         ...Object.keys(packageJson.peerDependencies || {}),
@@ -36,4 +34,5 @@ export const libConfig: UserConfig = {
       },
     },
   },
+  plugins: [nodeExternals()],
 };
