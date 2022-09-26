@@ -4,8 +4,8 @@ import {
   IExtractorConfigPrepareOptions,
 } from '@microsoft/api-extractor';
 import glob from 'fast-glob';
-import { rmSync } from 'fs';
-import { join } from 'path';
+import { rmSync } from 'node:fs';
+import { join } from 'node:path';
 import type { CompilerOptions } from 'typescript';
 import ts from 'typescript';
 import {

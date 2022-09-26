@@ -1,5 +1,5 @@
 import fse from 'fs-extra';
-import { join } from 'path';
+import { join } from 'node:path';
 
 const path = join(process.cwd(), '.gitignore');
 

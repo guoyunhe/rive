@@ -2,7 +2,7 @@
 
 import { Command } from 'commander';
 import i18n from 'i18n';
-import { join } from 'path';
+import { join } from 'node:path';
 import { build } from './build/build.js';
 import { riveRootFullPath, riveVersion } from './config.js';
 import { init } from './init/init.js';
@@ -35,7 +35,11 @@ program
   .option('--staged', i18n.__('lint_cmd_staged_opt_desc'))
   .action(lint);
 
-program.command('test').allowUnknownOption().description(i18n.__('test_cmd_desc')).action(test);
+program
+  .command('test')
+  .allowUnknownOption()
+  .description(i18n.__('test_cmd_desc'))
+  .action(test);
 
 program.helpOption('-h, --help', i18n.__('help_cmd_desc'));
 program.addHelpCommand('help [command]', i18n.__('help_cmd_desc'));

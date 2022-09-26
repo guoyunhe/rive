@@ -1,5 +1,5 @@
 import FastGlob from 'fast-glob';
-import { rmSync } from 'fs';
+import { rmSync } from 'node:fs';
 
 export function removeConflictFiles() {
   const files = FastGlob.sync([

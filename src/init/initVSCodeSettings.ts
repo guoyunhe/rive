@@ -1,6 +1,6 @@
 import fse from 'fs-extra';
 import { merge } from 'lodash-es';
-import { join } from 'path';
+import { join } from 'node:path';
 
 const settingsConfig = {
   'eslint.validate': [
