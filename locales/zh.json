@@ -1,7 +1,6 @@
 {
   "help_cmd_desc": "显示帮助",
   "version_cmd_desc": "显示版本",
-  "init_cmd_desc": "初始化项目",
   "build_cmd_desc": "构建代码和文档",
   "build_cmd_no_doc_opt_desc": "不构建文档",
   "lint_cmd_desc": "检查代码风格问题",

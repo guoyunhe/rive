@@ -17,7 +17,6 @@
   "scripts": {
     "build": "node ../../lib/rive.js build",
     "format": "rive format",
-    "init": "node ../../lib/rive.js init",
     "lint": "rive lint",
     "start": "rive start",
     "test": "rive test"

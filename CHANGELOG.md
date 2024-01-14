@@ -4,6 +4,7 @@
 
 - **BREAKING CHANGE**: use `tsc` as library compiler, instead of vite, to support style tree-shaking, multiple entries, etc.
 - **BREAKING CHANGE**: use `vitest` as test runner, instead of jest, to support esm-only modules
+- **BREAKING CHANGE**: removed `init` command, please use `npm create rive` instead
 - Updated `typescript` 4.x to 5.x
 - Updated `prettier` 2.x to 3.x
 

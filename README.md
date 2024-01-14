@@ -11,16 +11,10 @@
 
 ## Getting Started
 
-### Create New Projects
+Run the following command to create new projects or migrate old projects
 
-```
-npx rive new my-react-lib
-```
-
-### Migrate Old Projects
-
-```
-npx rive init
+```bash
+npm create rive my-lib
 ```
 
 ## Configurations

@@ -5,7 +5,6 @@ import i18n from 'i18n';
 import { join } from 'node:path';
 import { build } from './build/build.js';
 import { riveRootFullPath, riveVersion } from './config.js';
-import { init } from './init/init.js';
 import { lint } from './lint/lint.js';
 import { test } from './test/test.js';
 
@@ -26,8 +25,6 @@ program
   .description(i18n.__('build_cmd_desc'))
   .action(build);
 
-program.command('init').description(i18n.__('init_cmd_desc')).action(init);
-
 program
   .command('lint')
   .description(i18n.__('lint_cmd_desc'))
@@ -37,7 +34,8 @@ program
 
 program
   .command('test')
-  .allowUnknownOption()
+  .option('--watch')
+  .option('--ui')
   .description(i18n.__('test_cmd_desc'))
   .action(test);
 
