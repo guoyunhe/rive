@@ -37,6 +37,7 @@
     "lint": "tsx src/rive.ts lint",
     "lint:fix": "tsx src/rive.ts lint --fix",
     "test": "tsx src/rive.ts test",
+    "test:ui": "tsx src/rive.ts test --ui",
     "test:watch": "tsx src/rive.ts test --watch"
   },
   "prettier": {
@@ -76,6 +77,7 @@
     "vitest": "^1.2.0"
   },
   "devDependencies": {
+    "@testing-library/react": "^14.1.2",
     "@types/eslint": "^8.56.2",
     "@types/fs-extra": "^11.0.4",
     "@types/i18n": "^0.13.10",

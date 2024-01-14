@@ -10,6 +10,8 @@ export async function test({ watch = false, ui = false }: TestOptions) {
     watch,
     ui,
     passWithNoTests: true,
+    globals: true,
+    environment: 'happy-dom',
   });
 
   await vitest.start();
