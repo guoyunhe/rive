@@ -67,6 +67,7 @@
     "lodash-es": "^4.17.21",
     "postcss": "^8.4.33",
     "prettier": "^3.2.2",
+    "prettier-config-rive": "^1.0.0",
     "react-docgen-typescript": "^2.2.2",
     "simple-git": "^3.22.0",
     "stylelint": "^16.1.0",
