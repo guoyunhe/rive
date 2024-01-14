@@ -9,7 +9,9 @@ export async function doPrettier(stagedFiles?: string[]) {
 
 async function formatFile(filePath: string) {
   const text = await fse.readFile(filePath, 'utf8');
-  const options = await prettier.resolveConfig(filePath);
+  const options = await prettier.resolveConfig(filePath, {
+    editorconfig: true,
+  });
   const formatted = await prettier.format(text, {
     ...options,
     filepath: filePath,

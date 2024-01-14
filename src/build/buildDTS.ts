@@ -30,7 +30,7 @@ export function buildDTS() {
   const tsconfig = readTsconfigJson();
   const compilerOptionsResult = ts.convertCompilerOptionsFromJson(
     tsconfig,
-    process.cwd()
+    process.cwd(),
   );
   const compilerOptions: CompilerOptions = {
     ...compilerOptionsResult.options,

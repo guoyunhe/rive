@@ -10,7 +10,7 @@ export async function doESLint(fix?: boolean, stagedFiles?: string[]) {
 
   // 检查文件
   const results = await eslint.lintFiles(
-    stagedFiles || 'src/**/*.{js,jsx,ts,tsx}'
+    stagedFiles || 'src/**/*.{js,jsx,ts,tsx}',
   );
 
   // 修复代码并保存

@@ -44,6 +44,11 @@
       "prettier-plugin-packagejson"
     ]
   },
+  "eslintConfig": {
+    "extends": [
+      "rive"
+    ]
+  },
   "dependencies": {
     "@microsoft/api-extractor": "^7.39.1",
     "@vitejs/plugin-react-swc": "^3.5.0",

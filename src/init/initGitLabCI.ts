@@ -19,7 +19,7 @@ install:
 
 test:
   stage: test
-  coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
+  coverage: /All files[^|]*\\|[^|]*\\s+([\\d\\.]+)/
   dependencies:
     - install
   script:

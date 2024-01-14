@@ -1,7 +1,7 @@
 import chalk from 'chalk';
 import ora from 'ora';
 
-export async function stepOutput(name: string, exec: () => Promise<any>) {
+export async function stepOutput(name: string, exec: () => Promise<void>) {
   const start = Date.now();
   const spinner = ora(name).start();
   await exec();
