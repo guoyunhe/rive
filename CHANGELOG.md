@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.0.0
+
+- **BREAKING CHANGES**: use `tsc` as library compiler, instead of vite, to support style tree-shaking, multiple entries, etc.
+- **BREAKING CHANGES**: use `vitest` as test runner, instead of jest, to support esm-only modules
+- Updated `typescript` 4.x to 5.x
+- Updated `prettier` 2.x to 3.x
+
 ## 1.1.0
 
 - External node built-in modules
