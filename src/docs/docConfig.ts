@@ -1,4 +1,4 @@
-import react from '@vitejs/plugin-react';
+import react from '@vitejs/plugin-react-swc';
 import type { UserConfig } from 'vite';
 import { docOutDir, docSrcDir } from '../config.js';
 
