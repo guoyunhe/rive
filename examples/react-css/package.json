@@ -2,35 +2,26 @@
   "name": "react-css",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/index.cjs",
-  "scripts": {
-    "build": "node ../../lib/rive.js build",
-    "init": "node ../../lib/rive.js init",
-    "start": "rive start",
-    "test": "rive test",
-    "lint": "rive lint",
-    "format": "rive format"
-  },
   "keywords": [],
-  "author": "Guo Yunhe",
   "license": "ISC",
-  "devDependencies": {
-    "@types/jest": "^18.1.1",
-    "@types/react": "^18.0.12",
-    "@types/react-dom": "^18.0.5",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "rive": "latest",
-    "typescript": "^4.7.3"
-  },
+  "author": "Guo Yunhe",
+  "main": "dist/index.cjs",
   "module": "dist/index.mjs",
-  "style": "dist/index.css",
   "types": "dist/index.d.ts",
+  "style": "dist/index.css",
   "files": [
     "dist",
     "README.md",
     "CHANGELOG.md"
   ],
+  "scripts": {
+    "build": "node ../../lib/rive.js build",
+    "format": "rive format",
+    "init": "node ../../lib/rive.js init",
+    "lint": "rive lint",
+    "start": "rive start",
+    "test": "rive test"
+  },
   "eslintConfig": {
     "extends": [
       "rive"
@@ -50,5 +41,13 @@
       "coverage",
       "dist"
     ]
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.12",
+    "@types/react-dom": "^18.0.5",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "rive": "latest",
+    "typescript": "^4.7.3"
   }
 }

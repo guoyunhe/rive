@@ -18,7 +18,7 @@ const tsconfig = {
     isolatedModules: true,
     noEmit: true,
     jsx: 'react',
-    types: ['jest', 'node', 'react'],
+    types: ['node', 'react', 'vitest/globals'],
   },
   include: ['src/**/*.ts', 'src/**/*.tsx'],
   exclude: ['**/*.spec.ts', '**/*.spec.tsx', '**/*.test.ts', '**/*.test.tsx'],

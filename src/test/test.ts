@@ -1,5 +1,16 @@
-import jest from 'jest';
+import { createVitest } from 'vitest/node';
 
-export function test() {
-  jest.run(process.argv.slice(3));
+export interface TestOptions {
+  watch?: boolean;
+  ui?: boolean;
+}
+
+export async function test({ watch = false, ui = false }: TestOptions) {
+  const vitest = await createVitest('test', {
+    watch,
+    ui,
+    passWithNoTests: true,
+  });
+
+  await vitest.start();
 }

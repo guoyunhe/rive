@@ -22,16 +22,10 @@ const packageJsonConfig = {
     '@types/node': '^18.0.0',
     '@types/react': '^18.0.0',
     '@types/react-dom': '^18.0.0',
-    '@types/jest': '^18.0.0',
-    jest: '^28.0.0',
     rive: 'latest',
     react: '^18.0.0',
     'react-dom': '^18.0.0',
-    'ts-jest': '^28.0.0',
     typescript: '^4.0.0',
-  },
-  jest: {
-    preset: 'rive',
   },
   eslintConfig: {
     extends: ['rive'],
