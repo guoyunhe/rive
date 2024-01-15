@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "lib": ["es2021"],
+    "lib": ["esnext"],
     "module": "es2022",
     "target": "es2021",
     "jsx": "react-jsx",

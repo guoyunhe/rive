@@ -3,6 +3,8 @@ import fs from 'fs-extra';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 
+export * from './getPackageJson';
+
 export const root = process.cwd();
 
 export const srcDir = 'src';

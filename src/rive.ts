@@ -5,6 +5,7 @@ import i18n from 'i18n';
 import { join } from 'path';
 import { build } from './build/build.js';
 import { riveRootFullPath, riveVersion } from './config/index.js';
+import { start } from './index.js';
 import { lint } from './lint/lint.js';
 import { test } from './test/test.js';
 
@@ -18,6 +19,8 @@ if (process.env['LANG']?.startsWith('zh')) {
 }
 
 const program = new Command('rive');
+
+program.command('start').description(i18n.__('start_cmd_desc')).action(start);
 
 program
   .command('build')

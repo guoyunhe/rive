@@ -1,0 +1,11 @@
+{
+	"build_cmd_no_doc_opt_desc": "build_cmd_no_doc_opt_desc",
+	"build_cmd_desc": "build_cmd_desc",
+	"lint_cmd_desc": "lint_cmd_desc",
+	"lint_cmd_fix_opt_desc": "lint_cmd_fix_opt_desc",
+	"lint_cmd_staged_opt_desc": "lint_cmd_staged_opt_desc",
+	"test_cmd_desc": "test_cmd_desc",
+	"help_cmd_desc": "help_cmd_desc",
+	"version_cmd_desc": "version_cmd_desc",
+	"start_cmd_desc": "start_cmd_desc"
+}
