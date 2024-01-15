@@ -1,7 +1,7 @@
-import FastGlob from 'fast-glob';
+import glob from 'fast-glob';
 import fs from 'fs-extra';
-import { dirname, join } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { dirname, join } from 'path';
+import { fileURLToPath } from 'url';
 
 export const root = process.cwd();
 
@@ -9,7 +9,7 @@ export const srcDir = 'src';
 export const outDir = 'dist';
 
 function findOrCreateEntry() {
-  const entries = FastGlob.sync('src/index.{tsx,ts,jsx,js}');
+  const entries = glob.sync('src/index.{tsx,ts,jsx,js}');
   let entry = entries[0];
   if (!entry) {
     const entryFileContent = `import React, { ReactNode } from 'react';

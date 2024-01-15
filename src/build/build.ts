@@ -1,4 +1,4 @@
-import { buildDocs } from '../docs/buildDocs.js';
+import { buildDocs } from './buildDocs.js';
 import { buildLib } from './buildLib.js';
 
 export interface BuildOptions {

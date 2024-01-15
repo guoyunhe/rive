@@ -1,5 +1,5 @@
 import { ESLint } from 'eslint';
-import { packageJson } from '../config.js';
+import { packageJson } from '../config/index.js';
 
 export async function doESLint(fix?: boolean, stagedFiles?: string[]) {
   // 加载配置

@@ -2,9 +2,9 @@
 
 import { Command } from 'commander';
 import i18n from 'i18n';
-import { join } from 'node:path';
+import { join } from 'path';
 import { build } from './build/build.js';
-import { riveRootFullPath, riveVersion } from './config.js';
+import { riveRootFullPath, riveVersion } from './config/index.js';
 import { lint } from './lint/lint.js';
 import { test } from './test/test.js';
 

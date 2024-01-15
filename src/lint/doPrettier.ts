@@ -1,9 +1,10 @@
-import fg from 'fast-glob';
+import glob from 'fast-glob';
 import fse from 'fs-extra';
 import prettier from 'prettier';
 
 export async function doPrettier(stagedFiles?: string[]) {
-  const files = stagedFiles || (await fg('src/**/*.{js,jsx,ts,tsx}'));
+  const files =
+    stagedFiles || (await glob(['package.json', 'src/**/*.{js,jsx,ts,tsx}']));
   await Promise.all(files.map(formatFile));
 }
 

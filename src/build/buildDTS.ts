@@ -4,8 +4,8 @@ import {
   IExtractorConfigPrepareOptions,
 } from '@microsoft/api-extractor';
 import glob from 'fast-glob';
-import { rmSync } from 'node:fs';
-import { join } from 'node:path';
+import { rmSync } from 'fs';
+import { join } from 'path';
 import type { CompilerOptions } from 'typescript';
 import ts from 'typescript';
 import {
@@ -14,7 +14,7 @@ import {
   outDir,
   packageJsonPath,
   tsconfigJsonPath,
-} from '../config.js';
+} from '../config/index.js';
 import { readTsconfigJson } from '../utils/readTsconfigJson.js';
 
 /**

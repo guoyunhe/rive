@@ -40,17 +40,12 @@
     "test:ui": "tsx src/rive.ts test --ui",
     "test:watch": "tsx src/rive.ts test --watch"
   },
-  "prettier": {
-    "plugins": [
-      "prettier-plugin-packagejson"
-    ]
-  },
+  "prettier": "prettier-config-rive",
   "eslintConfig": {
-    "extends": [
-      "rive"
-    ]
+    "extends": "eslint-config-rive"
   },
   "dependencies": {
+    "@mdx-js/rollup": "^3.0.0",
     "@microsoft/api-extractor": "^7.39.1",
     "@vitejs/plugin-react-swc": "^3.5.0",
     "@vitest/ui": "^1.2.0",
@@ -61,19 +56,27 @@
     "fast-glob": "^3.3.2",
     "fast-ignore": "^1.1.1",
     "fs-extra": "^11.2.0",
-    "happy-dom": "^13.0.6",
+    "happy-dom": "^13.1.4",
     "husky": "^8.0.3",
     "i18n": "^0.15.1",
-    "lodash-es": "^4.17.21",
     "postcss": "^8.4.33",
     "prettier": "^3.2.2",
     "prettier-config-rive": "^1.0.0",
     "react-docgen-typescript": "^2.2.2",
+    "recma-export-filepath": "^1.0.0",
+    "recma-mdx-displayname": "^0.4.0",
+    "rehype-mdx-code-props": "^2.0.0",
+    "rehype-mdx-title": "^3.0.0",
+    "remark-frontmatter": "^5.0.0",
+    "remark-gfm": "^4.0.0",
+    "remark-mdx-frontmatter": "^4.0.0",
+    "remark-mdx-images": "^3.0.0",
     "simple-git": "^3.22.0",
     "stylelint": "^16.1.0",
     "stylelint-config-rive": "^2.0.0",
     "tsc-alias": "^1.8.8",
     "vite": "^5.0.11",
+    "vite-tsconfig-paths": "^4.2.3",
     "vitest": "^1.2.0"
   },
   "devDependencies": {
@@ -81,9 +84,8 @@
     "@types/eslint": "^8.56.2",
     "@types/fs-extra": "^11.0.4",
     "@types/i18n": "^0.13.10",
-    "@types/lodash-es": "^4.17.12",
-    "@types/node": "^20.11.0",
-    "@types/react": "^18.2.47",
+    "@types/node": "^20.11.2",
+    "@types/react": "^18.2.48",
     "@types/react-dom": "^18.2.18",
     "prettier-plugin-packagejson": "^2.4.9",
     "react": "^18.2.0",
