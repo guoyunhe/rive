@@ -4,7 +4,10 @@ import prettier from 'prettier';
 
 export async function doPrettier(stagedFiles?: string[]) {
   const files =
-    stagedFiles || (await glob(['package.json', 'src/**/*.{js,jsx,ts,tsx}']));
+    stagedFiles ||
+    (await glob('**/*.{js,jsx,json,md,ts,tsx,yml,yaml}', {
+      ignore: ['node_modules/**/*', 'build/**/*', 'dist/**/*', '.*/**/*'],
+    }));
   await Promise.all(files.map(formatFile));
 }
 
