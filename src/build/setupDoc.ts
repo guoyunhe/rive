@@ -2,6 +2,7 @@ import chokidar from 'chokidar';
 import glob from 'fast-glob';
 import fs from 'fs-extra';
 import { join } from 'path';
+import { getBasename } from '../config/getBasename.js';
 import getPackageJson from '../config/getPackageJson.js';
 import { outputFileMemo } from '../utils/outputFileMemo.js';
 
@@ -9,7 +10,7 @@ export async function setupDoc(watch?: boolean) {
   const packageJson = await getPackageJson();
   const docUIPath =
     packageJson.name === 'react-doc-ui' ? '../src' : 'react-doc-ui';
-  const basename = packageJson.rive?.doc?.basename || '/';
+  const basename = await getBasename();
 
   await fs.mkdirp('.rive');
 
@@ -44,7 +45,6 @@ createRoot(document.getElementById('root')).render(<App />);
     const files = await glob(['**/*.md', '**/*.mdx'], {
       ignore: ['node_modules'],
     });
-    console.log(files);
     await outputFileMemo(
       join(process.cwd(), '.rive', 'App.jsx'),
       `

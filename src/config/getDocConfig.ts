@@ -12,13 +12,14 @@ import remarkMdxFrontmatter from 'remark-mdx-frontmatter';
 import remarkMdxImages from 'remark-mdx-images';
 import { defineConfig } from 'vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
+import { getBasename } from './getBasename.js';
 import getPackageJson from './getPackageJson.js';
 
 export default async function getDocConfig() {
   const packageJson = await getPackageJson();
   const docSrcDir = join(process.cwd(), '.rive');
   const docOutDir = join(process.cwd(), 'build');
-  const basename = join('/', packageJson.rive?.doc?.basename);
+  const basename = await getBasename();
 
   return defineConfig({
     define: {
