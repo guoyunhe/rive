@@ -11,18 +11,18 @@ export async function doPrettier(stagedFiles?: string[]) {
   await Promise.all(files.map(formatFile));
 }
 
-async function formatFile(filePath: string) {
-  const text = await fse.readFile(filePath, 'utf8');
-  const options = await prettier.resolveConfig(filePath, {
+async function formatFile(filepath: string) {
+  const text = await fse.readFile(filepath, 'utf8');
+  const options = await prettier.resolveConfig(filepath, {
     editorconfig: true,
   });
   const formatted = await prettier.format(text, {
     ...options,
-    filepath: filePath,
+    filepath,
   });
   if (formatted !== text) {
-    await fse.writeFile(filePath, formatted, 'utf8');
+    await fse.writeFile(filepath, formatted, 'utf8');
     // eslint-disable-next-line no-console
-    console.log(`格式化文件 ${filePath} 完成`);
+    console.log(`format ${filepath} 完成`);
   }
 }
