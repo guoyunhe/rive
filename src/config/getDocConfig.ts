@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react-swc';
 import { join } from 'path';
 import recmaExportFilepath from 'recma-export-filepath';
 import recmaMdxDisplayname from 'recma-mdx-displayname';
+import rehypeMdxCodeImports from 'rehype-mdx-code-imports';
 import rehypeMdxCodeProps from 'rehype-mdx-code-props';
 import rehypeMdxTitle from 'rehype-mdx-title';
 import remarkFrontmatter from 'remark-frontmatter';
@@ -35,7 +36,11 @@ export default async function getDocConfig() {
         ...mdx({
           providerImportSource: '@mdx-js/react',
           recmaPlugins: [recmaExportFilepath, recmaMdxDisplayname],
-          rehypePlugins: [rehypeMdxTitle, rehypeMdxCodeProps],
+          rehypePlugins: [
+            rehypeMdxTitle,
+            rehypeMdxCodeImports,
+            rehypeMdxCodeProps,
+          ],
           remarkPlugins: [
             remarkGfm,
             remarkFrontmatter,
