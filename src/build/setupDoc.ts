@@ -2,11 +2,15 @@ import chokidar from 'chokidar';
 import glob from 'fast-glob';
 import fs from 'fs-extra';
 import { join } from 'path';
-import getPackageJson from '../config/getPackageJson';
-import { outputFileMemo } from '../utils/outputFileMemo';
+import getPackageJson from '../config/getPackageJson.js';
+import { outputFileMemo } from '../utils/outputFileMemo.js';
 
 export async function setupDoc(watch?: boolean) {
   const packageJson = await getPackageJson();
+  const docUIPath =
+    packageJson.name === 'react-doc-ui' ? '../src' : 'react-doc-ui';
+  const basename = packageJson.rive?.doc?.basename || '/';
+
   await fs.mkdirp('.rive');
 
   await fs.outputFile(
@@ -45,11 +49,16 @@ createRoot(document.getElementById('root')).render(<App />);
       join(process.cwd(), '.rive', 'App.jsx'),
       `
 import React from 'react';
-import DocUI from 'react-doc-ui';
+import DocUI from '${docUIPath}';
 ${files.map((file, index) => `import * as mdx${index} from '../${file}'`).join(';\n')}
 
 export default function App() {
-  return <DocUI docs={[ ${files.map((_file, index) => `mdx${index}`).join(', ')} ]}/>
+  return (
+    <DocUI
+      docs={[ ${files.map((_file, index) => `mdx${index}`).join(', ')} ]}
+      basename="${basename}"
+    />
+  );
 }
 `,
     );

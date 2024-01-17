@@ -1,2 +1,2 @@
-export * from './build';
-export * from './start';
+export * from './build/index.js';
+export * from './start/index.js';

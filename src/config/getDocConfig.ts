@@ -12,7 +12,7 @@ import remarkMdxFrontmatter from 'remark-mdx-frontmatter';
 import remarkMdxImages from 'remark-mdx-images';
 import { defineConfig } from 'vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
-import getPackageJson from './getPackageJson';
+import getPackageJson from './getPackageJson.js';
 
 export default async function getDocConfig() {
   const packageJson = await getPackageJson();
