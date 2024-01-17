@@ -2,6 +2,7 @@ import chalk from 'chalk';
 import glob from 'fast-glob';
 import ignore from 'fast-ignore';
 import { copyFile, readFile, rm } from 'fs/promises';
+import JSON from 'json5';
 import { join } from 'path';
 import { replaceTscAliasPaths } from 'tsc-alias';
 import ts from 'typescript';

@@ -62,6 +62,7 @@
     "happy-dom": "^13.1.4",
     "husky": "^8.0.3",
     "i18n": "^0.15.1",
+    "json5": "^2.2.3",
     "postcss": "^8.4.33",
     "prettier": "^3.2.2",
     "prettier-config-rive": "^1.0.0",

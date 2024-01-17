@@ -1,6 +1,6 @@
 # Changelog
 
-## 2.0.0
+## 2.0.0 - 2024-01-17
 
 - **BREAKING CHANGE**: use `tsc` as library compiler, instead of vite, to support style tree-shaking, multiple entries, etc.
 - **BREAKING CHANGE**: use `vitest` as test runner, instead of jest, to support esm-only modules
