@@ -45,12 +45,11 @@ createRoot(document.getElementById('root')).render(<App />);
       join(process.cwd(), '.rive', 'App.jsx'),
       `
 import React from 'react';
+import DocUI from 'react-doc-ui';
 ${files.map((file, index) => `import * as mdx${index} from '../${file}'`).join(';\n')}
 
-console.log(mdx0);
-
 export default function App() {
-  return <div></div>
+  return <DocUI docs={[ ${files.map((_file, index) => `mdx${index}`).join(', ')} ]}/>
 }
 `,
     );
