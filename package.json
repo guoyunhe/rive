@@ -66,8 +66,10 @@
     "postcss": "^8.4.33",
     "prettier": "^3.2.4",
     "prettier-config-rive": "^1.0.0",
+    "react": "^18.2.0",
     "react-doc-ui": "^2.0.1",
     "react-docgen-typescript": "^2.2.2",
+    "react-dom": "^18.2.0",
     "react-router-dom": "^6.21.2",
     "recma-export-filepath": "^1.0.0",
     "recma-mdx-displayname": "^0.4.1",
@@ -82,6 +84,7 @@
     "stylelint": "^16.1.0",
     "stylelint-config-rive": "^2.0.0",
     "tsc-alias": "^1.8.8",
+    "typescript": "^5.3.3",
     "vite": "^5.0.11",
     "vite-tsconfig-paths": "^4.3.1",
     "vitest": "^1.2.0"
@@ -95,12 +98,6 @@
     "@types/react": "^18.2.48",
     "@types/react-dom": "^18.2.18",
     "prettier-plugin-packagejson": "^2.4.9",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "tsx": "^4.7.0",
-    "typescript": "^5.3.3"
-  },
-  "peerDependencies": {
-    "typescript": "^4.0.0 || ^5.0.0"
+    "tsx": "^4.7.0"
   }
 }
