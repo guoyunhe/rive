@@ -18,6 +18,7 @@ export default async function getDocConfig() {
   const packageJson = await getPackageJson();
   const docSrcDir = join(process.cwd(), '.rive');
   const docOutDir = join(process.cwd(), 'build');
+  const basename = join('/', packageJson.rive?.doc?.basename);
 
   return defineConfig({
     define: {
@@ -59,7 +60,7 @@ export default async function getDocConfig() {
     },
     server: {
       host: true,
-      open: true,
+      open: basename,
     },
   });
 }
