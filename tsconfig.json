@@ -20,6 +20,7 @@
     "noUnusedParameters": true,
     "checkJs": true,
     "moduleResolution": "node",
-    "types": ["node", "vitest/globals"]
-  }
+    "types": ["node", "vitest/globals"],
+  },
+  "include": ["src"],
 }

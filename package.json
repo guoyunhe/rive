@@ -26,6 +26,7 @@
   "bin": "dist/rive.js",
   "files": [
     "dist",
+    "globals.d.ts",
     "CHANGELOG.md",
     "LICENSE",
     "README.md"
