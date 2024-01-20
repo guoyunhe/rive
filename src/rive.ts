@@ -2,16 +2,19 @@
 
 import { Command } from 'commander';
 import i18n from 'i18n';
-import { join } from 'path';
+import { dirname, join } from 'path';
+import { fileURLToPath } from 'url';
+import { version } from '../package.json';
 import { build } from './build/build.js';
-import { riveRootFullPath, riveVersion } from './config/index.js';
 import { start } from './index.js';
 import { lint } from './lint/lint.js';
 import { test } from './test/test.js';
 
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
 i18n.configure({
   locales: ['en', 'zh'],
-  directory: join(riveRootFullPath, 'locales'),
+  directory: join(__dirname, 'locales'),
 });
 
 if (process.env['LANG']?.startsWith('zh')) {
@@ -45,6 +48,6 @@ program
 program.helpOption('-h, --help', i18n.__('help_cmd_desc'));
 program.addHelpCommand('help [command]', i18n.__('help_cmd_desc'));
 
-program.version(riveVersion, '-v, --version', i18n.__('version_cmd_desc'));
+program.version(version, '-v, --version', i18n.__('version_cmd_desc'));
 
 program.parse();
