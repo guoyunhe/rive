@@ -4,12 +4,11 @@ import { Command } from 'commander';
 import i18n from 'i18n';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
-import { version } from '../package.json';
+import { version } from '../package.json' with { type: 'json' };
 import { build } from './build/build.js';
 import { start } from './index.js';
 import { lint } from './lint/lint.js';
 import { test } from './test/test.js';
-
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 i18n.configure({
