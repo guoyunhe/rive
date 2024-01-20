@@ -12,19 +12,16 @@ import remarkMdxFrontmatter from 'remark-mdx-frontmatter';
 import remarkMdxImages from 'remark-mdx-images';
 import { defineConfig } from 'vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
-import { getBasename } from './getBasename.js';
-import getPackageJson from './getPackageJson.js';
+import { Config } from '../types/Config.js';
 
-export default async function getDocConfig() {
-  const packageJson = await getPackageJson();
+export default async function getDocConfig(config: Config) {
   const docSrcDir = join(process.cwd(), '.rive');
   const docOutDir = join(process.cwd(), 'build');
-  const basename = await getBasename();
 
   return defineConfig({
     define: {
-      PACKAGE_NAME: `"${packageJson.name}"`,
-      PACKAGE_VERSION: `"${packageJson.version}"`,
+      PACKAGE_NAME: `"${config.packageJson.name}"`,
+      PACKAGE_VERSION: `"${config.packageJson.version}"`,
       'process.env': process.env, // https://github.com/vitejs/vite/issues/1973
     },
     root: docSrcDir,
@@ -56,12 +53,12 @@ export default async function getDocConfig() {
     ],
     resolve: {
       alias: {
-        [packageJson.name]: './src/',
+        [config.packageJson.name]: './src/',
       },
     },
     server: {
       host: true,
-      open: basename,
+      open: config.doc.basename,
     },
   });
 }

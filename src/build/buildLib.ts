@@ -1,46 +1,23 @@
 import chalk from 'chalk';
 import glob from 'fast-glob';
 import ignore from 'fast-ignore';
-import { copyFile, readFile, rm } from 'fs/promises';
-import JSON from 'json5';
+import { copyFile, rm } from 'fs/promises';
 import { join } from 'path';
 import { replaceTscAliasPaths } from 'tsc-alias';
 import ts from 'typescript';
+import { Config } from '../types/Config';
 
-export async function buildLib() {
+export async function buildLib(config: Config) {
   const rootDir = process.cwd();
   const outDir = join(rootDir, 'dist');
 
-  // read package.json
-  let packageJson: any = {};
-  try {
-    packageJson = JSON.parse(
-      await readFile(join(rootDir, 'package.json'), 'utf-8'),
-    );
-  } catch (e) {
-    console.log(chalk.red('[rive]'), 'Failed to parse package.json:');
-    console.log();
-    throw e;
-  }
-
-  // read tsconfig.json
-  let tsconfig: any = {};
-  try {
-    tsconfig = JSON.parse(
-      await readFile(join(rootDir, 'tsconfig.json'), 'utf-8'),
-    );
-  } catch (e) {
-    console.log(chalk.red('[rive]'), 'Failed to parse tsconfig.json:');
-    console.log();
-    throw e;
-  }
-
   // convert string literal like 'esnext' to enum like ts.ModuleKind.ESNext (=99)
   const compilerOptionsResult = ts.convertCompilerOptionsFromJson(
-    tsconfig.compilerOptions,
+    config.tsconfigJson.compilerOptions || {},
     rootDir,
     'tsconfig.json',
   );
+
   // quit building if compilerOptions is invalid
   if (compilerOptionsResult.errors.length > 0) {
     console.log(
@@ -65,7 +42,7 @@ export async function buildLib() {
     '*.spec.jsx',
     '*.spec.ts',
     '*.spec.tsx',
-    ...(tsconfig.exclude || []),
+    ...(config.tsconfigJson.exclude || []),
   ]);
   sources = sources.filter((file) => !ig(file));
 
@@ -128,7 +105,7 @@ export async function buildLib() {
   })();
 
   // compile cjs (optional)
-  if (packageJson.type !== 'module') {
+  if (config.packageJson.type !== 'module') {
     await (async () => {
       const compilerOptions: ts.CompilerOptions = {
         ...compilerOptionsResult.options,
