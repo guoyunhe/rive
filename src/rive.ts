@@ -1,16 +1,19 @@
 #!/usr/bin/env node
 
 import { Command } from 'commander';
+import { readFileSync } from 'fs';
 import i18n from 'i18n';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
-import packageJson from '../package.json' with { type: 'json' };
 import { build } from './build/build.js';
 import { start } from './index.js';
 import { lint } from './lint/lint.js';
 import { test } from './test/test.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
+const packageJson = JSON.parse(
+  readFileSync(join(__dirname, '../package.json'), 'utf-8'),
+);
 
 i18n.configure({
   locales: ['en', 'zh'],
