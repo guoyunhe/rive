@@ -60,6 +60,7 @@ export async function buildLib(config: Config) {
       noEmit: false,
       module: ts.ModuleKind.ESNext,
       moduleResolution: ts.ModuleResolutionKind.Node10,
+      rootDir: 'src',
       outDir,
     };
     const program = ts.createProgram(sources, compilerOptions);
