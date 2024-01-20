@@ -4,7 +4,7 @@ import { Command } from 'commander';
 import i18n from 'i18n';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
-import { version } from '../package.json' with { type: 'json' };
+import packageJson from '../package.json' with { type: 'json' };
 import { build } from './build/build.js';
 import { start } from './index.js';
 import { lint } from './lint/lint.js';
@@ -48,6 +48,10 @@ program
 program.helpOption('-h, --help', i18n.__('help_cmd_desc'));
 program.addHelpCommand('help [command]', i18n.__('help_cmd_desc'));
 
-program.version(version, '-v, --version', i18n.__('version_cmd_desc'));
+program.version(
+  packageJson.version,
+  '-v, --version',
+  i18n.__('version_cmd_desc'),
+);
 
 program.parse();
