@@ -1,11 +1,15 @@
 import { ESLint } from 'eslint';
-import { packageJson } from '../config/index.js';
+import { Config } from '../types/Config';
 
-export async function doESLint(fix?: boolean, stagedFiles?: string[]) {
+export async function doESLint(
+  config: Config,
+  fix?: boolean,
+  stagedFiles?: string[],
+) {
   // 加载配置
   const eslint = new ESLint({
     fix,
-    baseConfig: packageJson.eslintConfig,
+    baseConfig: config.packageJson.eslintConfig,
   });
 
   // 检查文件

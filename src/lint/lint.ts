@@ -1,4 +1,5 @@
 import git from 'simple-git';
+import { parseConfig } from '../config/parseConfig.js';
 import { doESLint } from './doESLint.js';
 import { doPrettier } from './doPrettier.js';
 
@@ -8,6 +9,7 @@ export interface LintOptions {
 }
 
 export async function lint({ fix, staged }: LintOptions) {
+  const config = await parseConfig();
   const stagedFiles = staged ? (await git().status()).files : undefined;
   const stagedFilesToLint = stagedFiles
     ?.filter(
@@ -24,6 +26,7 @@ export async function lint({ fix, staged }: LintOptions) {
   }
 
   const eslintOk = await doESLint(
+    config,
     fix,
     stagedFilesToLint?.filter((file) =>
       ['.js', '.jsx', '.ts', '.tsx'].some((ext) => file.endsWith(ext)),
