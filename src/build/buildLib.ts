@@ -1,8 +1,8 @@
 import chalk from 'chalk';
 import glob from 'fast-glob';
 import ignore from 'fast-ignore';
-import { copyFile, rm } from 'fs/promises';
-import { join } from 'path';
+import { copyFile, mkdir, rm } from 'fs/promises';
+import { dirname, join } from 'path';
 import { replaceTscAliasPaths } from 'tsc-alias';
 import ts from 'typescript';
 import { Config } from '../types/Config';
@@ -47,7 +47,7 @@ export async function buildLib(config: Config) {
   sources = sources.filter((file) => !ig(file));
 
   // find assets files
-  const assets = await glob('src/**/*.{css,less,scss}');
+  const assets = await glob('src/**/*.{css,less,scss,json}');
 
   // empty old output
   await rm(outDir, { recursive: true, force: true });
@@ -99,9 +99,15 @@ export async function buildLib(config: Config) {
 
     // copy styles, images, etc.
     await Promise.all(
-      assets.map((asset) =>
-        copyFile(join(rootDir, asset), join(outDir, asset.substring(3))),
-      ),
+      assets.map(async (asset) => {
+        const dest = join(outDir, asset.substring(3));
+        try {
+          await mkdir(dirname(dest), { recursive: true });
+        } catch (e) {
+          //
+        }
+        await copyFile(join(rootDir, asset), dest);
+      }),
     );
   })();
 
