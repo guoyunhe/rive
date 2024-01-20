@@ -6,5 +6,6 @@
   "lint_cmd_desc": "检查代码风格问题",
   "lint_cmd_fix_opt_desc": "自动修复代码问题",
   "lint_cmd_staged_opt_desc": "只检查 Git 暂存的代码文件",
-  "test_cmd_desc": "运行单元测试"
+  "test_cmd_desc": "运行单元测试",
+  "start_cmd_desc": "启动开发服务器"
 }

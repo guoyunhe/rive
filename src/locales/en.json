@@ -3,8 +3,10 @@
   "version_cmd_desc": "Show version",
   "build_cmd_desc": "Build code and document",
   "build_cmd_no_doc_opt_desc": "Don't build document",
+
   "lint_cmd_desc": "Check code style issues",
   "lint_cmd_fix_opt_desc": "Auto fix code style issues",
   "lint_cmd_staged_opt_desc": "Lint git staged code files",
-  "test_cmd_desc": "Execute unit tests"
+  "test_cmd_desc": "Execute unit tests",
+  "start_cmd_desc": "Start dev server"
 }
