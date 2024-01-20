@@ -2,8 +2,8 @@ import chalk from 'chalk';
 import { readFile } from 'fs/promises';
 import JSON5 from 'json5';
 import { join } from 'path';
-import { Config } from '../types/Config';
-import { TemplateType } from '../types/TemplateType';
+import { Config } from '../types/Config.js';
+import { TemplateType } from '../types/TemplateType.js';
 
 export async function parseConfig() {
   let packageJson: any = {};

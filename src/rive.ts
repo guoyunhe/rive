@@ -9,6 +9,7 @@ import { build } from './build/build.js';
 import { start } from './index.js';
 import { lint } from './lint/lint.js';
 import { test } from './test/test.js';
+
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 i18n.configure({
