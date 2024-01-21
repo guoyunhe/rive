@@ -20,9 +20,7 @@ i18n.configure({
   directory: join(__dirname, 'locales'),
 });
 
-if (process.env['LANG']?.startsWith('zh')) {
-  i18n.setLocale('zh');
-}
+i18n.setLocale(process.env['LANG']?.substring(0, 2) || 'en');
 
 const program = new Command('rive');
 
