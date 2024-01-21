@@ -19,6 +19,7 @@ export default async function getDocConfig(config: Config) {
   const docOutDir = join(process.cwd(), 'build');
 
   return defineConfig({
+    base: config.doc.basename,
     define: {
       PACKAGE_NAME: `"${config.packageJson.name}"`,
       PACKAGE_VERSION: `"${config.packageJson.version}"`,
