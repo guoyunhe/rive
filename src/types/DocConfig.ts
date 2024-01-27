@@ -1,3 +1,5 @@
+import { DocLanguage } from './DocLanguage';
+
 export interface DocConfig {
   /** Skip doc building */
   disabled?: boolean;
@@ -7,4 +9,7 @@ export interface DocConfig {
 
   /** Title */
   title: string;
+
+  /** Supported languages */
+  languages?: DocLanguage[];
 }
