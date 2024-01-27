@@ -54,6 +54,7 @@ export default function App() {
     <DocUI
       docs={[ ${files.map((_file, index) => `mdx${index}`).join(', ')} ]}
       basename="${config.doc.basename}"
+      languages={${JSON.stringify(config.doc.languages)}}
     />
   );
 }
