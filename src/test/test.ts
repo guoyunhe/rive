@@ -15,4 +15,7 @@ export async function test({ watch = false, ui = false }: TestOptions) {
   });
 
   await vitest.start();
+  if (!watch) {
+    await vitest.close();
+  }
 }
