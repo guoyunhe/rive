@@ -40,6 +40,10 @@ export async function parseConfig() {
     : '/';
   const lib = packageJson.rive?.lib || {};
 
+  if (!doc.title) {
+    doc.title = packageJson.name + ' - ' + packageJson.description;
+  }
+
   const config: Config = {
     template,
     doc,

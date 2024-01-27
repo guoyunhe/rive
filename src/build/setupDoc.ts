@@ -17,7 +17,7 @@ export async function setupDoc(config: Config, watch?: boolean) {
 <html>
 <head>
   <meta charset="utf-8">
-  <title>${config.packageJson.name}</title>
+  <title>${config.doc.title}</title>
 </head>
 <body>
   <div id="root"></div>
