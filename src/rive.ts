@@ -8,7 +8,7 @@ import { fileURLToPath } from 'url';
 import { build } from './build/build.js';
 import { start } from './index.js';
 import { lint } from './lint/lint.js';
-import { benchmark } from './test/benchmark.js';
+import { bench } from './test/bench.js';
 import { test } from './test/test.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -48,11 +48,11 @@ program
   .action(test);
 
 program
-  .command('benchmark')
+  .command('bench')
   .option('--watch')
   .option('--ui')
-  .description(i18n.__('benchmark_cmd_desc'))
-  .action(benchmark);
+  .description(i18n.__('bench_cmd_desc'))
+  .action(bench);
 
 program.helpOption('-h, --help', i18n.__('help_cmd_desc'));
 program.addHelpCommand('help [command]', i18n.__('help_cmd_desc'));

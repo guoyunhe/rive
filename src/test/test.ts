@@ -7,7 +7,7 @@ export interface TestOptions {
 
 export async function test({ watch = false, ui = false }: TestOptions) {
   const vitest = await createVitest('test', {
-    watch,
+    watch: watch || ui,
     ui,
     passWithNoTests: true,
     globals: true,
@@ -15,7 +15,7 @@ export async function test({ watch = false, ui = false }: TestOptions) {
   });
 
   await vitest.start();
-  if (!watch) {
+  if (!watch && !ui) {
     await vitest.close();
   }
 }
