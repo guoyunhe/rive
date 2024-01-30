@@ -1,7 +1,7 @@
 import chalk from 'chalk';
 import glob from 'fast-glob';
 import ignore from 'fast-ignore';
-import { copyFile, mkdir, rm } from 'fs/promises';
+import { copyFile, mkdir, rm, writeFile } from 'fs/promises';
 import { dirname, join } from 'path';
 import { replaceTscAliasPaths } from 'tsc-alias';
 import ts from 'typescript';
@@ -95,6 +95,7 @@ export async function buildLib(config: Config) {
       configFile: join(rootDir, 'tsconfig.json'),
       declarationDir: outDir,
       outDir,
+      resolveFullPaths: true,
     });
 
     // copy styles, images, etc.
@@ -111,12 +112,15 @@ export async function buildLib(config: Config) {
     );
   })();
 
-  // compile cjs (optional)
   if (config.packageJson.type !== 'module') {
+    // this is a trick to make Node recognize ESM with .js extension
+    await writeFile(join(outDir, 'package.json'), '{"type":"module"}', 'utf-8');
+
+    // compile cjs (optional)
     await (async () => {
       const compilerOptions: ts.CompilerOptions = {
         ...compilerOptionsResult.options,
-        declaration: false,
+        declaration: true,
         noEmit: false,
         module: ts.ModuleKind.CommonJS,
         moduleResolution: ts.ModuleResolutionKind.Node10,
@@ -134,6 +138,14 @@ export async function buildLib(config: Config) {
           ),
         ),
       );
+
+      // convert alias paths (like ~/types) to relative path (like ../../types)
+      await replaceTscAliasPaths({
+        configFile: join(rootDir, 'tsconfig.json'),
+        declarationDir: join(outDir, 'cjs'),
+        outDir: join(outDir, 'cjs'),
+        resolveFullPaths: true,
+      });
     })();
   }
 }
