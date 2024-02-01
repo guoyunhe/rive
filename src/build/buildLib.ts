@@ -42,6 +42,7 @@ export async function buildLib(config: Config) {
       '**/*.spec.' + exts,
       '**/*.test.' + exts,
       '**/__mocks__/**',
+      'setupTests.' + exts,
     ],
   });
 
