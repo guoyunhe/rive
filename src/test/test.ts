@@ -19,7 +19,7 @@ export async function test({ watch = false, ui = false }: TestOptions) {
     globals: true,
     environment: 'happy-dom',
     setupFiles,
-    include: ['{src,test,tests}/**/*.{spec,test}.(c|m)[jt]s?(x)'],
+    include: ['{src,test,tests}/**/*.{spec,test}.{js,jsx,ts,tsx}'],
   });
 
   await vitest.start();
