@@ -1,6 +1,5 @@
 import chalk from 'chalk';
 import glob from 'fast-glob';
-import ignore from 'fast-ignore';
 import { copyFile, mkdir, rm, writeFile } from 'fs/promises';
 import { dirname, join } from 'path';
 import { replaceTscAliasPaths } from 'tsc-alias';
@@ -36,15 +35,14 @@ export async function buildLib(config: Config) {
   }
 
   // find source files
-  let sources = await glob('src/**/*.{js,jsx,ts,tsx}');
-  const ig = ignore([
-    '*.spec.js',
-    '*.spec.jsx',
-    '*.spec.ts',
-    '*.spec.tsx',
-    ...(config.tsconfigJson.exclude || []),
-  ]);
-  sources = sources.filter((file) => !ig(file));
+  const sources = await glob('src/**/*.{cjs,cts,js,jsx,mjs,mts,ts,tsx}', {
+    ignore: [
+      '**/*.bench.{cjs,cts,js,jsx,mjs,mts,ts,tsx}',
+      '**/*.spec.{cjs,cts,js,jsx,mjs,mts,ts,tsx}',
+      '**/*.test.{cjs,cts,js,jsx,mjs,mts,ts,tsx}',
+      '**/__mocks__/**',
+    ],
+  });
 
   // find assets files
   const assets = await glob('src/**/*.{css,less,scss,json}');
