@@ -35,11 +35,12 @@ export async function buildLib(config: Config) {
   }
 
   // find source files
-  const sources = await glob('src/**/*.{cjs,cts,js,jsx,mjs,mts,ts,tsx}', {
+  const exts = '{cjs,cts,js,jsx,mjs,mts,ts,tsx}';
+  const sources = await glob('src/**/*.' + exts, {
     ignore: [
-      '**/*.bench.{cjs,cts,js,jsx,mjs,mts,ts,tsx}',
-      '**/*.spec.{cjs,cts,js,jsx,mjs,mts,ts,tsx}',
-      '**/*.test.{cjs,cts,js,jsx,mjs,mts,ts,tsx}',
+      '**/*.bench.' + exts,
+      '**/*.spec.' + exts,
+      '**/*.test.' + exts,
       '**/__mocks__/**',
     ],
   });
