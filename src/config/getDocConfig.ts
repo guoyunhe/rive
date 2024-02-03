@@ -54,7 +54,7 @@ export default async function getDocConfig(config: Config) {
     ],
     resolve: {
       alias: {
-        [config.packageJson.name]: './src/',
+        [config.packageJson.name]: join(process.cwd(), 'src'),
       },
     },
     server: {
