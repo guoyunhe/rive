@@ -29,6 +29,7 @@ export default async function getDocConfig(config: Config) {
     build: {
       emptyOutDir: true,
       outDir: docOutDir,
+      chunkSizeWarningLimit: 9999,
     },
     plugins: [
       {
