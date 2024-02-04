@@ -40,7 +40,7 @@ createRoot(document.getElementById('root')).render(<App />);
 
   const update = async () => {
     const files = await glob(['**/*.md', '**/*.mdx'], {
-      ignore: ['node_modules'],
+      ignore: ['**/node_modules/**', '**/build/**', '**/dist/**'],
     });
     await outputFileMemo(
       join(process.cwd(), '.rive', 'App.jsx'),
