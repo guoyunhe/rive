@@ -4,12 +4,15 @@ import { buildDocs } from './buildDoc.js';
 import { buildLib } from './buildLib.js';
 
 export interface BuildOptions {
+  lib: boolean;
   doc: boolean;
 }
 
-export async function build({ doc }: BuildOptions) {
+export async function build({ lib, doc }: BuildOptions) {
   const config = await parseConfig();
-  await buildLib(config);
+  if (lib) {
+    await buildLib(config);
+  }
   if (doc && !config.doc.disabled) {
     await buildDocs(config);
   } else {

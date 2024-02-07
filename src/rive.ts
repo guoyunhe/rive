@@ -5,11 +5,7 @@ import { readFileSync } from 'fs';
 import i18n from 'i18n';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
-import { build } from './build/build.js';
-import { start } from './index.js';
-import { lint } from './lint/lint.js';
-import { bench } from './test/bench.js';
-import { test } from './test/test.js';
+import { bench, build, lint, start, test } from './index.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const packageJson = JSON.parse(
@@ -29,6 +25,7 @@ program.command('start').description(i18n.__('start_cmd_desc')).action(start);
 
 program
   .command('build')
+  .option('--no-lib', i18n.__('build_cmd_no_lib_opt_desc'))
   .option('--no-doc', i18n.__('build_cmd_no_doc_opt_desc'))
   .description(i18n.__('build_cmd_desc'))
   .action(build);

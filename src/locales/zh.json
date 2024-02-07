@@ -2,6 +2,7 @@
   "bench_cmd_desc": "运行性能测试",
   "build_cmd_desc": "构建代码和文档",
   "build_cmd_no_doc_opt_desc": "不构建文档",
+  "build_cmd_no_lib_opt_desc": "不构建库 (ESM & CJS)",
   "help_cmd_desc": "显示帮助",
   "lint_cmd_desc": "检查代码风格问题",
   "lint_cmd_fix_opt_desc": "自动修复代码问题",

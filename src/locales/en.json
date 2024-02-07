@@ -2,6 +2,7 @@
   "bench_cmd_desc": "Benchmark performance",
   "build_cmd_desc": "Build code and document",
   "build_cmd_no_doc_opt_desc": "Don't build document",
+  "build_cmd_no_lib_opt_desc": "Don't build library (ESM & CJS)",
   "help_cmd_desc": "Show help",
   "lint_cmd_desc": "Check code style issues",
   "lint_cmd_fix_opt_desc": "Auto fix code style issues",
