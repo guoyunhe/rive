@@ -74,7 +74,7 @@
     "react-router-dom": "^6.21.3",
     "recma-export-filepath": "^1.0.0",
     "recma-mdx-displayname": "^0.4.1",
-    "rehype-mdx-code-imports": "^0.3.0",
+    "rehype-mdx-code-imports": "^0.4.0",
     "rehype-mdx-code-props": "^2.0.0",
     "rehype-mdx-title": "^3.0.0",
     "remark-frontmatter": "^5.0.0",
