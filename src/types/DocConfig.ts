@@ -12,4 +12,10 @@ export interface DocConfig {
 
   /** Supported languages */
   languages?: DocLanguage[];
+
+  /** Glob patterns for Markdown/MDX file including */
+  include?: string[];
+
+  /** Glob patterns for Markdown/MDX file excluding */
+  exclude?: string[];
 }

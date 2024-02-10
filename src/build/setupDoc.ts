@@ -39,8 +39,13 @@ createRoot(document.getElementById('root')).render(<App />);
   );
 
   const update = async () => {
-    const files = await glob(['**/*.md', '**/*.mdx'], {
-      ignore: ['**/node_modules/**', '**/build/**', '**/dist/**'],
+    const files = await glob(config.doc.include || ['**/*.md', '**/*.mdx'], {
+      ignore: [
+        ...(config.doc.exclude || []),
+        '**/node_modules/**',
+        '**/build/**',
+        '**/dist/**',
+      ],
     });
     await outputFileMemo(
       join(process.cwd(), '.rive', 'App.jsx'),
