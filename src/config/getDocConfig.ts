@@ -36,7 +36,10 @@ export default async function getDocConfig(config: Config) {
         enforce: 'pre',
         ...mdx({
           providerImportSource: '@mdx-js/react',
-          recmaPlugins: [recmaExportFilepath, recmaMdxDisplayname],
+          recmaPlugins: [
+            [recmaExportFilepath, { cwd: config.doc.rootDir }],
+            recmaMdxDisplayname,
+          ],
           rehypePlugins: [
             rehypeMdxTitle,
             rehypeMdxCodeImports,

@@ -13,6 +13,9 @@ export interface DocConfig {
   /** Supported languages */
   languages?: DocLanguage[];
 
+  /** Root directory */
+  rootDir?: string;
+
   /** Glob patterns for Markdown/MDX file including */
   include?: string[];
 
