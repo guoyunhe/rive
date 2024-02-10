@@ -71,5 +71,6 @@ export default function App() {
     });
 
     watcher.on('change', () => update());
+    watcher.on('add', () => update());
   }
 }
