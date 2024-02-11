@@ -8,7 +8,7 @@ import { outputFileMemo } from '../utils/outputFileMemo.js';
 export async function setupDoc(config: Config, watch?: boolean) {
   const docUIPath =
     config.packageJson.name === 'react-doc-ui' ? '../src' : 'react-doc-ui';
-  const rootDir = config.doc.rootDir || '.';
+  const rootDir = config.doc.root || '.';
   const include = config.doc.include || ['**/*.md', '**/*.mdx'];
   const exclude = [
     ...(config.doc.exclude || []),
