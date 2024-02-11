@@ -58,6 +58,9 @@ export async function setupDoc(config: Config, watch?: boolean) {
 `,
   );
 
+  const pathSegmentsToKeep = config.doc.basename
+    .split('/')
+    .filter(Boolean).length;
   await fs.outputFile(
     join(process.cwd(), '.rive', 'public', '404.html'),
     `
@@ -85,7 +88,7 @@ export async function setupDoc(config: Config, watch?: boolean) {
       // https://username.github.io/repo-name/one/two?a=b&c=d#qwe becomes
       // https://username.github.io/repo-name/?/one/two&a=b~and~c=d#qwe
       // Otherwise, leave pathSegmentsToKeep as 0.
-      var pathSegmentsToKeep = 0;
+      var pathSegmentsToKeep = ${pathSegmentsToKeep};
 
       var l = window.location;
       l.replace(
