@@ -107,10 +107,11 @@ export async function setupDoc(config: Config, watch?: boolean) {
 `,
   );
 
-  const setupFiles = await glob('src/setupDocs.{js,jsx,ts,tsx}');
-  await fs.outputFile(
-    join(process.cwd(), '.rive', 'index.jsx'),
-    `
+  const updateIndexJs = async () => {
+    const setupFiles = await glob('src/setupDocs.{js,jsx,ts,tsx}');
+    await fs.outputFile(
+      join(process.cwd(), '.rive', 'index.jsx'),
+      `
 ${setupFiles.map((file) => `import '../${file}';`).join('\n')}
 import React from 'react';
 import { createRoot } from 'react-dom/client';
@@ -118,9 +119,21 @@ import App from './App';
 
 createRoot(document.getElementById('root')).render(<App />);
 `,
-  );
+    );
+  };
 
-  const update = async () => {
+  await updateIndexJs();
+
+  if (watch) {
+    const watcher = chokidar.watch('src/setupDocs.{js,jsx,ts,tsx}', {
+      persistent: true,
+    });
+
+    watcher.on('unlink', () => updateIndexJs());
+    watcher.on('add', () => updateIndexJs());
+  }
+
+  const updateAppJs = async () => {
     const files = await glob(include, {
       ignore: exclude,
       cwd: rootDir,
@@ -145,7 +158,7 @@ export default function App() {
     );
   };
 
-  await update();
+  await updateAppJs();
 
   if (watch) {
     const watcher = chokidar.watch(include, {
@@ -154,7 +167,7 @@ export default function App() {
       persistent: true,
     });
 
-    watcher.on('change', () => update());
-    watcher.on('add', () => update());
+    watcher.on('unlink', () => updateAppJs());
+    watcher.on('add', () => updateAppJs());
   }
 }
