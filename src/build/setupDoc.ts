@@ -127,6 +127,7 @@ createRoot(document.getElementById('root')).render(<App />);
   if (watch) {
     const watcher = chokidar.watch('src/setupDocs.{js,jsx,ts,tsx}', {
       persistent: true,
+      awaitWriteFinish: true,
     });
 
     watcher.on('unlink', () => updateIndexJs());
@@ -165,6 +166,7 @@ export default function App() {
       ignored: exclude,
       cwd: rootDir,
       persistent: true,
+      awaitWriteFinish: true,
     });
 
     watcher.on('unlink', () => updateAppJs());
