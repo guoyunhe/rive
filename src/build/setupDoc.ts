@@ -107,9 +107,11 @@ export async function setupDoc(config: Config, watch?: boolean) {
 `,
   );
 
+  const setupFiles = await glob('src/setupDocs.{js,jsx,ts,tsx}');
   await fs.outputFile(
     join(process.cwd(), '.rive', 'index.jsx'),
     `
+${setupFiles.map((file) => `import '../${file}';`).join('\n')}
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App';
