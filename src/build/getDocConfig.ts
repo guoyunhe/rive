@@ -13,9 +13,12 @@ import remarkMdxImages from 'remark-mdx-images';
 import { defineConfig } from 'vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import { Config } from '../types/Config.js';
+import { doc } from './docVitePlugin.js';
 
-export default async function getDocConfig(config: Config) {
-  const docSrcDir = join(process.cwd(), '.rive');
+export default async function getDocConfig(
+  config: Config,
+  type: 'server' | 'build',
+) {
   const docOutDir = join(process.cwd(), 'build');
 
   return defineConfig({
@@ -25,7 +28,13 @@ export default async function getDocConfig(config: Config) {
       PACKAGE_VERSION: `"${config.packageJson.version}"`,
       'process.env': process.env, // https://github.com/vitejs/vite/issues/1973
     },
-    root: docSrcDir,
+    // Vite cannot watch parent directory. So in server mode we have to set root
+    // to project root instead of `.rive`. To avoid expose `index.html`, we use
+    // `doc()` plugin to server html, to get rid of `index.html` on project root.
+    // However, in build mode, we still use `.rive` as Vite root because here is
+    // no way to skip `index.html` on disk.
+    root: type === 'server' ? process.cwd() : join(process.cwd(), '.rive'),
+    publicDir: join(process.cwd(), '.rive', 'public'),
     build: {
       emptyOutDir: true,
       outDir: docOutDir,
@@ -55,6 +64,7 @@ export default async function getDocConfig(config: Config) {
       },
       react({ tsDecorators: true }),
       tsconfigPaths(),
+      doc(config),
     ],
     resolve: {
       alias: {
