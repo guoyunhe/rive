@@ -1,6 +1,6 @@
 import chalk from 'chalk';
 import glob from 'fast-glob';
-import { copyFile, mkdir, rm, writeFile } from 'fs/promises';
+import { copyFile, mkdir, rm } from 'fs/promises';
 import { dirname, join } from 'path';
 import { replaceTscAliasPaths } from 'tsc-alias';
 import ts from 'typescript';
@@ -113,9 +113,6 @@ export async function buildLib(config: Config) {
   })();
 
   if (config.packageJson.type !== 'module') {
-    // this is a trick to make Node recognize ESM with .js extension
-    await writeFile(join(outDir, 'package.json'), '{"type":"module"}', 'utf-8');
-
     // compile cjs (optional)
     await (async () => {
       const compilerOptions: ts.CompilerOptions = {
