@@ -2,7 +2,7 @@ import { Plugin } from 'vite';
 import { Config } from '../types/Config.js';
 import { getHtml } from './getHtml.js';
 
-export function doc(config: Config): Plugin {
+export function docVitePlugin(config: Config): Plugin {
   return {
     name: 'rive:doc',
     configureServer: (server) => {
