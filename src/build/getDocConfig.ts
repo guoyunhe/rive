@@ -5,11 +5,11 @@ import recmaExportFilepath from 'recma-export-filepath';
 import recmaMdxDisplayname from 'recma-mdx-displayname';
 import rehypeMdxCodeImports from 'rehype-mdx-code-imports';
 import rehypeMdxCodeProps from 'rehype-mdx-code-props';
+import rehypeMdxImportMedia from 'rehype-mdx-import-media';
 import rehypeMdxTitle from 'rehype-mdx-title';
 import remarkFrontmatter from 'remark-frontmatter';
 import remarkGfm from 'remark-gfm';
 import remarkMdxFrontmatter from 'remark-mdx-frontmatter';
-import remarkMdxImages from 'remark-mdx-images';
 import { defineConfig } from 'vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import { Config } from '../types/Config.js';
@@ -43,8 +43,13 @@ export default async function getDocConfig(config: Config, type: 'server' | 'bui
         ...mdx({
           providerImportSource: '@mdx-js/react',
           recmaPlugins: [[recmaExportFilepath, { cwd: config.doc.root }], recmaMdxDisplayname],
-          rehypePlugins: [rehypeMdxTitle, rehypeMdxCodeImports, rehypeMdxCodeProps],
-          remarkPlugins: [remarkGfm, remarkFrontmatter, remarkMdxFrontmatter, remarkMdxImages],
+          rehypePlugins: [
+            rehypeMdxTitle,
+            rehypeMdxCodeImports,
+            rehypeMdxCodeProps,
+            rehypeMdxImportMedia,
+          ],
+          remarkPlugins: [remarkGfm, remarkFrontmatter, remarkMdxFrontmatter],
         }),
       },
       react({ tsDecorators: true }),

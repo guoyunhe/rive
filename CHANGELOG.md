@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.3.0 - 2024-12-28
+
+- Changed `remark-mdx-images` to `rehype-mdx-import-media`
+
 ## 2.2.0 - 2024-12-28
 
 - Update `vitest` from 1.x to 2.x
