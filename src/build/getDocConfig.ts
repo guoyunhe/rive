@@ -13,12 +13,9 @@ import remarkMdxImages from 'remark-mdx-images';
 import { defineConfig } from 'vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import { Config } from '../types/Config.js';
-import { doc } from './docVitePlugin.js';
+import { docVitePlugin } from './docVitePlugin.js';
 
-export default async function getDocConfig(
-  config: Config,
-  type: 'server' | 'build',
-) {
+export default async function getDocConfig(config: Config, type: 'server' | 'build') {
   const docOutDir = join(process.cwd(), 'build');
 
   return defineConfig({
@@ -45,26 +42,14 @@ export default async function getDocConfig(
         enforce: 'pre',
         ...mdx({
           providerImportSource: '@mdx-js/react',
-          recmaPlugins: [
-            [recmaExportFilepath, { cwd: config.doc.root }],
-            recmaMdxDisplayname,
-          ],
-          rehypePlugins: [
-            rehypeMdxTitle,
-            rehypeMdxCodeImports,
-            rehypeMdxCodeProps,
-          ],
-          remarkPlugins: [
-            remarkGfm,
-            remarkFrontmatter,
-            remarkMdxFrontmatter,
-            remarkMdxImages,
-          ],
+          recmaPlugins: [[recmaExportFilepath, { cwd: config.doc.root }], recmaMdxDisplayname],
+          rehypePlugins: [rehypeMdxTitle, rehypeMdxCodeImports, rehypeMdxCodeProps],
+          remarkPlugins: [remarkGfm, remarkFrontmatter, remarkMdxFrontmatter, remarkMdxImages],
         }),
       },
       react({ tsDecorators: true }),
       tsconfigPaths(),
-      doc(config),
+      docVitePlugin(config),
     ],
     resolve: {
       alias: {
