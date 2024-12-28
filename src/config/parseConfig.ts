@@ -8,9 +8,7 @@ import { TemplateType } from '../types/TemplateType.js';
 export async function parseConfig() {
   let packageJson: any = {};
   try {
-    packageJson = JSON.parse(
-      await readFile(join(process.cwd(), 'package.json'), 'utf-8'),
-    );
+    packageJson = JSON.parse(await readFile(join(process.cwd(), 'package.json'), 'utf-8'));
   } catch (e) {
     console.log(
       chalk.cyan('[rive]'),
@@ -22,9 +20,7 @@ export async function parseConfig() {
   // tsconfig.json support comments, so we have to use JSON5 parser
   let tsconfigJson: any = {};
   try {
-    tsconfigJson = JSON5.parse(
-      await readFile(join(process.cwd(), 'tsconfig.json'), 'utf-8'),
-    );
+    tsconfigJson = JSON5.parse(await readFile(join(process.cwd(), 'tsconfig.json'), 'utf-8'));
   } catch (e) {
     console.log(
       chalk.cyan('[rive]'),
@@ -35,9 +31,7 @@ export async function parseConfig() {
 
   const template = packageJson.rive?.template || TemplateType.React;
   const doc = packageJson.rive?.doc || {};
-  doc.basename = doc.basename
-    ? join('/', packageJson.rive?.doc?.basename || '.')
-    : '/';
+  doc.basename = doc.basename ? join('/', packageJson.rive?.doc?.basename || '.') : '/';
   const lib = packageJson.rive?.lib || {};
 
   if (!doc.title) {

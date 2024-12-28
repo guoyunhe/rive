@@ -19,10 +19,7 @@ export async function buildLib(config: Config) {
 
   // quit building if compilerOptions is invalid
   if (compilerOptionsResult.errors.length > 0) {
-    console.log(
-      chalk.red('[rive]'),
-      'Failed to parse compilerOptions from tsconfig.json:',
-    );
+    console.log(chalk.red('[rive]'), 'Failed to parse compilerOptions from tsconfig.json:');
     // margin bottom
     console.log();
     compilerOptionsResult.errors.forEach((error) => {
@@ -66,9 +63,7 @@ export async function buildLib(config: Config) {
     const program = ts.createProgram(sources, compilerOptions);
     const emitResult = program.emit();
 
-    const allDiagnostics = ts
-      .getPreEmitDiagnostics(program)
-      .concat(emitResult.diagnostics);
+    const allDiagnostics = ts.getPreEmitDiagnostics(program).concat(emitResult.diagnostics);
 
     allDiagnostics.forEach((diagnostic) => {
       if (diagnostic.file) {
@@ -76,17 +71,10 @@ export async function buildLib(config: Config) {
           diagnostic.file,
           diagnostic.start!,
         );
-        const message = ts.flattenDiagnosticMessageText(
-          diagnostic.messageText,
-          '\n',
-        );
-        console.log(
-          `${diagnostic.file.fileName} (${line + 1},${character + 1}): ${message}`,
-        );
+        const message = ts.flattenDiagnosticMessageText(diagnostic.messageText, '\n');
+        console.log(`${diagnostic.file.fileName} (${line + 1},${character + 1}): ${message}`);
       } else {
-        console.log(
-          ts.flattenDiagnosticMessageText(diagnostic.messageText, '\n'),
-        );
+        console.log(ts.flattenDiagnosticMessageText(diagnostic.messageText, '\n'));
       }
     });
 
@@ -129,10 +117,7 @@ export async function buildLib(config: Config) {
       // copy styles, images, etc.
       await Promise.all(
         assets.map((asset) =>
-          copyFile(
-            join(rootDir, asset),
-            join(outDir, 'cjs', asset.substring(3)),
-          ),
+          copyFile(join(rootDir, asset), join(outDir, 'cjs', asset.substring(3))),
         ),
       );
 

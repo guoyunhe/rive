@@ -7,8 +7,7 @@ import { outputFileMemo } from '../utils/outputFileMemo.js';
 import { getHtml } from './getHtml.js';
 
 export async function setupDoc(config: Config, watch?: boolean) {
-  const docUIPath =
-    config.packageJson.name === 'react-doc-ui' ? '../src' : 'react-doc-ui';
+  const docUIPath = config.packageJson.name === 'react-doc-ui' ? '../src' : 'react-doc-ui';
   const rootDir = config.doc.root || '.';
   const include = config.doc.include || ['**/*.md', '**/*.mdx'];
   const exclude = [
@@ -20,14 +19,9 @@ export async function setupDoc(config: Config, watch?: boolean) {
 
   await fs.mkdirp('.rive');
 
-  await fs.outputFile(
-    join(process.cwd(), '.rive', 'index.html'),
-    getHtml(config, 'build'),
-  );
+  await fs.outputFile(join(process.cwd(), '.rive', 'index.html'), getHtml(config, 'build'));
 
-  const pathSegmentsToKeep = config.doc.basename
-    .split('/')
-    .filter(Boolean).length;
+  const pathSegmentsToKeep = config.doc.basename.split('/').filter(Boolean).length;
   await fs.outputFile(
     join(process.cwd(), '.rive', 'public', '404.html'),
     `

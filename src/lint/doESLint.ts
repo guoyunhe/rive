@@ -1,11 +1,7 @@
 import { ESLint } from 'eslint';
 import { Config } from '../types/Config';
 
-export async function doESLint(
-  config: Config,
-  fix?: boolean,
-  stagedFiles?: string[],
-) {
+export async function doESLint(config: Config, fix?: boolean, stagedFiles?: string[]) {
   // 加载配置
   const eslint = new ESLint({
     fix,
@@ -13,9 +9,7 @@ export async function doESLint(
   });
 
   // 检查文件
-  const results = await eslint.lintFiles(
-    stagedFiles || 'src/**/*.{js,jsx,ts,tsx}',
-  );
+  const results = await eslint.lintFiles(stagedFiles || 'src/**/*.{js,jsx,ts,tsx}');
 
   // 修复代码并保存
   if (fix) {

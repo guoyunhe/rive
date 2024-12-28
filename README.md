@@ -25,7 +25,7 @@ Default:
 
 ```jsonc
 {
-  "browserslist": ["defaults", "not IE 11", "maintained node versions"]
+  "browserslist": ["defaults", "not IE 11", "maintained node versions"],
 }
 ```
 

@@ -1,13 +1,18 @@
 {
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "style": "dist/index.css",
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
-    "start": "rive start",
     "build": "rive build",
-    "test": "rive test",
+    "format": "rive format",
     "lint": "rive lint",
-    "format": "rive format"
-  },
-  "devDependencies": {
-    "rive": "latest"
+    "start": "rive start",
+    "test": "rive test"
   },
   "eslintConfig": {
     "extends": [
@@ -29,12 +34,7 @@
       "stylelint-config-rive"
     ]
   },
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.esm.js",
-  "style": "dist/index.css",
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist",
-    "README.md"
-  ]
+  "devDependencies": {
+    "rive": "latest"
+  }
 }

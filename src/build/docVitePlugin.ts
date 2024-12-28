@@ -13,11 +13,7 @@ export function docVitePlugin(config: Config): Plugin {
           res.statusCode = 200;
           res.setHeader('Content-Type', 'text/html');
           let html = getHtml(config, 'server');
-          html = await server.transformIndexHtml(
-            req.url,
-            html,
-            req.originalUrl,
-          );
+          html = await server.transformIndexHtml(req.url, html, req.originalUrl);
           res.end(html);
         });
       };

@@ -8,9 +8,7 @@ import { fileURLToPath } from 'url';
 import { bench, build, lint, start, test } from './index.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const packageJson = JSON.parse(
-  readFileSync(join(__dirname, '../package.json'), 'utf-8'),
-);
+const packageJson = JSON.parse(readFileSync(join(__dirname, '../package.json'), 'utf-8'));
 
 i18n.configure({
   locales: ['en', 'zh'],
@@ -54,10 +52,6 @@ program
 program.helpOption('-h, --help', i18n.__('help_cmd_desc'));
 program.addHelpCommand('help [command]', i18n.__('help_cmd_desc'));
 
-program.version(
-  packageJson.version,
-  '-v, --version',
-  i18n.__('version_cmd_desc'),
-);
+program.version(packageJson.version, '-v, --version', i18n.__('version_cmd_desc'));
 
 program.parse();
