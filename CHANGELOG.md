@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.2.0 - 2024-12-28
+
+- Update `vitest` from 1.x to 2.x
+
 ## 2.1.0 - 2024-12-28
 
 - Update `vite` from 5.x to 6.x
