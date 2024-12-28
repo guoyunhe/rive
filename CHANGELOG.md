@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.0 - 2024-12-28
+
+- Update `vite` from 5.x to 6.x
+
 ## 2.0.0 - 2024-01-17
 
 - **BREAKING CHANGE**: use `tsc` as library compiler, instead of vite, to support style tree-shaking, multiple entries, etc.
