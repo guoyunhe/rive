@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.0.0 - 2024-12-29
+
+- **BREAKING CHANGE**: Updated `eslint` from 8.x to 9.x with new configuration file format
+
 ## 2.3.0 - 2024-12-28
 
 - Changed `remark-mdx-images` to `rehype-mdx-import-media`

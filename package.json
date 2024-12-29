@@ -42,9 +42,6 @@
     "test:watch": "tsx src/rive.ts test --watch"
   },
   "prettier": "prettier-config-rive",
-  "eslintConfig": {
-    "extends": "eslint-config-rive"
-  },
   "dependencies": {
     "@mdx-js/react": "^3.1.0",
     "@mdx-js/rollup": "^3.1.0",
@@ -53,8 +50,8 @@
     "chalk": "^5.4.1",
     "chokidar": "^3.6.0",
     "commander": "^12.1.0",
-    "eslint": "^8.57.1",
-    "eslint-config-rive": "^2.2.0",
+    "eslint": "^9.17.0",
+    "eslint-config-rive": "^3.0.0",
     "fast-glob": "^3.3.2",
     "fs-extra": "^11.2.0",
     "happy-dom": "^16.0.1",
@@ -88,7 +85,7 @@
   "devDependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/react": "^16.1.0",
-    "@types/eslint": "^8.56.12",
+    "@types/eslint": "^9.6.1",
     "@types/fs-extra": "^11.0.4",
     "@types/i18n": "^0.13.12",
     "@types/node": "^22.10.2",
