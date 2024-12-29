@@ -5,11 +5,10 @@ export async function doESLint(config: Config, fix?: boolean, stagedFiles?: stri
   // 加载配置
   const eslint = new ESLint({
     fix,
-    baseConfig: config.packageJson.eslintConfig,
   });
 
   // 检查文件
-  const results = await eslint.lintFiles(stagedFiles || 'src/**/*.{js,jsx,ts,tsx}');
+  const results = await eslint.lintFiles(stagedFiles || './src/**/*.{js,jsx,ts,tsx}');
 
   // 修复代码并保存
   if (fix) {

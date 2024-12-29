@@ -1,3 +1,3 @@
-import rive from 'eslint-config-rive';
+import { base } from 'eslint-config-rive';
 
-export default [rive];
+export default [...base];

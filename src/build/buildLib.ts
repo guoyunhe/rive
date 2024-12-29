@@ -92,7 +92,7 @@ export async function buildLib(config: Config) {
         const dest = join(outDir, asset.substring(3));
         try {
           await mkdir(dirname(dest), { recursive: true });
-        } catch (e) {
+        } catch {
           //
         }
         await copyFile(join(rootDir, asset), dest);
