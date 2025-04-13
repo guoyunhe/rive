@@ -2,7 +2,7 @@
   "compilerOptions": {
     "lib": ["esnext"],
     "module": "esnext",
-    "target": "es2017",
+    "target": "es2020",
     "jsx": "react-jsx",
     "strict": true,
     "resolveJsonModule": true,
@@ -19,9 +19,12 @@
     "noUncheckedIndexedAccess": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "checkJs": true,
+    "checkJs": false,
     "moduleResolution": "node",
-    "types": ["node", "vitest/globals"]
+    "types": ["node", "vitest/globals"],
+    "allowJs": true,
+    "isolatedModules": true,
+    "noEmit": true
   },
-  "include": ["src"]
+  "exclude": [".rive", "build", "coverage", "dist", "node_modules"]
 }
