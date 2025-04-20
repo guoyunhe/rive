@@ -25,7 +25,7 @@ export default async function getDocConfig(config: Config, type: 'server' | 'bui
       PACKAGE_NAME: `"${config.packageJson.name}"`,
       PACKAGE_VERSION: `"${config.packageJson.version}"`,
       // https://github.com/vitejs/vite/issues/1973
-      'process.env': { NODE_ENV: process.env?.['NODE_ENV'] },
+      'process.env': process.env,
     },
 
     // Vite cannot watch parent directory. So in server mode we have to set root

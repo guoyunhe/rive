@@ -23,9 +23,9 @@ npm create rive my-lib
 
 Default:
 
-```jsonc
+```json
 {
-  "browserslist": ["defaults", "not IE 11", "maintained node versions"],
+  "browserslist": ["defaults", "not IE 11", "maintained node versions"]
 }
 ```
 
