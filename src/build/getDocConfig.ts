@@ -1,6 +1,8 @@
 import mdx from '@mdx-js/rollup';
+import preact from '@preact/preset-vite';
 import react from '@vitejs/plugin-react-swc';
-import { join } from 'path';
+import { createRequire } from 'node:module';
+import { join } from 'node:path';
 import recmaExportFilepath from 'recma-export-filepath';
 import recmaMdxDisplayname from 'recma-mdx-displayname';
 import rehypeMdxCodeImports from 'rehype-mdx-code-imports';
@@ -15,6 +17,8 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 import { Config } from '../types/Config.js';
 import { docVitePlugin } from './docVitePlugin.js';
 
+const require = createRequire(import.meta.url);
+
 export default async function getDocConfig(config: Config, type: 'server' | 'build') {
   const docOutDir = join(process.cwd(), 'build');
 
@@ -23,8 +27,10 @@ export default async function getDocConfig(config: Config, type: 'server' | 'bui
     define: {
       PACKAGE_NAME: `"${config.packageJson.name}"`,
       PACKAGE_VERSION: `"${config.packageJson.version}"`,
-      'process.env': process.env, // https://github.com/vitejs/vite/issues/1973
+      // https://github.com/vitejs/vite/issues/1973
+      'process.env': {},
     },
+
     // Vite cannot watch parent directory. So in server mode we have to set root
     // to project root instead of `.rive`. To avoid expose `index.html`, we use
     // `doc()` plugin to server html, to get rid of `index.html` on project root.
@@ -38,10 +44,17 @@ export default async function getDocConfig(config: Config, type: 'server' | 'bui
       chunkSizeWarningLimit: 9999,
     },
     plugins: [
+      // Support MDX
       {
         enforce: 'pre',
         ...mdx({
-          providerImportSource: '@mdx-js/react',
+          jsxImportSource: ['preact', 'react'].includes(config.template)
+            ? config.template
+            : require.resolve('react'),
+          providerImportSource:
+            config.template === 'preact'
+              ? require.resolve('@mdx-js/preact')
+              : require.resolve('@mdx-js/react'),
           recmaPlugins: [[recmaExportFilepath, { cwd: config.doc.root }], recmaMdxDisplayname],
           rehypePlugins: [
             rehypeMdxTitle,
@@ -52,8 +65,14 @@ export default async function getDocConfig(config: Config, type: 'server' | 'bui
           remarkPlugins: [remarkGfm, remarkFrontmatter, remarkMdxFrontmatter],
         }),
       },
-      react({ tsDecorators: true }),
+
+      // Support React/Preact
+      config.template === 'preact' ? preact() : react({ tsDecorators: true }),
+
+      // Support tsconfig's compilerOptions.paths
       tsconfigPaths(),
+
+      // Provide virtual index.html entry
       docVitePlugin(config),
     ],
     resolve: {

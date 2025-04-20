@@ -1,6 +1,1 @@
-export enum TemplateType {
-  React = 'react',
-  ReactIcons = 'react-icons',
-  CLI = 'cli',
-  Node = 'node',
-}
+export type TemplateType = 'base' | 'web' | 'react' | 'preact' | 'node' | 'cli';
