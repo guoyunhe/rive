@@ -2,7 +2,7 @@ import mdx from '@mdx-js/rollup';
 import preact from '@preact/preset-vite';
 import react from '@vitejs/plugin-react-swc';
 import { createRequire } from 'node:module';
-import { join } from 'node:path';
+import { dirname, join } from 'node:path';
 import recmaExportFilepath from 'recma-export-filepath';
 import recmaMdxDisplayname from 'recma-mdx-displayname';
 import rehypeMdxCodeImports from 'rehype-mdx-code-imports';
@@ -28,7 +28,7 @@ export default async function getDocConfig(config: Config, type: 'server' | 'bui
       PACKAGE_NAME: `"${config.packageJson.name}"`,
       PACKAGE_VERSION: `"${config.packageJson.version}"`,
       // https://github.com/vitejs/vite/issues/1973
-      'process.env': {},
+      'process.env': { NODE_ENV: process.env.NODE_ENV },
     },
 
     // Vite cannot watch parent directory. So in server mode we have to set root
@@ -50,7 +50,7 @@ export default async function getDocConfig(config: Config, type: 'server' | 'bui
         ...mdx({
           jsxImportSource: ['preact', 'react'].includes(config.template)
             ? config.template
-            : require.resolve('react'),
+            : dirname(require.resolve('react/package.json')),
           providerImportSource:
             config.template === 'preact'
               ? require.resolve('@mdx-js/preact')
