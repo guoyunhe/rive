@@ -1,17 +1,13 @@
 import chokidar from 'chokidar';
 import glob from 'fast-glob';
 import fs from 'fs-extra';
-import { createRequire } from 'node:module';
 import { join } from 'node:path';
 import { Config } from '../types/Config.js';
 import { outputFileMemo } from '../utils/outputFileMemo.js';
 import { getHtml } from './getHtml.js';
 
-const require = createRequire(import.meta.url);
-
 export async function setupDoc(config: Config, watch?: boolean) {
-  const docUIPath =
-    config.packageJson.name === 'react-doc-ui' ? '../src' : require.resolve('react-doc-ui');
+  const docUIPath = config.packageJson.name === 'react-doc-ui' ? '../src' : 'react-doc-ui';
   const rootDir = config.doc.root || '.';
   const include = config.doc.include || ['**/*.md', '**/*.mdx'];
   const exclude = [
