@@ -72,6 +72,7 @@ export default async function getDocConfig(config: Config, type: 'server' | 'bui
     resolve: {
       alias: {
         [config.packageJson.name]: join(process.cwd(), 'src'),
+        '@mdx-js/react': config.template === 'preact' ? '@mdx-js/preact' : '@mdx-js/react',
       },
     },
     server: {
