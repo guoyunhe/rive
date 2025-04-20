@@ -3,7 +3,6 @@ import { readFile } from 'fs/promises';
 import JSON5 from 'json5';
 import { join } from 'path';
 import { Config } from '../types/Config.js';
-import { TemplateType } from '../types/TemplateType.js';
 
 export async function parseConfig() {
   let packageJson: any = {};
@@ -29,13 +28,13 @@ export async function parseConfig() {
     throw e;
   }
 
-  const template = packageJson.rive?.template || TemplateType.React;
+  const template = packageJson.rive?.template || 'react';
   const doc = packageJson.rive?.doc || {};
   doc.basename = doc.basename ? join('/', packageJson.rive?.doc?.basename || '.') : '/';
   const lib = packageJson.rive?.lib || {};
 
   if (!doc.title) {
-    doc.title = packageJson.name + ' - ' + packageJson.description;
+    doc.title = `${packageJson.name} - ${packageJson.description}`;
   }
 
   const config: Config = {
