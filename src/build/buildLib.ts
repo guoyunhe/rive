@@ -33,13 +33,13 @@ export async function buildLib(config: Config) {
 
   // find source files
   const exts = '{cjs,cts,js,jsx,mjs,mts,ts,tsx}';
-  const sources = await glob('src/**/*.' + exts, {
+  const sources = await glob(`src/**/*.${exts}`, {
     ignore: [
-      '**/*.bench.' + exts,
-      '**/*.spec.' + exts,
-      '**/*.test.' + exts,
+      `**/*.bench.${exts}`,
+      `**/*.spec.${exts}`,
+      `**/*.test.${exts}`,
       '**/__mocks__/**',
-      'setupTests.' + exts,
+      `setupTests.${exts}`,
     ],
   });
 
@@ -56,7 +56,6 @@ export async function buildLib(config: Config) {
       declaration: true,
       noEmit: false,
       module: ts.ModuleKind.ESNext,
-      moduleResolution: ts.ModuleResolutionKind.Node10,
       rootDir: 'src',
       outDir,
     };
