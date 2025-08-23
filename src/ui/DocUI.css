@@ -1,11 +1,13 @@
-.doc-ui {
+.rive-ui {
   display: flex;
 }
 
-.doc-ui-main {
+.rive-ui-main {
   flex: 1 1 auto;
+  display: flex;
 }
 
-.doc-ui-content {
+.rive-ui-content {
   padding: 0 1em;
+  flex: 1 1 800px;
 }

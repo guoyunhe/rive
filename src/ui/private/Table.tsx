@@ -5,7 +5,7 @@ export function Table(
   props: DetailedHTMLProps<HTMLAttributes<HTMLTableElement>, HTMLTableElement>,
 ) {
   return (
-    <div className="doc-ui-table">
+    <div className="rive-ui-table">
       <table {...props} />
     </div>
   );

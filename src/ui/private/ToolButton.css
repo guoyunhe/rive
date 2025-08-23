@@ -1,4 +1,4 @@
-.doc-ui-tool-button {
+.rive-ui-tool-button {
   font-size: 12px;
   display: block;
   border: 0;
@@ -8,20 +8,20 @@
   user-select: none;
 }
 
-.doc-ui-tool-button:hover {
+.rive-ui-tool-button:hover {
   background: rgba(0, 0, 0, 0.05);
 }
 
-.doc-ui-tool-button:active {
+.rive-ui-tool-button:active {
   background: rgba(0, 0, 0, 0.1);
 }
 
-.doc-ui-tool-button svg {
+.rive-ui-tool-button svg {
   width: 16px;
   height: 16px;
   margin: -3px 2px -3px 0;
 }
 
-.doc-ui-tool-button-success {
-  color: var(--doc-ui-color-success);
+.rive-ui-tool-button-success {
+  color: var(--rive-ui-color-success);
 }

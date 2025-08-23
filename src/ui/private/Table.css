@@ -1,27 +1,27 @@
-.doc-ui-table {
-  border: 1px solid var(--doc-ui-color-border);
-  border-radius: var(--doc-ui-border-radius);
+.rive-ui-table {
+  border: 1px solid var(--rive-ui-color-border);
+  border-radius: var(--rive-ui-border-radius);
   overflow: hidden;
 }
 
-.doc-ui-table table {
+.rive-ui-table table {
   border-collapse: collapse;
   margin: -1px;
   table-layout: fixed;
   width: calc(100% + 2px);
 }
 
-.doc-ui-table td,
-.doc-ui-table th {
+.rive-ui-table td,
+.rive-ui-table th {
   text-align: left;
-  border: 1px solid var(--doc-ui-color-border);
+  border: 1px solid var(--rive-ui-color-border);
   padding: 4px 8px;
 }
 
-.doc-ui-table th {
-  background-color: var(--doc-ui-color-toolbar-bg);
+.rive-ui-table th {
+  background-color: var(--rive-ui-color-toolbar-bg);
 }
 
-.doc-ui-table td {
-  background-color: var(--doc-ui-color-content-bg);
+.rive-ui-table td {
+  background-color: var(--rive-ui-color-content-bg);
 }

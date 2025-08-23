@@ -1,22 +1,22 @@
 :root {
-  --doc-ui-color-border: #d8d8d8;
-  --doc-ui-color-text: #333;
-  --doc-ui-color-content-bg: #fff;
-  --doc-ui-color-toolbar-bg: #f0f0f0;
-  --doc-ui-color-success: #52c41a;
-  --doc-ui-color-success-bg: #f6ffed;
-  --doc-ui-color-info: #1677ff;
-  --doc-ui-color-info-bg: #e6f4ff;
-  --doc-ui-color-warning: #faad14;
-  --doc-ui-color-warning-bg: #fffbe6;
-  --doc-ui-color-error: #ff4d4f;
-  --doc-ui-color-error-bg: #fff2f0;
-  --doc-ui-font-size: 14px;
-  --doc-ui-font-family-code:
+  --rive-ui-color-border: #d8d8d8;
+  --rive-ui-color-text: #333;
+  --rive-ui-color-content-bg: #fff;
+  --rive-ui-color-toolbar-bg: #f0f0f0;
+  --rive-ui-color-success: #52c41a;
+  --rive-ui-color-success-bg: #f6ffed;
+  --rive-ui-color-info: #1677ff;
+  --rive-ui-color-info-bg: #e6f4ff;
+  --rive-ui-color-warning: #faad14;
+  --rive-ui-color-warning-bg: #fffbe6;
+  --rive-ui-color-error: #ff4d4f;
+  --rive-ui-color-error-bg: #fff2f0;
+  --rive-ui-font-size: 14px;
+  --rive-ui-font-family-code:
     ui-monospace, 'SF Mono', 'Menlo', 'Consolas', 'Liberation Mono', monospace;
-  --doc-ui-border-radius: 8px;
-  --doc-ui-padding-x: 8px;
-  --doc-ui-padding-y: 4px;
+  --rive-ui-border-radius: 8px;
+  --rive-ui-padding-x: 8px;
+  --rive-ui-padding-y: 4px;
 }
 
 body {

@@ -6,5 +6,5 @@ export interface ToolbarProps {
 }
 
 export function Toolbar({ children }: ToolbarProps) {
-  return <div className="doc-ui-toolbar">{children}</div>;
+  return <div className="rive-ui-toolbar">{children}</div>;
 }

@@ -1,9 +1,9 @@
-.doc-ui-select-dropdown {
+.rive-ui-select-dropdown {
   position: absolute;
-  background-color: var(--doc-ui-color-toolbar-bg);
+  background-color: var(--rive-ui-color-toolbar-bg);
   display: none;
 }
 
-.doc-ui-select-dropdown-open {
+.rive-ui-select-dropdown-open {
   display: block;
 }

@@ -1,9 +1,9 @@
-.doc-ui-site-nav {
+.rive-ui-site-nav {
   flex: 0 0 250px;
-  background-color: var(--doc-ui-color-content-bg);
+  background-color: var(--rive-ui-color-content-bg);
 }
 
-.doc-ui-site-nav-inner {
+.rive-ui-site-nav-inner {
   position: sticky;
   top: 0;
   height: 100vh;
@@ -11,18 +11,18 @@
   overflow-y: auto;
 }
 
-.doc-ui-site-settings {
+.rive-ui-site-settings {
   padding: 0.5rem 1rem;
 }
 
-.doc-ui-site-nav-group-title {
+.rive-ui-site-nav-group-title {
   font-size: 0.7rem;
   font-weight: 700;
   padding: 0.5rem 1rem;
   opacity: 0.5;
 }
 
-.doc-ui-site-nav-item {
+.rive-ui-site-nav-item {
   display: block;
   font-size: 0.8rem;
   text-decoration: none;
@@ -30,10 +30,10 @@
   color: inherit;
 }
 
-.doc-ui-site-nav-item:hover {
-  background-color: var(--doc-ui-color-toolbar-bg);
+.rive-ui-site-nav-item:hover {
+  background-color: var(--rive-ui-color-toolbar-bg);
 }
 
-.doc-ui-site-nav-item.active {
-  background-color: var(--doc-ui-color-toolbar-bg);
+.rive-ui-site-nav-item.active {
+  background-color: var(--rive-ui-color-toolbar-bg);
 }

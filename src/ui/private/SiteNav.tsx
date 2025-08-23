@@ -52,9 +52,9 @@ export function SiteNav({ docs, languages }: SiteNavProps) {
   });
 
   return (
-    <aside className="doc-ui-site-nav">
-      <nav className="doc-ui-site-nav-inner">
-        <div className="doc-ui-site-settings">
+    <aside className="rive-ui-site-nav">
+      <nav className="rive-ui-site-nav-inner">
+        <div className="rive-ui-site-settings">
           {languages && (
             <select value={i18n.language} onChange={(e) => i18n.changeLanguage(e.target.value)}>
               {languages.map((lang) => (
@@ -71,7 +71,7 @@ export function SiteNav({ docs, languages }: SiteNavProps) {
             <Link
               key={doc.path}
               className={(active) =>
-                active ? 'doc-ui-site-nav-item active' : 'doc-ui-site-nav-item'
+                active ? 'rive-ui-site-nav-item active' : 'rive-ui-site-nav-item'
               }
               to={getRoutePath(doc.path)}
             >
@@ -80,15 +80,15 @@ export function SiteNav({ docs, languages }: SiteNavProps) {
           ))}
 
         {groups.map((group) => (
-          <div key={group} className="doc-ui-site-nav-group">
-            <div className="doc-ui-site-nav-group-title">{group}</div>
+          <div key={group} className="rive-ui-site-nav-group">
+            <div className="rive-ui-site-nav-group-title">{group}</div>
             {docsFilteredByLang
               .filter((doc) => group === doc.group)
               .map((doc) => (
                 <Link
                   key={doc.path}
                   className={(active) =>
-                    active ? 'doc-ui-site-nav-item active' : 'doc-ui-site-nav-item'
+                    active ? 'rive-ui-site-nav-item active' : 'rive-ui-site-nav-item'
                   }
                   to={getRoutePath(doc.path)}
                 >

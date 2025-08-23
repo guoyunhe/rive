@@ -27,9 +27,9 @@ export function Alert({ type = 'info', children }: AlertProps) {
     }
   }, [type]);
   return (
-    <div className={cn('doc-ui-alert', `doc-ui-alert-${type}`)}>
-      <div className="doc-ui-alert-icon">{icon}</div>
-      <div className="doc-ui-alert-main">{children}</div>
+    <div className={cn('rive-ui-alert', `rive-ui-alert-${type}`)}>
+      <div className="rive-ui-alert-icon">{icon}</div>
+      <div className="rive-ui-alert-main">{children}</div>
     </div>
   );
 }

@@ -54,7 +54,7 @@ export function DemoBlock({
 
   return (
     <div
-      className={cn('doc-ui-demo-block', `doc-ui-demo-block-${selectedDevice}`, className)}
+      className={cn('rive-ui-demo-block', `rive-ui-demo-block-${selectedDevice}`, className)}
       style={style}
     >
       <Toolbar>
@@ -76,16 +76,16 @@ export function DemoBlock({
         scope={imports}
         noInline={code?.includes('render(')}
       >
-        <div className="doc-ui-demo-block-main">
+        <div className="rive-ui-demo-block-main">
           <LivePreview
             className={cn(
-              'doc-ui-demo-block-preview',
-              disablePadding && 'doc-ui-demo-block-preview-disable-padding',
+              'rive-ui-demo-block-preview',
+              disablePadding && 'rive-ui-demo-block-preview-disable-padding',
             )}
           />
-          <div className="doc-ui-demo-block-develop">
-            <LiveError className="doc-ui-demo-block-error" />
-            <LiveEditor className="doc-ui-demo-block-editor" />
+          <div className="rive-ui-demo-block-develop">
+            <LiveError className="rive-ui-demo-block-error" />
+            <LiveEditor className="rive-ui-demo-block-editor" />
           </div>
         </div>
       </LiveProvider>

@@ -8,6 +8,7 @@ import { I18nextProvider } from 'react-i18next';
 import { Route, Router, Switch } from 'wouter';
 import './DocUI.css';
 import { SiteNav } from './private/SiteNav';
+import { Toc } from './private/Toc';
 import { components } from './private/components';
 import { getRoutePath } from './private/getRoutePath';
 import { DocLanguage, MDXDoc } from './types';
@@ -89,23 +90,29 @@ export function DocUI({ docs = [], basename, languages, className, style }: DocU
 
   return (
     <I18nextProvider i18n={i18n}>
-      <div className={cn('doc-ui', className)} style={style}>
+      <div className={cn('rive-ui', className)} style={style}>
         <Router base={trimedBasename}>
           <SiteNav languages={languages} docs={docs} />
-          <main className="doc-ui-main">
-            <article className="doc-ui-content">
-              <MDXProvider components={components}>
-                <Switch>
-                  {docs.map((doc) => (
-                    <Route
-                      key={doc.filepath}
-                      path={getRoutePath(doc.filepath)}
-                      component={doc.default as any}
-                    />
-                  ))}
-                </Switch>
-              </MDXProvider>
-            </article>
+          <main className="rive-ui-main">
+            <MDXProvider components={components}>
+              <Switch>
+                {docs.map((doc) => (
+                  <Route
+                    key={doc.filepath}
+                    path={getRoutePath(doc.filepath)}
+                    children={
+                      <>
+                        <article className="rive-ui-content">
+                          <doc.default />
+                        </article>
+
+                        {doc.tableOfContents && <Toc toc={doc.tableOfContents} />}
+                      </>
+                    }
+                  />
+                ))}
+              </Switch>
+            </MDXProvider>
           </main>
         </Router>
       </div>

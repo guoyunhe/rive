@@ -1,44 +1,44 @@
-.doc-ui-file-name {
+.rive-ui-file-name {
   padding: 0 7px;
   font-size: 12px;
   display: flex;
   align-items: center;
 }
 
-.doc-ui-file-name-icon {
+.rive-ui-file-name-icon {
   display: inline-block;
   padding: 0 4px;
   border-radius: 3px;
-  background-color: var(--doc-ui-color-text);
-  color: var(--doc-ui-color-toolbar-bg);
+  background-color: var(--rive-ui-color-text);
+  color: var(--rive-ui-color-toolbar-bg);
   text-transform: uppercase;
   margin-right: 0.5em;
   font-family: monospace;
 }
 
-.doc-ui-file-name-icon-html {
+.rive-ui-file-name-icon-html {
   background: #e24c26;
   color: #fbfbfb;
 }
 
-.doc-ui-file-name-icon-css {
+.rive-ui-file-name-icon-css {
   background: #0477bb;
   color: #fbfbfb;
 }
 
-.doc-ui-file-name-icon-js,
-.doc-ui-file-name-icon-jsx {
+.rive-ui-file-name-icon-js,
+.rive-ui-file-name-icon-jsx {
   background: #ebd64d;
   color: #323230;
 }
 
-.doc-ui-file-name-icon-ts,
-.doc-ui-file-name-icon-tsx {
+.rive-ui-file-name-icon-ts,
+.rive-ui-file-name-icon-tsx {
   background: #2f75c1;
   color: #fbfbfb;
 }
 
-.doc-ui-file-name-icon-json {
+.rive-ui-file-name-icon-json {
   background: #9273a3;
   color: #fbfbfb;
 }

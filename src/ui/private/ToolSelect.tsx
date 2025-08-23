@@ -15,11 +15,11 @@ export function ToolSelect({ value, onChange, options, className, style }: ToolS
   const [open, setOpen] = useState(false);
   const selected = options.find((item) => item.value === value);
   return (
-    <div className={cn('doc-ui-select', className)} style={style}>
+    <div className={cn('rive-ui-select', className)} style={style}>
       <ToolButton icon={selected?.icon} onClick={() => setOpen((prev) => !prev)}>
         {selected?.label}
       </ToolButton>
-      <div className={cn('doc-ui-select-dropdown', open && 'doc-ui-select-dropdown-open')}>
+      <div className={cn('rive-ui-select-dropdown', open && 'rive-ui-select-dropdown-open')}>
         {options.map((item) => (
           <ToolButton
             key={item.value}

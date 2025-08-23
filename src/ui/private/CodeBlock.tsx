@@ -24,7 +24,7 @@ export function CodeBlock({
   className,
 }: CodeBlockProps) {
   return (
-    <div className={cn('doc-ui-code-block', className)}>
+    <div className={cn('rive-ui-code-block', className)}>
       <Toolbar>
         <FileName language={language} filename={filename} />
         <Spacer />

@@ -8,13 +8,13 @@ export interface FileNameProps {
 
 export function FileName({ language, filename }: FileNameProps) {
   return (
-    <span className="doc-ui-file-name">
+    <span className="rive-ui-file-name">
       {language && (
-        <span className={cn('doc-ui-file-name-icon', `doc-ui-file-name-icon-${language}`)}>
+        <span className={cn('rive-ui-file-name-icon', `rive-ui-file-name-icon-${language}`)}>
           {language === 'bash' ? '>_' : language}
         </span>
       )}
-      <span className="doc-ui-file-name-text">{filename}</span>
+      <span className="rive-ui-file-name-text">{filename}</span>
     </span>
   );
 }
