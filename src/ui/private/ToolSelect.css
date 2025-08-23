@@ -1,0 +1,9 @@
+.doc-ui-select-dropdown {
+  position: absolute;
+  background-color: var(--doc-ui-color-toolbar-bg);
+  display: none;
+}
+
+.doc-ui-select-dropdown-open {
+  display: block;
+}

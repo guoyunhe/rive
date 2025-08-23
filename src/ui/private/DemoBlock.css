@@ -1,0 +1,62 @@
+.doc-ui-demo-block {
+  color: var(--doc-ui-color-text);
+  border: 1px solid var(--doc-ui-color-border);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.doc-ui-demo-block-main {
+  overflow: hidden;
+}
+
+.doc-ui-demo-block-preview {
+  margin: 0;
+  padding: 10px;
+  background: #fff;
+}
+
+.doc-ui-demo-block-preview-disable-padding {
+  padding: 0;
+}
+
+.doc-ui-demo-block-develop {
+  border-left: 1px solid var(--doc-ui-color-border);
+  border-top: 1px solid var(--doc-ui-color-border);
+  margin-left: -1px;
+  margin-top: -1px;
+  flex: 1 1 300px;
+  overflow: hidden;
+}
+
+.doc-ui-demo-block-error {
+  padding: 10px;
+  background: var(--doc-ui-color-error-bg);
+  margin: 0;
+  color: var(--doc-ui-color-error);
+}
+
+.doc-ui-demo-block-editor {
+  overflow: auto;
+  font-family: monospace !important;
+}
+
+.doc-ui-demo-block-editor .prism-code {
+  margin: 0;
+  border-radius: 0;
+  padding: 8px 10px;
+}
+
+.doc-ui-demo-block-phone .doc-ui-demo-block-main,
+.doc-ui-demo-block-tablet .doc-ui-demo-block-main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.doc-ui-demo-block-phone .doc-ui-demo-block-preview {
+  flex: 0 1 360px;
+}
+
+.doc-ui-demo-block-tablet .doc-ui-demo-block-preview {
+  flex: 0 1 720px;
+}

@@ -1,0 +1,55 @@
+.doc-ui-alert {
+  border: 1px solid var(--doc-ui-color-info);
+  border-radius: var(--doc-ui-border-radius);
+  padding: var(--doc-ui-padding-y) var(--doc-ui-padding-x);
+  background-color: var(--doc-ui-color-info-bg);
+  font-size: var(--doc-ui-font-size);
+  margin-bottom: 1em;
+  display: flex;
+}
+
+.doc-ui-alert-icon {
+  margin-right: var(--doc-ui-padding-x);
+  color: var(--doc-ui-color-info);
+}
+
+.doc-ui-alert-icon svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+.doc-ui-alert-success {
+  border-color: var(--doc-ui-color-success);
+  background-color: var(--doc-ui-color-success-bg);
+}
+
+.doc-ui-alert-success .doc-ui-alert-icon {
+  color: var(--doc-ui-color-success);
+}
+
+.doc-ui-alert-warning {
+  border-color: var(--doc-ui-color-warning);
+  background-color: var(--doc-ui-color-warning-bg);
+}
+
+.doc-ui-alert-warning .doc-ui-alert-icon {
+  color: var(--doc-ui-color-warning);
+}
+
+.doc-ui-alert-error {
+  border-color: var(--doc-ui-color-error);
+  background-color: var(--doc-ui-color-error-bg);
+}
+
+.doc-ui-alert-error .doc-ui-alert-icon {
+  color: var(--doc-ui-color-error);
+}
+
+.doc-ui-alert-main > *:first-child {
+  margin-top: 0;
+}
+
+.doc-ui-alert-main > *:last-child {
+  margin-bottom: 0;
+}

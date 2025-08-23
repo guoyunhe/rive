@@ -32,6 +32,16 @@
     "LICENSE",
     "README.md"
   ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./ui": {
+      "types": "./dist/ui/index.d.ts",
+      "import": "./dist/ui/index.js"
+    }
+  },
   "scripts": {
     "build": "tsx src/rive.ts build",
     "build:watch": "tsx src/rive.ts build --watch",
@@ -50,6 +60,7 @@
   },
   "prettier": "prettier-config-ali",
   "dependencies": {
+    "@guoyunhe/prism-theme-github": "^1.0.0",
     "@mdx-js/preact": "^3.1.0",
     "@mdx-js/react": "^3.1.0",
     "@mdx-js/rollup": "^3.1.0",
@@ -58,6 +69,7 @@
     "@vitest/ui": "^2.1.9",
     "chalk": "^5.4.1",
     "chokidar": "^3.6.0",
+    "classnames": "^2.5.1",
     "commander": "^12.1.0",
     "eslint": "^9.30.0",
     "eslint-config-rive": "^3.1.1",
@@ -65,14 +77,20 @@
     "fs-extra": "^11.3.0",
     "happy-dom": "^16.8.1",
     "i18n": "^0.15.1",
+    "i18next": "^25.4.0",
+    "i18next-browser-languagedetector": "^8.2.0",
     "json5": "^2.2.3",
     "postcss": "^8.5.6",
     "prettier": "^3.6.2",
     "prettier-config-rive": "^1.0.0",
-    "react": "^18.3.1",
-    "react-doc-ui": "^2.4.0",
-    "react-docgen-typescript": "^2.4.0",
-    "react-dom": "^18.3.1",
+    "prism-react-renderer": "^2.4.1",
+    "react": "^19.1.1",
+    "react-bootstrap-icons-pro": "^1.1.4",
+    "react-dom": "^19.1.1",
+    "react-i18next": "^15.7.1",
+    "react-live": "^4.1.8",
+    "react-responsive": "^10.0.1",
+    "react-use-localstorage": "^3.5.3",
     "recma-export-filepath": "^1.2.0",
     "recma-mdx-displayname": "^0.4.1",
     "rehype-mdx-code-imports": "^0.4.3",
@@ -90,7 +108,8 @@
     "vite": "^7.0.0",
     "vite-plugin-commonjs": "^0.10.4",
     "vite-tsconfig-paths": "^5.1.4",
-    "vitest": "^2.1.9"
+    "vitest": "^2.1.9",
+    "wouter": "^3.7.1"
   },
   "devDependencies": {
     "@testing-library/dom": "^10.4.0",
@@ -99,6 +118,8 @@
     "@types/fs-extra": "^11.0.4",
     "@types/i18n": "^0.13.12",
     "@types/node": "^20.19.2",
+    "@types/react": "^19.1.11",
+    "@types/react-dom": "^19.1.7",
     "@vitest/ui": "^3.1.1",
     "eslint": "^9.24.0",
     "eslint-config-ali": "^16.3.0",

@@ -1,0 +1,12 @@
+.doc-ui-toolbar {
+  display: flex;
+  background-color: var(--doc-ui-color-toolbar-bg);
+}
+
+.doc-ui-toolbar:first-child {
+  border-bottom: 1px solid var(--doc-ui-color-border);
+}
+
+.doc-ui-toolbar:last-child {
+  border-top: 1px solid var(--doc-ui-color-border);
+}

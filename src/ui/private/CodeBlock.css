@@ -1,0 +1,13 @@
+.doc-ui-code-block {
+  color: var(--doc-ui-color-text);
+  border: 1px solid var(--doc-ui-color-border);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.doc-ui-code-block .prism-code {
+  margin: 0;
+  border-radius: 0;
+  padding: 8px 10px;
+}

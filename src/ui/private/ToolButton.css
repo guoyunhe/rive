@@ -1,0 +1,27 @@
+.doc-ui-tool-button {
+  font-size: 12px;
+  display: block;
+  border: 0;
+  padding: 4px 8px;
+  background-color: transparent;
+  cursor: pointer;
+  user-select: none;
+}
+
+.doc-ui-tool-button:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.doc-ui-tool-button:active {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.doc-ui-tool-button svg {
+  width: 16px;
+  height: 16px;
+  margin: -3px 2px -3px 0;
+}
+
+.doc-ui-tool-button-success {
+  color: var(--doc-ui-color-success);
+}

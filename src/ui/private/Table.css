@@ -1,0 +1,27 @@
+.doc-ui-table {
+  border: 1px solid var(--doc-ui-color-border);
+  border-radius: var(--doc-ui-border-radius);
+  overflow: hidden;
+}
+
+.doc-ui-table table {
+  border-collapse: collapse;
+  margin: -1px;
+  table-layout: fixed;
+  width: calc(100% + 2px);
+}
+
+.doc-ui-table td,
+.doc-ui-table th {
+  text-align: left;
+  border: 1px solid var(--doc-ui-color-border);
+  padding: 4px 8px;
+}
+
+.doc-ui-table th {
+  background-color: var(--doc-ui-color-toolbar-bg);
+}
+
+.doc-ui-table td {
+  background-color: var(--doc-ui-color-content-bg);
+}

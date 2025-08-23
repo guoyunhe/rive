@@ -1,0 +1,11 @@
+.doc-ui {
+  display: flex;
+}
+
+.doc-ui-main {
+  flex: 1 1 auto;
+}
+
+.doc-ui-content {
+  padding: 0 1em;
+}
