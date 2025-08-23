@@ -1,5 +1,7 @@
 import mdx from '@mdx-js/rollup';
 import preact from '@preact/preset-vite';
+import rehypeExtractToc from '@stefanprobst/rehype-extract-toc';
+import rehypeMdxExtractToc from '@stefanprobst/rehype-extract-toc/mdx';
 import react from '@vitejs/plugin-react-swc';
 import { join } from 'node:path';
 import recmaExportFilepath from 'recma-export-filepath';
@@ -55,6 +57,8 @@ export default async function getDocConfig(config: Config, type: 'server' | 'bui
             rehypeMdxCodeImports,
             rehypeMdxCodeProps,
             rehypeMdxImportMedia,
+            rehypeExtractToc,
+            rehypeMdxExtractToc,
           ],
           remarkPlugins: [remarkGfm, remarkFrontmatter, remarkMdxFrontmatter],
         }),
