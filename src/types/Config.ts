@@ -3,6 +3,7 @@ import { TemplateType } from './TemplateType.js';
 
 export interface Config {
   template: TemplateType;
+  lib?: boolean;
   doc: DocConfig;
   packageJson: any;
   tsconfigJson: any;

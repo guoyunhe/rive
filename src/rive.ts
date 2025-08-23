@@ -5,7 +5,7 @@ import { readFileSync } from 'fs';
 import i18n from 'i18n';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
-import { bench, build, lint, start, test } from './index.js';
+import { build, start } from './index.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const packageJson = JSON.parse(readFileSync(join(__dirname, '../package.json'), 'utf-8'));
@@ -28,29 +28,8 @@ program
   .description(i18n.__('build_cmd_desc'))
   .action(build);
 
-program
-  .command('lint')
-  .description(i18n.__('lint_cmd_desc'))
-  .option('--fix', i18n.__('lint_cmd_fix_opt_desc'))
-  .option('--staged', i18n.__('lint_cmd_staged_opt_desc'))
-  .action(lint);
-
-program
-  .command('test')
-  .option('--watch')
-  .option('--ui')
-  .description(i18n.__('test_cmd_desc'))
-  .action(test);
-
-program
-  .command('bench')
-  .option('--watch')
-  .option('--ui')
-  .description(i18n.__('bench_cmd_desc'))
-  .action(bench);
-
 program.helpOption('-h, --help', i18n.__('help_cmd_desc'));
-program.addHelpCommand('help [command]', i18n.__('help_cmd_desc'));
+program.helpCommand('help [command]', i18n.__('help_cmd_desc'));
 
 program.version(packageJson.version, '-v, --version', i18n.__('version_cmd_desc'));
 

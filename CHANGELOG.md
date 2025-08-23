@@ -3,6 +3,7 @@
 ## 3.2.0 - 2025-08-23
 
 - Added `rive/ui` which was `react-doc-ui` before...
+- Removed `lint` and `test` command
 
 ## 3.1.0 - 2025-04-20
 
