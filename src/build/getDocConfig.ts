@@ -10,6 +10,7 @@ import rehypeMdxCodeImports from 'rehype-mdx-code-imports';
 import rehypeMdxCodeProps from 'rehype-mdx-code-props';
 import rehypeMdxImportMedia from 'rehype-mdx-import-media';
 import rehypeMdxTitle from 'rehype-mdx-title';
+import rehypeSlug from 'rehype-slug';
 import remarkFrontmatter from 'remark-frontmatter';
 import remarkGfm from 'remark-gfm';
 import remarkMdxFrontmatter from 'remark-mdx-frontmatter';
@@ -57,6 +58,7 @@ export default async function getDocConfig(config: Config, type: 'server' | 'bui
             rehypeMdxCodeImports,
             rehypeMdxCodeProps,
             rehypeMdxImportMedia,
+            rehypeSlug,
             rehypeExtractToc,
             rehypeMdxExtractToc,
           ],

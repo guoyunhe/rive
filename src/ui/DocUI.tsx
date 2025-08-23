@@ -42,6 +42,7 @@ export interface DocUIProps {
 }
 
 export function DocUI({ docs = [], basename, languages, className, style }: DocUIProps) {
+  console.log(docs);
   const trimedBasename = basename?.endsWith('/')
     ? basename.substring(0, basename.length - 1)
     : basename;
