@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.2.0 - 2025-08-23
+
+- Added `rive/ui` which was `react-doc-ui` before...
+
 ## 3.1.0 - 2025-04-20
 
 - Added Preact support
