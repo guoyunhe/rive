@@ -1,10 +1,12 @@
 .rive-ui-toc {
-  flex: 0 0 300px;
+  font-size: 0.8rem;
+  flex: 0 0 auto;
+  width: 25em;
+  box-sizing: border-box;
 }
 
 .rive-ui-toc-inner {
   border-left: 1px solid var(--rive-ui-color-border);
-  font-size: 0.8rem;
   padding-left: 1em;
   max-height: 100vh;
   overflow: auto;

@@ -1,13 +1,10 @@
 .rive-ui {
   display: flex;
+  justify-content: center;
 }
 
 .rive-ui-main {
-  flex: 1 1 auto;
-  display: flex;
-}
-
-.rive-ui-content {
   padding: 0 1em;
-  flex: 1 1 800px;
+  flex: 1 1 auto;
+  max-width: 60em;
 }

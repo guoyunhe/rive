@@ -1,4 +1,6 @@
-# RiVE - Effortless React Library Development Experience
+# Rive
+
+Effortless React Library Development Experience
 
 ## Features
 

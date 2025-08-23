@@ -2,18 +2,18 @@ import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'wouter';
 import { DocLanguage, MDXDoc } from '../types';
-import './SiteNav.css';
+import './Nav.css';
 import { getLang } from './getLang';
 import { getRoutePath } from './getRoutePath';
 import { setLang } from './setLang';
 
-export interface SiteNavProps {
+export interface NavProps {
   docs: MDXDoc[];
   languages?: DocLanguage[];
   lang?: string;
 }
 
-export function SiteNav({ docs, languages }: SiteNavProps) {
+export function Nav({ docs, languages }: NavProps) {
   const [location, navigate] = useLocation();
   const { i18n } = useTranslation();
 
@@ -52,8 +52,8 @@ export function SiteNav({ docs, languages }: SiteNavProps) {
   });
 
   return (
-    <aside className="rive-ui-site-nav">
-      <nav className="rive-ui-site-nav-inner">
+    <aside className="rive-ui-nav">
+      <nav className="rive-ui-nav-inner">
         <div className="rive-ui-site-settings">
           {languages && (
             <select value={i18n.language} onChange={(e) => i18n.changeLanguage(e.target.value)}>
@@ -70,9 +70,7 @@ export function SiteNav({ docs, languages }: SiteNavProps) {
           .map((doc) => (
             <Link
               key={doc.path}
-              className={(active) =>
-                active ? 'rive-ui-site-nav-item active' : 'rive-ui-site-nav-item'
-              }
+              className={(active) => (active ? 'rive-ui-nav-item active' : 'rive-ui-nav-item')}
               to={getRoutePath(doc.path)}
             >
               {doc.title}
@@ -80,16 +78,14 @@ export function SiteNav({ docs, languages }: SiteNavProps) {
           ))}
 
         {groups.map((group) => (
-          <div key={group} className="rive-ui-site-nav-group">
-            <div className="rive-ui-site-nav-group-title">{group}</div>
+          <div key={group} className="rive-ui-nav-group">
+            <div className="rive-ui-nav-group-title">{group}</div>
             {docsFilteredByLang
               .filter((doc) => group === doc.group)
               .map((doc) => (
                 <Link
                   key={doc.path}
-                  className={(active) =>
-                    active ? 'rive-ui-site-nav-item active' : 'rive-ui-site-nav-item'
-                  }
+                  className={(active) => (active ? 'rive-ui-nav-item active' : 'rive-ui-nav-item')}
                   to={getRoutePath(doc.path)}
                 >
                   {doc.title}

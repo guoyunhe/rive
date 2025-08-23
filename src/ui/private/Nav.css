@@ -1,28 +1,30 @@
-.rive-ui-site-nav {
-  flex: 0 0 250px;
-  background-color: var(--rive-ui-color-content-bg);
+.rive-ui-nav {
+  font-size: 0.8rem;
+  flex: 0 0 auto;
+  width: 25em;
+  box-sizing: border-box;
 }
 
-.rive-ui-site-nav-inner {
+.rive-ui-nav-inner {
+  border-right: 1px solid var(--rive-ui-color-border);
+  height: 100vh;
+  overflow: auto;
   position: sticky;
   top: 0;
-  height: 100vh;
-  overflow-x: hidden;
-  overflow-y: auto;
 }
 
 .rive-ui-site-settings {
   padding: 0.5rem 1rem;
 }
 
-.rive-ui-site-nav-group-title {
+.rive-ui-nav-group-title {
   font-size: 0.7rem;
   font-weight: 700;
   padding: 0.5rem 1rem;
   opacity: 0.5;
 }
 
-.rive-ui-site-nav-item {
+.rive-ui-nav-item {
   display: block;
   font-size: 0.8rem;
   text-decoration: none;
@@ -30,10 +32,10 @@
   color: inherit;
 }
 
-.rive-ui-site-nav-item:hover {
+.rive-ui-nav-item:hover {
   background-color: var(--rive-ui-color-toolbar-bg);
 }
 
-.rive-ui-site-nav-item.active {
+.rive-ui-nav-item.active {
   background-color: var(--rive-ui-color-toolbar-bg);
 }
