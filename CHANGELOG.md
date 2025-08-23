@@ -1,8 +1,12 @@
 # Changelog
 
+## 3.3.0 - 2025-08-23
+
+- Added table of contents to `rive/ui`
+
 ## 3.2.0 - 2025-08-23
 
-- Added `rive/ui` which was `react-rive-ui` before...
+- Added `rive/ui` which was `react-doc-ui` before...
 - Removed `lint` and `test` command
 
 ## 3.1.0 - 2025-04-20
