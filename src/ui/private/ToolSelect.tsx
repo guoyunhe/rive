@@ -6,7 +6,7 @@ import './ToolSelect.css';
 export interface ToolSelectProps {
   value: string;
   onChange: (value: string) => void;
-  options: Array<{ value: string; label: string; icon: ReactNode }>;
+  options: Array<{ value: string; label: string; icon?: ReactNode }>;
   className?: string;
   style?: CSSProperties;
 }

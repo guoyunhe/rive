@@ -2,18 +2,26 @@ import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'wouter';
 import { DocLanguage, MDXDoc } from '../types';
-import './Nav.css';
 import { getLang } from './getLang';
 import { getRoutePath } from './getRoutePath';
+import { LanguageSelect } from './LanguageSelect';
+import './Nav.css';
 import { setLang } from './setLang';
+import { ThemeSelect } from './ThemeSelect';
+
+const date = new Date();
+const year = date.getFullYear();
 
 export interface NavProps {
   docs: MDXDoc[];
   languages?: DocLanguage[];
   lang?: string;
+  author?: string;
+  theme: string;
+  setTheme: (theme: string) => void;
 }
 
-export function Nav({ docs, languages }: NavProps) {
+export function Nav({ docs, languages, author, theme, setTheme }: NavProps) {
   const [location, navigate] = useLocation();
   const { i18n } = useTranslation();
 
@@ -29,8 +37,8 @@ export function Nav({ docs, languages }: NavProps) {
     .map((doc) => ({
       title: doc.title,
       path: getRoutePath(doc.filepath),
-      group: doc.frontmatter?.group,
-      order: doc.frontmatter?.order,
+      group: doc.frontmatter?.['group'],
+      order: doc.frontmatter?.['order'],
     }))
     .sort((a, b) => {
       if (typeof a.order === 'number' && typeof b.order === 'number') {
@@ -54,45 +62,48 @@ export function Nav({ docs, languages }: NavProps) {
   return (
     <aside className="rive-ui-nav">
       <nav className="rive-ui-nav-inner">
-        <div className="rive-ui-site-settings">
-          {languages && (
-            <select value={i18n.language} onChange={(e) => i18n.changeLanguage(e.target.value)}>
-              {languages.map((lang) => (
-                <option key={lang.code} value={lang.code}>
-                  {lang.name}
-                </option>
-              ))}
-            </select>
-          )}
-        </div>
-        {docsFilteredByLang
-          .filter((doc) => !doc.group)
-          .map((doc) => (
-            <Link
-              key={doc.path}
-              className={(active) => (active ? 'rive-ui-nav-item active' : 'rive-ui-nav-item')}
-              to={getRoutePath(doc.path)}
-            >
-              {doc.title}
-            </Link>
-          ))}
+        <div className="rive-ui-nav-menu">
+          {docsFilteredByLang
+            .filter((doc) => !doc.group)
+            .map((doc) => (
+              <Link
+                key={doc.path}
+                className={(active) => (active ? 'rive-ui-nav-item active' : 'rive-ui-nav-item')}
+                to={getRoutePath(doc.path)}
+              >
+                {doc.title}
+              </Link>
+            ))}
 
-        {groups.map((group) => (
-          <div key={group} className="rive-ui-nav-group">
-            <div className="rive-ui-nav-group-title">{group}</div>
-            {docsFilteredByLang
-              .filter((doc) => group === doc.group)
-              .map((doc) => (
-                <Link
-                  key={doc.path}
-                  className={(active) => (active ? 'rive-ui-nav-item active' : 'rive-ui-nav-item')}
-                  to={getRoutePath(doc.path)}
-                >
-                  {doc.title}
-                </Link>
-              ))}
+          {groups.map((group) => (
+            <div key={group} className="rive-ui-nav-group">
+              <div className="rive-ui-nav-group-title">{group}</div>
+              {docsFilteredByLang
+                .filter((doc) => group === doc.group)
+                .map((doc) => (
+                  <Link
+                    key={doc.path}
+                    className={(active) =>
+                      active ? 'rive-ui-nav-item active' : 'rive-ui-nav-item'
+                    }
+                    to={getRoutePath(doc.path)}
+                  >
+                    {doc.title}
+                  </Link>
+                ))}
+            </div>
+          ))}
+        </div>
+
+        <div className="rive-ui-nav-footer">
+          {languages && <LanguageSelect languages={languages} />}
+
+          <ThemeSelect theme={theme} setTheme={setTheme} />
+
+          <div className="rive-ui-copyright">
+            &copy; {year} {author}
           </div>
-        ))}
+        </div>
       </nav>
     </aside>
   );

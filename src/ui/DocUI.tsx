@@ -1,4 +1,5 @@
 import '@guoyunhe/prism-theme-github/github-light.css';
+import { useLocalStorage } from '@guoyunhe/react-storage';
 import { MDXProvider } from '@mdx-js/react';
 import cn from 'classnames';
 import { createInstance } from 'i18next';
@@ -48,6 +49,8 @@ export function DocUI({ docs = [], basename = '/', languages = [], className, st
     ? basename.substring(0, basename.length - 1)
     : basename;
 
+  const [theme, setTheme] = useLocalStorage(`${trimedBasename}/theme`, 'auto');
+
   const i18n = useMemo(() => {
     const i18n_ = createInstance({
       fallbackLng: 'en',
@@ -92,7 +95,7 @@ export function DocUI({ docs = [], basename = '/', languages = [], className, st
     <I18nextProvider i18n={i18n}>
       <div className={cn('rive-ui', className)} style={style}>
         <Router base={trimedBasename}>
-          <Nav languages={languages} docs={docs} />
+          <Nav languages={languages} docs={docs} theme={theme} setTheme={setTheme} />
           <MDXProvider components={components}>
             <Switch>
               {docs.map((doc) => (

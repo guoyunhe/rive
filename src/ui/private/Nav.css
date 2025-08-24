@@ -11,10 +11,12 @@
   overflow: auto;
   position: sticky;
   top: 0;
+  display: flex;
+  flex-direction: column;
 }
 
-.rive-ui-site-settings {
-  padding: 0.5rem 1rem;
+.rive-ui-nav-menu {
+  flex: 1 1 auto;
 }
 
 .rive-ui-nav-group-title {
@@ -38,4 +40,8 @@
 
 .rive-ui-nav-item.active {
   background-color: var(--rive-ui-color-toolbar-bg);
+}
+
+.rive-ui-copyright {
+  padding: 0.5rem;
 }

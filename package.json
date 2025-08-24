@@ -61,6 +61,7 @@
   "prettier": "prettier-config-ali",
   "dependencies": {
     "@guoyunhe/prism-theme-github": "^1.0.0",
+    "@guoyunhe/react-storage": "^2.0.1",
     "@mdx-js/preact": "^3.1.0",
     "@mdx-js/react": "^3.1.0",
     "@mdx-js/rollup": "^3.1.0",
@@ -142,7 +143,17 @@
   "rive": {
     "template": "cli",
     "doc": {
-      "basename": "/rive/"
+      "basename": "/rive/",
+      "languages": [
+        {
+          "code": "en",
+          "name": "🇬🇧 English"
+        },
+        {
+          "code": "zh",
+          "name": "🇨🇳 中文"
+        }
+      ]
     }
   }
 }
