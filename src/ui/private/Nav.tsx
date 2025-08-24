@@ -1,12 +1,10 @@
-import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link, useLocation } from 'wouter';
+import { Link } from 'wouter';
 import { DocLanguage, MDXDoc } from '../types';
 import { getLang } from './getLang';
 import { getRoutePath } from './getRoutePath';
 import { LanguageSelect } from './LanguageSelect';
 import './Nav.css';
-import { setLang } from './setLang';
 import { ThemeSelect } from './ThemeSelect';
 
 const date = new Date();
@@ -22,15 +20,7 @@ export interface NavProps {
 }
 
 export function Nav({ docs, languages, author, theme, setTheme }: NavProps) {
-  const [location, navigate] = useLocation();
   const { i18n } = useTranslation();
-
-  useEffect(() => {
-    const newPath = setLang(location, i18n.language);
-    if (newPath !== location) {
-      navigate(newPath);
-    }
-  }, [i18n.language, location, navigate]);
 
   const docsFilteredByLang = docs
     .filter((doc) => getLang(doc.filepath) === i18n.language)
