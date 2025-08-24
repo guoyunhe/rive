@@ -22,16 +22,6 @@
   "license": "GPL-3.0",
   "author": "Guo Yunhe",
   "type": "module",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "bin": "dist/rive.js",
-  "files": [
-    "dist",
-    "globals.d.ts",
-    "CHANGELOG.md",
-    "LICENSE",
-    "README.md"
-  ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -42,23 +32,45 @@
       "import": "./dist/ui/index.js"
     }
   },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": "dist/rive.js",
+  "files": [
+    "dist",
+    "globals.d.ts",
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.md"
+  ],
   "scripts": {
     "build": "tsx src/rive.ts build",
     "build:watch": "tsx src/rive.ts build --watch",
     "ci:eslint": "eslint -f json src -o ./.ci/eslint.json",
-    "lint": "eslint .",
-    "lint:fix": "prettier --write . && eslint --fix .",
+    "lint": "eslint . && stylelint --allow-empty-input \"**/*.{css,less,scss}\"",
+    "lint:fix": "prettier --write . && eslint --fix . && stylelint --allow-empty-input --fix \"**/*.{css,less,scss}\"",
     "prepare": "husky",
     "start": "tsx src/rive.ts start",
     "test": "vitest run",
     "test:ui": "vitest --ui",
     "test:watch": "vitest"
   },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
   "lint-staged": {
     "*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}": "eslint --fix",
+    "*.{css,less,scss}": "stylelint --fix",
     "*.{cjs,css,cts,html,js,json,jsx,less,md,mjs,mts,scss,ts,tsx,vue,yaml,yml}": "prettier --write"
   },
   "prettier": "prettier-config-ali",
+  "stylelint": {
+    "extends": [
+      "stylelint-config-ali",
+      "stylelint-prettier/recommended"
+    ]
+  },
   "dependencies": {
     "@guoyunhe/prism-theme-github": "^1.0.0",
     "@guoyunhe/react-storage": "^2.0.1",
@@ -115,6 +127,8 @@
     "wouter": "^3.7.1"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/react": "^16.3.0",
     "@types/eslint": "^9.6.1",
@@ -124,15 +138,18 @@
     "@types/react": "^19.1.11",
     "@types/react-dom": "^19.1.7",
     "@vitest/ui": "^3.1.1",
-    "eslint": "^9.24.0",
+    "eslint": "^9.34.0",
     "eslint-config-ali": "^16.5.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",
     "husky": "^9.1.7",
-    "lint-staged": "^15.5.2",
-    "prettier": "^3.5.3",
+    "lint-staged": "^16.1.5",
+    "prettier": "^3.6.2",
     "prettier-config-ali": "^1.5.0",
     "prettier-plugin-packagejson": "^2.5.19",
+    "stylelint": "^16.23.1",
+    "stylelint-config-ali": "^2.3.0",
+    "stylelint-prettier": "^5.0.3",
     "tsx": "^4.20.5",
     "typescript": "^5.8.3",
     "vitest": "^3.1.1"
