@@ -18,6 +18,9 @@
   --rive-ui-border-radius: 0.5rem;
   --rive-ui-padding-x: 0.5rem;
   --rive-ui-padding-y: 0.25rem;
+
+  --rive-ui-input-height: 2rem;
+  --rive-ui-input-height-small: 1.5rem;
 }
 
 body {

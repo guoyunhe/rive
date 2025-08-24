@@ -13,7 +13,6 @@ const year = date.getFullYear();
 export interface NavProps {
   docs: MDXDoc[];
   languages?: DocLanguage[];
-  lang?: string;
   author?: string;
   theme: string;
   setTheme: (theme: string) => void;

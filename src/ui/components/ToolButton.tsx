@@ -12,10 +12,23 @@ export interface ToolButtonProps {
   onClick?: MouseEventHandler<HTMLAnchorElement>;
 }
 
-export function ToolButton({ children, icon, color, className, style, onClick }: ToolButtonProps) {
+export function ToolButton({
+  children,
+  icon,
+  active,
+  color,
+  className,
+  style,
+  onClick,
+}: ToolButtonProps) {
   return (
     <a
-      className={classNames('rive-ui-tool-button', `rive-ui-tool-button-${color}`, className)}
+      className={classNames(
+        'rive-ui-tool-button',
+        color && `rive-ui-tool-button-${color}`,
+        active && `rive-ui-tool-button-active`,
+        className,
+      )}
       onClick={onClick}
       style={style}
     >

@@ -8,10 +8,10 @@ import { CSSProperties, useMemo } from 'react';
 import { I18nextProvider } from 'react-i18next';
 import { Redirect, Route, Router, Switch } from 'wouter';
 import './DocUI.css';
-import { Nav } from './private/Nav';
-import { Toc } from './private/Toc';
-import { components } from './private/components';
-import { getRoutePath } from './private/getRoutePath';
+import { Nav } from './components/Nav';
+import { Toc } from './components/Toc';
+import { components } from './components/components';
+import { getRoutePath } from './components/getRoutePath';
 import { DocLanguage, MDXDoc } from './types';
 
 export interface DocUIProps {
