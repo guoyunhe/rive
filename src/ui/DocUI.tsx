@@ -12,6 +12,7 @@ import { Toc } from './private/Toc';
 import { components } from './private/components';
 import { getRoutePath } from './private/getRoutePath';
 import { DocLanguage, MDXDoc } from './types';
+
 export interface DocUIProps {
   /**
    * Imported Markdown/MDX files. For example:
@@ -42,8 +43,7 @@ export interface DocUIProps {
   style?: CSSProperties;
 }
 
-export function DocUI({ docs = [], basename, languages, className, style }: DocUIProps) {
-  console.log(docs);
+export function DocUI({ docs = [], basename = '/', languages = [], className, style }: DocUIProps) {
   const trimedBasename = basename?.endsWith('/')
     ? basename.substring(0, basename.length - 1)
     : basename;
