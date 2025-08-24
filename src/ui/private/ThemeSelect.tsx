@@ -1,4 +1,3 @@
-import { BiMoon, BiSun, BiYinYang } from 'react-bootstrap-icons-pro';
 import { useTranslation } from 'react-i18next';
 import { ToolSelect } from './ToolSelect';
 
@@ -20,17 +19,14 @@ export function ThemeSelect({ theme, setTheme }: ThemeSelectProps) {
         {
           label: t('auto'),
           value: 'auto',
-          icon: <BiYinYang />,
         },
         {
           label: t('light'),
           value: 'light',
-          icon: <BiSun />,
         },
         {
           label: t('dark'),
           value: 'dark',
-          icon: <BiMoon />,
         },
       ]}
     />

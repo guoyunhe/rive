@@ -6,7 +6,7 @@ import { createInstance } from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import { CSSProperties, useMemo } from 'react';
 import { I18nextProvider } from 'react-i18next';
-import { Route, Router, Switch } from 'wouter';
+import { Redirect, Route, Router, Switch } from 'wouter';
 import './DocUI.css';
 import { Nav } from './private/Nav';
 import { Toc } from './private/Toc';
@@ -99,20 +99,17 @@ export function DocUI({ docs = [], basename = '/', languages = [], className, st
           <MDXProvider components={components}>
             <Switch>
               {docs.map((doc) => (
-                <Route
-                  key={doc.filepath}
-                  path={getRoutePath(doc.filepath)}
-                  children={
-                    <>
-                      <main className="rive-ui-main">
-                        <doc.default />
-                      </main>
+                <Route key={doc.filepath} path={getRoutePath(doc.filepath)}>
+                  <main className="rive-ui-main">
+                    <doc.default />
+                  </main>
 
-                      {doc.tableOfContents && <Toc toc={doc.tableOfContents} />}
-                    </>
-                  }
-                />
+                  {doc.tableOfContents && <Toc toc={doc.tableOfContents} />}
+                </Route>
               ))}
+              <Route>
+                <Redirect href={i18n.language === 'en' ? '/' : `/${i18n.language}`} />
+              </Route>
             </Switch>
           </MDXProvider>
         </Router>
