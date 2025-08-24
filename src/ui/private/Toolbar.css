@@ -1,6 +1,9 @@
 .rive-ui-toolbar {
   display: flex;
   background-color: var(--rive-ui-color-toolbar-bg);
+  height: 1.5rem;
+  font-size: 0.75rem;
+  align-items: center;
 }
 
 .rive-ui-toolbar:first-child {

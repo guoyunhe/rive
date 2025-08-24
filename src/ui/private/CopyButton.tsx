@@ -30,6 +30,7 @@ export function CopyButton({ code }: CopyButtonProps) {
 
   return (
     <ToolButton
+      icon={<BiCopy />}
       onClick={() => {
         navigator.clipboard
           .writeText(code || '')
@@ -39,7 +40,6 @@ export function CopyButton({ code }: CopyButtonProps) {
           .catch();
       }}
     >
-      <BiCopy />
       {t('copy')}
     </ToolButton>
   );

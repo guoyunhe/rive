@@ -11,14 +11,16 @@
   --rive-ui-color-warning-bg: #fffbe6;
   --rive-ui-color-error: #ff4d4f;
   --rive-ui-color-error-bg: #fff2f0;
-  --rive-ui-font-size: 14px;
+  --rive-ui-font-size: 1rem;
+  --rive-ui-font-family: 'Noto Sans', 'sans-serif';
   --rive-ui-font-family-code:
-    ui-monospace, 'SF Mono', 'Menlo', 'Consolas', 'Liberation Mono', monospace;
-  --rive-ui-border-radius: 8px;
-  --rive-ui-padding-x: 8px;
-  --rive-ui-padding-y: 4px;
+    ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+  --rive-ui-border-radius: 0.5rem;
+  --rive-ui-padding-x: 0.5rem;
+  --rive-ui-padding-y: 0.25rem;
 }
 
 body {
   margin: 0;
+  font-family: var(--rive-ui-font-family);
 }

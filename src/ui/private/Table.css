@@ -15,7 +15,7 @@
 .rive-ui-table th {
   text-align: left;
   border: 1px solid var(--rive-ui-color-border);
-  padding: 4px 8px;
+  padding: 0.25rem 0.5rem;
 }
 
 .rive-ui-table th {

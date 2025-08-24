@@ -1,7 +1,7 @@
 .rive-ui-demo-block {
   color: var(--rive-ui-color-text);
   border: 1px solid var(--rive-ui-color-border);
-  border-radius: 8px;
+  border-radius: 0.5rem;
   overflow: hidden;
   margin-bottom: 1rem;
 }
@@ -12,7 +12,7 @@
 
 .rive-ui-demo-block-preview {
   margin: 0;
-  padding: 10px;
+  padding: 0.625rem;
   background: #fff;
 }
 
@@ -25,12 +25,12 @@
   border-top: 1px solid var(--rive-ui-color-border);
   margin-left: -1px;
   margin-top: -1px;
-  flex: 1 1 300px;
+  flex: 1 1 20rem;
   overflow: hidden;
 }
 
 .rive-ui-demo-block-error {
-  padding: 10px;
+  padding: 0.625rem;
   background: var(--rive-ui-color-error-bg);
   margin: 0;
   color: var(--rive-ui-color-error);
@@ -44,7 +44,7 @@
 .rive-ui-demo-block-editor .prism-code {
   margin: 0;
   border-radius: 0;
-  padding: 8px 10px;
+  padding: 0.5rem 0.625rem;
 }
 
 .rive-ui-demo-block-phone .rive-ui-demo-block-main,
@@ -54,9 +54,9 @@
 }
 
 .rive-ui-demo-block-phone .rive-ui-demo-block-preview {
-  flex: 0 1 360px;
+  flex: 0 1 22.5rem;
 }
 
 .rive-ui-demo-block-tablet .rive-ui-demo-block-preview {
-  flex: 0 1 720px;
+  flex: 0 1 45rem;
 }

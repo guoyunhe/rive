@@ -1,7 +1,7 @@
 .rive-ui-code-block {
   color: var(--rive-ui-color-text);
   border: 1px solid var(--rive-ui-color-border);
-  border-radius: 8px;
+  border-radius: 0.5rem;
   overflow: hidden;
   margin-bottom: 1rem;
 }
@@ -9,5 +9,5 @@
 .rive-ui-code-block .prism-code {
   margin: 0;
   border-radius: 0;
-  padding: 8px 10px;
+  padding: 0.5rem 0.625rem;
 }
