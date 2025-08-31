@@ -3,12 +3,12 @@ import { CSSProperties, useMemo, useState } from 'react';
 import { BiLaptop, BiPhone, BiTablet } from 'react-bootstrap-icons-pro';
 import { useTranslation } from 'react-i18next';
 import { LiveEditor, LiveError, LivePreview, LiveProvider } from 'react-live';
+import { Button } from '../Button';
 import { CopyButton } from './CopyButton';
 import './DemoBlock.css';
 import { FileName } from './FileName';
 import { Spacer } from './Spacer';
-import { Toolbar } from './Toobar';
-import { ToolButton } from './ToolButton';
+import { Toolbar } from './Toolbar';
 import { ToolSelect } from './ToolSelect';
 import { transformCode } from './transformCode';
 
@@ -31,7 +31,7 @@ export function DemoBlock({
   disablePadding,
   className,
   style,
-  imports,
+  imports = {},
 }: DemoBlockProps) {
   const { t } = useTranslation();
   const deviceList = useMemo(
@@ -63,7 +63,9 @@ export function DemoBlock({
         {device === 'responsive' ? (
           <ToolSelect value={selectedDevice} onChange={setSelectedDevice} options={deviceList} />
         ) : (
-          <ToolButton icon={selectedDeviceObj?.icon}>{selectedDeviceObj?.label}</ToolButton>
+          <Button>
+            {selectedDeviceObj?.icon} {selectedDeviceObj?.label}
+          </Button>
         )}
         <CopyButton code={code} />
       </Toolbar>

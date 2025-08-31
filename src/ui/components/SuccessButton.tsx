@@ -1,12 +1,13 @@
 import { BiCheckCircle } from 'react-bootstrap-icons-pro';
 import { useTranslation } from 'react-i18next';
-import { ToolButton } from './ToolButton';
+import { Button } from '../Button';
 
 export function SuccessButton() {
   const { t } = useTranslation();
   return (
-    <ToolButton color="success" icon={<BiCheckCircle />}>
+    <Button color="success">
+      <BiCheckCircle />
       {t('success')}
-    </ToolButton>
+    </Button>
   );
 }

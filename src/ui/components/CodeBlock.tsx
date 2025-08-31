@@ -5,7 +5,7 @@ import './CodeBlock.css';
 import { CopyButton } from './CopyButton';
 import { FileName } from './FileName';
 import { Spacer } from './Spacer';
-import { Toolbar } from './Toobar';
+import { Toolbar } from './Toolbar';
 
 export interface CodeBlockProps {
   code?: string;

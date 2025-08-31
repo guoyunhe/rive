@@ -1,8 +1,8 @@
 :root {
   --rive-ui-color-border: #d8d8d8;
-  --rive-ui-color-text: #333;
+  --rive-ui-color-text: rgba(0, 0, 0, 0.8);
   --rive-ui-color-content-bg: #fff;
-  --rive-ui-color-toolbar-bg: #f0f0f0;
+  --rive-ui-color-toolbar-bg: rgba(0, 0, 0, 0.05);
   --rive-ui-color-success: #52c41a;
   --rive-ui-color-success-bg: #f6ffed;
   --rive-ui-color-info: #1677ff;
@@ -21,6 +21,10 @@
 
   --rive-ui-input-height: 2rem;
   --rive-ui-input-height-small: 1.5rem;
+
+  --rive-ui-button-fg: rgba(0, 0, 0, 0.1);
+  --rive-ui-button-bg-hover: rgba(0, 0, 0, 0.05);
+  --rive-ui-button-bg-active: rgba(0, 0, 0, 0.1);
 }
 
 body {

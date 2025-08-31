@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { BiCopy } from 'react-bootstrap-icons-pro';
 import { useTranslation } from 'react-i18next';
+import { Button } from '../Button';
 import { SuccessButton } from './SuccessButton';
-import { ToolButton } from './ToolButton';
 
 export interface CopyButtonProps {
   code?: string | undefined;
@@ -29,8 +29,7 @@ export function CopyButton({ code }: CopyButtonProps) {
   }
 
   return (
-    <ToolButton
-      icon={<BiCopy />}
+    <Button
       onClick={() => {
         navigator.clipboard
           .writeText(code || '')
@@ -40,7 +39,8 @@ export function CopyButton({ code }: CopyButtonProps) {
           .catch();
       }}
     >
+      <BiCopy />
       {t('copy')}
-    </ToolButton>
+    </Button>
   );
 }
