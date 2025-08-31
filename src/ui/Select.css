@@ -1,4 +1,4 @@
-.rive-ui-button {
+.rive-ui-select {
   appearance: none;
   border: 0;
   border-radius: 0.25rem;
@@ -17,7 +17,7 @@
   gap: 0.25rem;
 }
 
-.rive-ui-button-size-small {
+.rive-ui-select-size-small {
   border-radius: 0.25rem;
   font-size: 0.75rem;
   padding: 0 0.5rem;
@@ -26,14 +26,10 @@
   gap: 0.25rem;
 }
 
-.rive-ui-button:hover {
+.rive-ui-select:hover {
   background: var(--rive-ui-button-bg-hover);
 }
 
-.rive-ui-button:active {
+.rive-ui-select:active {
   background: var(--rive-ui-button-bg-active);
-}
-
-.rive-ui-button-color-success {
-  color: var(--rive-ui-color-success);
 }

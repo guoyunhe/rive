@@ -23,7 +23,7 @@ export function CopyButton({ code }: CopyButtonProps) {
   }, [success]);
 
   if (success) {
-    return <Button>✅&nbsp;{t('success')}</Button>;
+    return <Button>{t('success')}</Button>;
   }
 
   return (
@@ -38,7 +38,7 @@ export function CopyButton({ code }: CopyButtonProps) {
           .catch();
       }}
     >
-      📋&nbsp;{t('copy')}
+      {t('copy')}
     </Button>
   );
 }

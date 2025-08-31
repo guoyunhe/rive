@@ -63,20 +63,18 @@ export function DocUI({ docs = [], basename = '/', languages = [], className, st
       resources: {
         en: {
           translation: {
-            copy: 'Copy',
-            success: 'Success',
-            phone: 'Phone',
-            tablet: 'Tablet',
-            laptop: 'Laptop',
+            copy: '📋 Copy',
+            success: '✅ Success',
+            phone: '📱 Phone',
+            laptop: '💻 Laptop',
           },
         },
         zh: {
           translation: {
-            copy: '复制',
-            success: '成功',
-            phone: '手机',
-            tablet: '平板',
-            laptop: '桌面',
+            copy: '📋 复制',
+            success: '✅ 成功',
+            phone: '📱 手机',
+            laptop: '💻 桌面',
           },
         },
       },

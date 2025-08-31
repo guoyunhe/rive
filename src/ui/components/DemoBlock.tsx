@@ -1,19 +1,17 @@
 import cn from 'classnames';
 import { CSSProperties, useMemo, useState } from 'react';
-import { BiLaptop, BiPhone, BiTablet } from 'react-bootstrap-icons-pro';
 import { useTranslation } from 'react-i18next';
 import { LiveEditor, LiveError, LivePreview, LiveProvider } from 'react-live';
-import { Button } from '../Button';
+import { Select } from '../Select';
 import { CopyButton } from './CopyButton';
 import './DemoBlock.css';
 import { FileName } from './FileName';
 import { Spacer } from './Spacer';
 import { Toolbar } from './Toolbar';
-import { ToolSelect } from './ToolSelect';
 import { transformCode } from './transformCode';
 
 export interface DemoBlockProps {
-  device?: 'laptop' | 'tablet' | 'phone' | 'responsive';
+  device?: 'laptop' | 'phone' | 'responsive';
   language?: 'jsx' | 'tsx';
   filename?: string | undefined;
   code: string;
@@ -36,20 +34,14 @@ export function DemoBlock({
   const { t } = useTranslation();
   const deviceList = useMemo(
     () => [
-      { value: 'phone', label: t('phone'), icon: <BiPhone /> },
-      { value: 'tablet', label: t('tablet'), icon: <BiTablet /> },
-      { value: 'laptop', label: t('laptop'), icon: <BiLaptop /> },
+      { value: 'phone', label: t('phone') },
+      { value: 'laptop', label: t('laptop') },
     ],
     [t],
   );
 
   const [selectedDevice, setSelectedDevice] = useState<string>(
     device === 'responsive' ? 'laptop' : device,
-  );
-
-  const selectedDeviceObj = useMemo(
-    () => deviceList.find((item) => item.value === selectedDevice),
-    [selectedDevice, deviceList],
   );
 
   return (
@@ -60,12 +52,13 @@ export function DemoBlock({
       <Toolbar>
         <FileName language={language} filename={filename} />
         <Spacer />
-        {device === 'responsive' ? (
-          <ToolSelect value={selectedDevice} onChange={setSelectedDevice} options={deviceList} />
-        ) : (
-          <Button>
-            {selectedDeviceObj?.icon} {selectedDeviceObj?.label}
-          </Button>
+        {device === 'responsive' && (
+          <Select
+            size="small"
+            value={selectedDevice}
+            onChange={(e) => setSelectedDevice(e.target.value)}
+            options={deviceList}
+          />
         )}
         <CopyButton code={code} />
       </Toolbar>
