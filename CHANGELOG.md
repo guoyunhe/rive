@@ -1,8 +1,9 @@
 # Changelog
 
-## 3.3.0 - 2025-08-23
+## 3.3.0 - 2025-08-31
 
-- Added table of contents to `rive/ui`
+- Added table of contents
+- Added dark theme support
 
 ## 3.2.0 - 2025-08-23
 
