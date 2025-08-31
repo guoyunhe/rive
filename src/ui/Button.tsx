@@ -5,15 +5,24 @@ import './Button.css';
 export interface ButtonProps
   extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
   active?: boolean;
-  color?: string;
+  color?: 'default' | 'success';
+  size?: 'medium' | 'small';
 }
 
-export function Button({ children, active, color, className, ...rest }: ButtonProps) {
+export function Button({
+  active,
+  children,
+  className,
+  color = 'default',
+  size = 'medium',
+  ...rest
+}: ButtonProps) {
   return (
     <button
       className={classNames(
         'rive-ui-button',
-        color && `rive-ui-button-${color}`,
+        `rive-ui-button-size-${size}`,
+        `rive-ui-button-color-${color}`,
         active && `rive-ui-button-active`,
         className,
       )}

@@ -3,13 +3,24 @@
   border: 0;
   border-radius: 0.25rem;
   color: var(--rive-ui-color-text);
+  font-family: var(--rive-ui-font-family);
   font-size: 0.75rem;
   padding: 0 0.5rem;
   display: flex;
+  justify-content: center;
   align-items: center;
   background-color: transparent;
   cursor: pointer;
   user-select: none;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  gap: 0.25rem;
+}
+
+.rive-ui-button-size-small {
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  padding: 0 0.5rem;
   height: 1.5rem;
   line-height: 1.5rem;
   gap: 0.25rem;
@@ -28,6 +39,6 @@
   align-items: center;
 }
 
-.rive-ui-button-success {
+.rive-ui-button-color-success {
   color: var(--rive-ui-color-success);
 }
