@@ -27,11 +27,11 @@
 }
 
 .rive-ui-button:hover {
-  background: var(--rive-ui-button-bg-hover);
+  background: var(--rive-ui-color-button-bg-hover);
 }
 
 .rive-ui-button:active {
-  background: var(--rive-ui-button-bg-active);
+  background: var(--rive-ui-color-button-bg-active);
 }
 
 .rive-ui-button-color-success {

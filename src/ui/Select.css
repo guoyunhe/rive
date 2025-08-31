@@ -27,9 +27,9 @@
 }
 
 .rive-ui-select:hover {
-  background: var(--rive-ui-button-bg-hover);
+  background: var(--rive-ui-color-button-bg-hover);
 }
 
 .rive-ui-select:active {
-  background: var(--rive-ui-button-bg-active);
+  background: var(--rive-ui-color-button-bg-active);
 }

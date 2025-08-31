@@ -13,7 +13,7 @@
 .rive-ui-demo-block-preview {
   margin: 0;
   padding: 0.625rem;
-  background: #fff;
+  background: var(--rive-ui-color-bg);
 }
 
 .rive-ui-demo-block-preview-disable-padding {

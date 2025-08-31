@@ -1,4 +1,4 @@
-import { DocUI } from './DocUI';
+import { DocUI } from './App';
 import './index.css';
 
 export default DocUI;

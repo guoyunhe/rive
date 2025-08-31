@@ -1,4 +1,3 @@
-import '@guoyunhe/prism-theme-github/github-light.css';
 import { useLocalStorage } from '@guoyunhe/react-storage';
 import { MDXProvider } from '@mdx-js/react';
 import cn from 'classnames';
@@ -7,11 +6,12 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import { CSSProperties, useMemo } from 'react';
 import { I18nextProvider } from 'react-i18next';
 import { Redirect, Route, Router, Switch } from 'wouter';
-import './DocUI.css';
+import './App.css';
 import { Nav } from './components/Nav';
 import { Toc } from './components/Toc';
 import { components } from './components/components';
 import { getRoutePath } from './components/getRoutePath';
+import './github.css';
 import { DocLanguage, MDXDoc } from './types';
 
 export interface DocUIProps {
