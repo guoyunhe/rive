@@ -97,8 +97,6 @@
     "prettier": "^3.6.2",
     "prettier-config-rive": "^1.0.0",
     "prism-react-renderer": "^2.4.1",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1",
     "react-i18next": "^15.7.2",
     "react-live": "^4.1.8",
     "react-responsive": "^10.0.1",
@@ -153,7 +151,9 @@
   },
   "peerDependencies": {
     "@mdx-js/preact": "^3.1.0",
-    "@mdx-js/react": "^3.1.0"
+    "@mdx-js/react": "^3.1.0",
+    "react": ">=16.8",
+    "react-dom": ">=16.8"
   },
   "rive": {
     "template": "cli",
