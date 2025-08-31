@@ -35,11 +35,12 @@
 }
 
 .rive-ui-nav-item:hover {
-  background-color: var(--rive-ui-color-toolbar-bg);
+  background-color: var(--rive-ui-button-bg-hover);
 }
 
+.rive-ui-nav-item:active,
 .rive-ui-nav-item.active {
-  background-color: var(--rive-ui-color-toolbar-bg);
+  background-color: var(--rive-ui-button-bg-active);
 }
 
 .rive-ui-settings {

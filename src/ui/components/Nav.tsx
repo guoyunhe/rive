@@ -86,9 +86,8 @@ export function Nav({ docs, languages, author, theme, setTheme }: NavProps) {
 
         <div className="rive-ui-nav-footer">
           <div className="rive-ui-settings">
-            {languages && <LanguageSelect languages={languages} />}
-
             <ThemeSelect theme={theme} setTheme={setTheme} />
+            {languages && <LanguageSelect languages={languages} />}
           </div>
 
           <div className="rive-ui-copyright">
