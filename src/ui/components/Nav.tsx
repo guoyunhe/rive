@@ -13,7 +13,7 @@ const year = date.getFullYear();
 export interface NavProps {
   docs: MDXDoc[];
   languages?: DocLanguage[];
-  author?: string;
+  author?: string | undefined;
   theme: string;
   setTheme: (theme: string) => void;
 }
@@ -85,9 +85,11 @@ export function Nav({ docs, languages, author, theme, setTheme }: NavProps) {
         </div>
 
         <div className="rive-ui-nav-footer">
-          {languages && <LanguageSelect languages={languages} />}
+          <div className="rive-ui-settings">
+            {languages && <LanguageSelect languages={languages} />}
 
-          <ThemeSelect theme={theme} setTheme={setTheme} />
+            <ThemeSelect theme={theme} setTheme={setTheme} />
+          </div>
 
           <div className="rive-ui-copyright">
             &copy; {year} {author}

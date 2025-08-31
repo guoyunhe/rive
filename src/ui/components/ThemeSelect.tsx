@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { ToolSelect } from './ToolSelect';
+import { Select } from '../Select';
 
 export interface ThemeSelectProps {
   theme: string;
@@ -10,16 +10,12 @@ export function ThemeSelect({ theme, setTheme }: ThemeSelectProps) {
   const { t } = useTranslation();
 
   return (
-    <ToolSelect
+    <Select
       value={theme}
-      onChange={(value) => {
-        setTheme(value);
+      onChange={(e) => {
+        setTheme(e.target.value);
       }}
       options={[
-        {
-          label: t('auto'),
-          value: 'auto',
-        },
         {
           label: t('light'),
           value: 'light',

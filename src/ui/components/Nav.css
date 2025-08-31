@@ -42,6 +42,14 @@
   background-color: var(--rive-ui-color-toolbar-bg);
 }
 
+.rive-ui-settings {
+  display: flex;
+}
+
+.rive-ui-settings > * {
+  flex: 1 1 50%;
+}
+
 .rive-ui-copyright {
   padding: 0.5rem;
 }

@@ -112,6 +112,7 @@ export default function App() {
       docs={[ ${files.map((_file, index) => `doc${index}`).join(', ')} ]}
       basename="${config.doc.basename}"
       languages={${JSON.stringify(config.doc.languages)}}
+      author={${JSON.stringify(config.packageJson.author?.name || config.packageJson.author)}}
     />
   );
 }

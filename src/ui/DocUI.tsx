@@ -16,6 +16,17 @@ import { DocLanguage, MDXDoc } from './types';
 
 export interface DocUIProps {
   /**
+   * Package author. Extracted from package.json. */
+  author?: string;
+  /**
+   * React Router basename
+   */
+  basename?: string;
+  /**
+   * Extra className.
+   */
+  className?: string;
+  /**
    * Imported Markdown/MDX files. For example:
    *
    * ```jsx
@@ -27,29 +38,28 @@ export interface DocUIProps {
    */
   docs?: MDXDoc[];
   /**
-   * React Router basename
-   */
-  basename?: string;
-  /**
    * Supported languages
    */
   languages?: DocLanguage[];
-  /**
-   * Extra className.
-   */
-  className?: string;
   /**
    * Extra style.
    */
   style?: CSSProperties;
 }
 
-export function DocUI({ docs = [], basename = '/', languages = [], className, style }: DocUIProps) {
+export function DocUI({
+  author,
+  docs = [],
+  basename = '/',
+  languages = [],
+  className,
+  style,
+}: DocUIProps) {
   const trimedBasename = basename?.endsWith('/')
     ? basename.substring(0, basename.length - 1)
     : basename;
 
-  const [theme, setTheme] = useLocalStorage(`${trimedBasename}/theme`, 'auto');
+  const [theme, setTheme] = useLocalStorage(`${trimedBasename}/theme`, 'light');
 
   const i18n = useMemo(() => {
     const i18n_ = createInstance({
@@ -67,6 +77,8 @@ export function DocUI({ docs = [], basename = '/', languages = [], className, st
             success: '✅ Success',
             phone: '📱 Phone',
             laptop: '💻 Laptop',
+            light: '☀️ Light',
+            dark: '🌛 Dark',
           },
         },
         zh: {
@@ -75,6 +87,8 @@ export function DocUI({ docs = [], basename = '/', languages = [], className, st
             success: '✅ 成功',
             phone: '📱 手机',
             laptop: '💻 桌面',
+            light: '☀️ 亮色',
+            dark: '🌛 暗色',
           },
         },
       },
@@ -91,9 +105,15 @@ export function DocUI({ docs = [], basename = '/', languages = [], className, st
 
   return (
     <I18nextProvider i18n={i18n}>
-      <div className={cn('rive-ui', className)} style={style}>
+      <div className={cn('rive-ui-app', `rive-ui-app-theme-${theme}`, className)} style={style}>
         <Router base={trimedBasename}>
-          <Nav languages={languages} docs={docs} theme={theme} setTheme={setTheme} />
+          <Nav
+            languages={languages}
+            docs={docs}
+            theme={theme}
+            setTheme={setTheme}
+            author={author}
+          />
           <MDXProvider components={components}>
             <Switch>
               {docs.map((doc) => (

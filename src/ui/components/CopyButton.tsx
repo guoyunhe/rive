@@ -23,7 +23,7 @@ export function CopyButton({ code }: CopyButtonProps) {
   }, [success]);
 
   if (success) {
-    return <Button>{t('success')}</Button>;
+    return <Button size="small">{t('success')}</Button>;
   }
 
   return (

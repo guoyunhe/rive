@@ -1,6 +1,55 @@
-.rive-ui {
+.rive-ui-app {
   display: flex;
   justify-content: center;
+  min-height: 100vh;
+  background-color: var(--rive-ui-color-bg);
+  color: var(--rive-ui-color-text);
+
+  --rive-ui-color-bg: #fff;
+  --rive-ui-color-border: #d8d8d8;
+  --rive-ui-color-text: rgba(0, 0, 0, 0.8);
+  --rive-ui-color-content-bg: #fff;
+  --rive-ui-color-toolbar-bg: rgba(0, 0, 0, 0.05);
+  --rive-ui-color-success: #52c41a;
+  --rive-ui-color-success-bg: #f6ffed;
+  --rive-ui-color-info: #1677ff;
+  --rive-ui-color-info-bg: #e6f4ff;
+  --rive-ui-color-warning: #faad14;
+  --rive-ui-color-warning-bg: #fffbe6;
+  --rive-ui-color-error: #ff4d4f;
+  --rive-ui-color-error-bg: #fff2f0;
+  --rive-ui-font-size: 1rem;
+  --rive-ui-font-family: 'Noto Sans', 'sans-serif';
+  --rive-ui-font-family-code:
+    ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+  --rive-ui-border-radius: 0.5rem;
+  --rive-ui-padding-x: 0.5rem;
+  --rive-ui-padding-y: 0.25rem;
+
+  --rive-ui-input-height: 2rem;
+  --rive-ui-input-height-small: 1.5rem;
+
+  --rive-ui-button-fg: rgba(0, 0, 0, 0.1);
+  --rive-ui-button-bg-hover: rgba(0, 0, 0, 0.05);
+  --rive-ui-button-bg-active: rgba(0, 0, 0, 0.1);
+}
+
+.rive-ui-app-theme-dark {
+  --rive-ui-color-bg: #000;
+  --rive-ui-color-border: #222;
+  --rive-ui-color-text: rgba(255, 255, 255, 0.8);
+  --rive-ui-color-content-bg: #fff;
+  --rive-ui-color-toolbar-bg: rgba(255, 255, 255, 0.05);
+  --rive-ui-button-bg-hover: rgba(255, 255, 255, 0.05);
+  --rive-ui-button-bg-active: rgba(255, 255, 255, 0.1);
+  --rive-ui-color-success: #52c41a;
+  --rive-ui-color-success-bg: #f6ffed;
+  --rive-ui-color-info: #1677ff;
+  --rive-ui-color-info-bg: #e6f4ff;
+  --rive-ui-color-warning: #faad14;
+  --rive-ui-color-warning-bg: #fffbe6;
+  --rive-ui-color-error: #ff4d4f;
+  --rive-ui-color-error-bg: #fff2f0;
 }
 
 .rive-ui-main {
